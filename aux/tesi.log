@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.5.3)  16 MAY 2021 18:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.5.3)  16 MAY 2021 19:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -892,7 +892,7 @@ Package csquotes Info: Redefining alias 'default' -> 'italian'.
 File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
 \l__kernel_color_stack_int=\count414
 \l__pdf_internal_box=\box47
-) (./tesi.aux)
+) (aux/tesi.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 44.
 LaTeX Font Info:    ... okay on input line 44.
 LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 44.
@@ -910,7 +910,6 @@ LaTeX Font Info:    ... okay on input line 44.
 LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 44.
 LaTeX Font Info:    Trying to load font information for LGR+cmr on input line 4
 4.
-
 (/usr/share/texmf-dist/tex/latex/cbfonts-fd/lgrcmr.fd
 File: lgrcmr.fd 2017/07/29 v1.2 Greek European Computer Regular
 )
@@ -1001,7 +1000,7 @@ LaTeX Info: Redefining \ref on input line 44.
 LaTeX Info: Redefining \pageref on input line 44.
 LaTeX Info: Redefining \nameref on input line 44.
 
-(./tesi.out) (./tesi.out)
+(aux/tesi.out) (aux/tesi.out)
 \@outlinefile=\write4
 Package biblatex Info: Trying to load language 'italian' -> 'italian-apa'...
 Package biblatex Info: ... file 'italian-apa.lbx' found.
@@ -1043,7 +1042,7 @@ Package: blx-case-expl3 2020/12/31 v3.16 expl3 case changing code for biblatex
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'tesi.bbl' found.
 
-(./tesi.bbl)
+(aux/tesi.bbl)
 Package biblatex Info: Reference section=0 on input line 44.
 Package biblatex Info: Reference segment=0 on input line 44.
 <images/logo.png, id=16, 943.525pt x 949.5475pt>
@@ -1053,15 +1052,15 @@ Package pdftex.def Info: images/logo.png  used on input line 51.
 (pdftex.def)             Requested size: 94.35802pt x 94.96031pt.
  [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./images/logo.png>] (./tes
-i.toc
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./images/logo.png>] (aux/t
+esi.toc
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 9.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 9.
 )
 \tf@toc=\write5
- (./capitoli/0-Introduzione.texpdfTeX warning (ext4): destination with the same
+ (./chapters/0-Introduzione.texpdfTeX warning (ext4): destination with the same
  identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
@@ -1074,7 +1073,7 @@ LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 3
 .
  (/usr/share/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-)) (./capitoli/1-CenniTeorici.tex [2
+)) (./chapters/1-CenniTeorici.tex [2
 
 ]
 Capitolo 1.
@@ -1082,24 +1081,16 @@ Capitolo 1.
 
 ] [4] [5
 
-] (./tesi.aux)
+] (aux/tesi.aux)
 Package rerunfilecheck Info: File `tesi.out' has not changed.
 (rerunfilecheck)             Checksum: 29383E47C2BBD9DC3E29BA48009C2A47;174.
-
-
-LaTeX Warning: There were undefined references.
-
-
-Package biblatex Warning: Please rerun LaTeX.
-(biblatex)                Page breaks have changed.
-
 Package logreq Info: Writing requests to 'tesi.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
- 16511 strings out of 479383
- 284688 string characters out of 5875831
- 1090362 words of memory out of 5000000
- 33386 multiletter control sequences out of 15000+600000
+ 16516 strings out of 479383
+ 284776 string characters out of 5875831
+ 1090434 words of memory out of 5000000
+ 33390 multiletter control sequences out of 15000+600000
  417769 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  66i,5n,72p,974b,2672s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1117,7 +1108,7 @@ t/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf-dist/fonts/type1/p
 ublic/cm-super/sfti0700.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/
 sfti1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></
 usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on tesi.pdf (6 pages, 346927 bytes).
+Output written on aux/tesi.pdf (6 pages, 346927 bytes).
 PDF statistics:
  129 PDF objects out of 1000 (max. 8388607)
  101 compressed objects within 2 object streams
