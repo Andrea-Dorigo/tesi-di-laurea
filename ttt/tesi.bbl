@@ -1,0 +1,90 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.1 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{apa/global//global/global}
+    \entry{garzanti-linguistica-stigma}{online}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=b230922c9adccbbcbf8a6c4d05a15890}{%
+           family={{Garzanti Linguistica}},
+           familyi={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{b230922c9adccbbcbf8a6c4d05a15890}
+      \strng{fullhash}{b230922c9adccbbcbf8a6c4d05a15890}
+      \strng{bibnamehash}{b230922c9adccbbcbf8a6c4d05a15890}
+      \strng{authorbibnamehash}{b230922c9adccbbcbf8a6c4d05a15890}
+      \strng{authornamehash}{b230922c9adccbbcbf8a6c4d05a15890}
+      \strng{authorfullhash}{b230922c9adccbbcbf8a6c4d05a15890}
+      \field{sortinit}{G}
+      \field{sortinithash}{62eb2aa29549e4fdbd3cb154ec5711cb}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Voce n. 2}
+      \field{title}{Garzanti Linguistica | Ricerca}
+      \field{urlday}{14}
+      \field{urlmonth}{5}
+      \field{urlyear}{2021}
+      \field{year}{n.d.}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.garzantilinguistica.it/ricerca/?q=stigma
+      \endverb
+      \verb{url}
+      \verb https://www.garzantilinguistica.it/ricerca/?q=stigma
+      \endverb
+    \endentry
+    \entry{treccani-stigma}{online}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=4a1f8731e05237fe67f8b022c393ea18}{%
+           family={Treccani},
+           familyi={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{4a1f8731e05237fe67f8b022c393ea18}
+      \strng{fullhash}{4a1f8731e05237fe67f8b022c393ea18}
+      \strng{bibnamehash}{4a1f8731e05237fe67f8b022c393ea18}
+      \strng{authorbibnamehash}{4a1f8731e05237fe67f8b022c393ea18}
+      \strng{authornamehash}{4a1f8731e05237fe67f8b022c393ea18}
+      \strng{authorfullhash}{4a1f8731e05237fe67f8b022c393ea18}
+      \field{sortinit}{T}
+      \field{sortinithash}{51f9faf24c60c62ca764a77f78cf5666}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Treccani: Stigma\textsuperscript{1} in Vocabolario}
+      \field{urlday}{14}
+      \field{urlmonth}{5}
+      \field{urlyear}{2021}
+      \field{year}{n.d.}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://treccani.it/vocabolario/stigma1
+      \endverb
+      \verb{url}
+      \verb https://treccani.it/vocabolario/stigma1
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
