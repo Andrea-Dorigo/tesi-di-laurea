@@ -44,7 +44,20 @@
 \begin{document}
 
 \newcommand{\textgreek}[1]{\begingroup\fontencoding{LGR}\selectfont#1\endgroup}
+\newcommand\frontmatter{%
+    \cleardoublepage
+  %\@mainmatterfalse
+  \pagenumbering{roman}}
 
+\newcommand\mainmatter{%
+    \cleardoublepage
+ % \@mainmattertrue
+  \pagenumbering{arabic}}
+
+
+
+
+\frontmatter
 
 \begin{titlepage}
 \begin{center}
@@ -92,6 +105,7 @@
 \doublespacing
 \tableofcontents{} %Indice
 
+\mainmatter
 \input{chapters/0-Introduzione}
 \input{chapters/1-CenniTeorici}
 
