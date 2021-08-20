@@ -1,15 +1,15 @@
-\documentclass{report}
+\documentclass[a4paper]{report}
 
-\usepackage[LGR,T1]{fontenc}
+\usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage{fancyhdr}
+% \usepackage{fancyhdr}
 
 %Lingua
 \usepackage[italian]{babel}
 \usepackage{setspace}
 
 % %Pacchetto per definire layout di pagina
-\usepackage[left=3cm, right=3cm, bottom=3cm]{geometry}
+\usepackage[left=3cm, right=3cm, top=3cm, bottom=3cm]{geometry}
 
 
 %Inclusione immagini
@@ -20,51 +20,52 @@
 %Crea link ipertestuali
 \usepackage{hyperref}
 % \usepackage{xurl}
-
+% \usepackage{ragged2e}
+% \justifying
 
 
 %Formattazione url
 % \usepackage{url}\
-
-\usepackage{csquotes}
-\usepackage[backend=biber, style=apa, hyperref=true, urldate=short, dateabbrev=false]{biblatex}
-\addbibresource{tesi.bib}
-\DeclareFieldFormat{formaturl}{#1}
-\newbibmacro*{url+urldate}{%
-\printtext[formaturl]{%
-  \iffieldundef{urlyear}
-    {}
-    {\setunit*{\addspace}%
-     Visitato il
-     \printtext[urldate]{\printurldate}}}
-   \newline
-   \printfield{url}}%
+%
+% \usepackage{csquotes}
+% \usepackage[backend=biber, hyperref=true]{biblatex}
+% \addbibresource{tesi.bib}
+% \DeclareFieldFormat{formaturl}{#1}
+% \newbibmacro*{url+urldate}{%
+% \printtext[formaturl]{%
+%   \iffieldundef{urlyear}
+%     {}
+%     {\setunit*{\addspace}%
+%      Visitato il
+%      \printtext[urldate]{\printurldate}}}
+%    \newline
+%    \printfield{url}}%
 
 \urlstyle{tt}
 
 \begin{document}
 
-\newcommand{\textgreek}[1]{\begingroup\fontencoding{LGR}\selectfont#1\endgroup}
-\newcommand\frontmatter{%
-    \cleardoublepage
-  %\@mainmatterfalse
-  \pagenumbering{roman}}
+% \newcommand{\textgreek}[1]{\begingroup\fontencoding{LGR}\selectfont#1\endgroup}
+% \newcommand\frontmatter{%
+%     \cleardoublepage
+%   %\@mainmatterfalse
+%   \pagenumbering{roman}}
+%
+% \newcommand\mainmatter{%
+%     \cleardoublepage
+%  % \@mainmattertrue
+%   \pagenumbering{arabic}}
 
-\newcommand\mainmatter{%
-    \cleardoublepage
- % \@mainmattertrue
-  \pagenumbering{arabic}}
-
-\pagestyle{fancy}
-\fancyhead{}
+% \pagestyle{fancy}
+% \fancyhead{}
 
 \renewcommand{\chaptermark}[1]{\markboth{\small\textsc{\thechapter.\ #1}}{}}
 \renewcommand{\sectionmark}[1]{\markright{\small\textsc{\thesection.\ #1}}{}}
-\fancyhead[LE]{\rightmark}
-\fancyhead[RO]{\leftmark}
+% \fancyhead[LE]{\rightmark}
+% \fancyhead[RO]{\leftmark}
 
 
-\frontmatter
+% \frontmatter
 
 \begin{titlepage}
 \begin{center}
@@ -75,23 +76,21 @@
 \vspace{0.8cm}
 \textsc{\LARGE Università degli Studi di Padova}\\
 \vspace{0.45cm}
-\textsc{\large Dipartimento di Filosofia, Sociologia, Pedagogia e Psicologia Applicata }\\
+\textsc{\large Dipartimento di Matematica}\\
 \vspace{0.45cm}
-\textsc{\large Corso di Laurea Magistrale in}\\
-\textsc{\large Psicologia Clinico-Dinamica}\\
+\textsc{\large Corso di Laurea in}\\
+\textsc{\large Informatica}\\
 \vspace{0.45cm}
-\textsc{\large Tesi di laurea Magistrale}\\
+\textsc{\large Elaborato finale}\\
 \vfill
 % Title
-{ \LARGE \bfseries Titolo tesi in italiano
-}\\
+{ \LARGE \bfseries Sperimentazione di Apache Kafka per l'integrazione funzionale di un'applicazione aziendale}\\
 \vspace{0.45cm}
-{ \large \bfseries Titolo tesi in inglese
-}\\
+{ \large \bfseries Experimenting with Apache Kafka for the Integration of an Enterprise Application}\\
 \vfill
-\textit{\large Relatore:} \hfill \textit{\large Laureando:}\\
-\textsc{\large Prof. Stefania Mannarini} \hfill \textsc{Gloria Zanon}\\
-\hfill \textsc{1234165}\\
+\textit{Relatore:} \hfill \textit{Laureando:}\\
+\textsc{Prof. Tullio Vardanega} \hfill \textsc{Andrea Dorigo}\\
+\hfill \textsc{1170610}\\
 
 \vfill
 % Bottom of the page
@@ -112,11 +111,13 @@
 \doublespacing
 \tableofcontents{} %Indice
 
-\mainmatter
-\input{chapters/0-Introduzione}
-\input{chapters/1-CenniTeorici}
+% \mainmatter
+\input{chapters/1-Contesto_aziendale}
+\input{chapters/2-Apache_Kafka_nel_settore_dell_Integrazione_Aziendale}
+\input{chapters/3-Apache_Kafka_in_un_caso_d_uso_simulato}
+\input{chapters/4-Obiettivi_soddisfatti_e_bilancio_formativo}
 
-\printbibliography
+% \printbibliography
 % \clearpage{\pagestyle{plain}\cleardoublepage} %Numerazione araba per i capitoli
 % \pagenumbering{arabic}
 %
