@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2021.8.20)  20 AUG 2021 11:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2021.8.20)  23 AUG 2021 10:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -396,28 +396,28 @@ l.1 \chapter
 
 ]
 Capitolo 1.
-) (./chapters/2-Apache_Kafka_nel_settore_dell_Integrazione_Aziendale.tex
 [2
 
-]
+]) (./chapters/2-Apache_Kafka_nel_settore_dell_Integrazione_Aziendale.tex
+[3]
 Capitolo 2.
-[3
+[4
 
-]) (./chapters/3-Apache_Kafka_in_un_caso_d_uso_simulato.tex [4]
+]) (./chapters/3-Apache_Kafka_in_un_caso_d_uso_simulato.tex [5]
 Capitolo 3.
-) (./chapters/4-Obiettivi_soddisfatti_e_bilancio_formativo.tex [5
+) (./chapters/4-Obiettivi_soddisfatti_e_bilancio_formativo.tex [6
 
 ]
 Capitolo 4.
-) [6
+) [7
 
 ] (./tesi.aux)
 Package rerunfilecheck Info: File `tesi.out' has not changed.
 (rerunfilecheck)             Checksum: 3637F338F4338814C2FE9CDF39535E45;3902.
  ) 
 Here is how much of TeX's memory you used:
- 10112 strings out of 478994
- 144710 string characters out of 5864751
+ 10113 strings out of 478994
+ 144716 string characters out of 5864751
  477605 words of memory out of 5000000
  27428 multiletter control sequences out of 15000+600000
  416437 words of font info for 45 fonts, out of 8000000 for 9000
@@ -436,10 +436,10 @@ r/share/texmf-dist/fonts/type1/public/cm-super/sfcc1728.pfb></usr/share/texmf-d
 ist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf-dist/fonts/type1
 /public/cm-super/sfrm1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-supe
 r/sfti1000.pfb>
-Output written on tesi.pdf (7 pages, 337150 bytes).
+Output written on tesi.pdf (8 pages, 339303 bytes).
 PDF statistics:
- 183 PDF objects out of 1000 (max. 8388607)
- 157 compressed objects within 2 object streams
- 24 named destinations out of 1000 (max. 500000)
+ 188 PDF objects out of 1000 (max. 8388607)
+ 161 compressed objects within 2 object streams
+ 25 named destinations out of 1000 (max. 500000)
  134 words of extra memory for PDF output out of 10000 (max. 10000000)
 
