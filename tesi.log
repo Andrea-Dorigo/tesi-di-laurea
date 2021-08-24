@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2021.8.20)  23 AUG 2021 10:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2021.8.20)  24 AUG 2021 10:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -386,43 +386,71 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 \tf@toc=\write4
 \openout4 = `tesi.toc'.
 
- (./chapters/1-Contesto_aziendale.texpdfTeX warning (ext4): destination with th
-e same identifier (name{page.1}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1 \chapter
-            {Contesto aziendale} [1
+l.113 \listoffigures
+                     [1
 
+
+] (./tesi.lof)
+\tf@lof=\write5
+\openout5 = `tesi.lof'.
+
+ (./chapters/1-Contesto_aziendale.tex
+[2
 
 ]
 Capitolo 1.
-[2
+[3
 
-]) (./chapters/2-Apache_Kafka_nel_settore_dell_Integrazione_Aziendale.tex
-[3]
+]
+<images/clickup_board.png, id=120, 1857.94125pt x 994.71625pt>
+File: images/clickup_board.png Graphic file (type png)
+<use images/clickup_board.png>
+Package pdftex.def Info: images/clickup_board.png  used on input line 31.
+(pdftex.def)             Requested size: 426.79135pt x 228.49153pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 31--32
+
+ []
+
+<images/clickup_task.png, id=122, 1858.945pt x 1003.75pt>
+File: images/clickup_task.png Graphic file (type png)
+<use images/clickup_task.png>
+Package pdftex.def Info: images/clickup_task.png  used on input line 35.
+(pdftex.def)             Requested size: 426.79135pt x 230.4441pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 35--36
+
+ []
+
+) (./chapters/2-Apache_Kafka_nel_settore_dell_Integrazione_Aziendale.tex
+[4 <./images/clickup_board.png> <./images/clickup_task.png>] [5]
 Capitolo 2.
-[4
+[6
 
-]) (./chapters/3-Apache_Kafka_in_un_caso_d_uso_simulato.tex [5]
+]) (./chapters/3-Apache_Kafka_in_un_caso_d_uso_simulato.tex [7]
 Capitolo 3.
-) (./chapters/4-Obiettivi_soddisfatti_e_bilancio_formativo.tex [6
+) (./chapters/4-Obiettivi_soddisfatti_e_bilancio_formativo.tex [8
 
 ]
 Capitolo 4.
-) [7
+) [9
 
 ] (./tesi.aux)
 Package rerunfilecheck Info: File `tesi.out' has not changed.
-(rerunfilecheck)             Checksum: 3637F338F4338814C2FE9CDF39535E45;3902.
+(rerunfilecheck)             Checksum: 90123A17E5D4D6815150821D35E55BE1;3902.
  ) 
 Here is how much of TeX's memory you used:
- 10113 strings out of 478994
- 144716 string characters out of 5864751
- 477605 words of memory out of 5000000
- 27428 multiletter control sequences out of 15000+600000
+ 10136 strings out of 478994
+ 145111 string characters out of 5864751
+ 477607 words of memory out of 5000000
+ 27441 multiletter control sequences out of 15000+600000
  416437 words of font info for 45 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 71i,5n,74p,504b,399s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 71i,6n,74p,504b,399s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/t
 exmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texmf-dist/font
 s/type1/public/cm-super/sfbi1440.pfb></usr/share/texmf-dist/fonts/type1/public/
@@ -436,10 +464,10 @@ r/share/texmf-dist/fonts/type1/public/cm-super/sfcc1728.pfb></usr/share/texmf-d
 ist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf-dist/fonts/type1
 /public/cm-super/sfrm1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-supe
 r/sfti1000.pfb>
-Output written on tesi.pdf (8 pages, 339303 bytes).
+Output written on tesi.pdf (10 pages, 664814 bytes).
 PDF statistics:
- 188 PDF objects out of 1000 (max. 8388607)
- 161 compressed objects within 2 object streams
- 25 named destinations out of 1000 (max. 500000)
- 134 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 206 PDF objects out of 1000 (max. 8388607)
+ 173 compressed objects within 2 object streams
+ 30 named destinations out of 1000 (max. 500000)
+ 144 words of extra memory for PDF output out of 10000 (max. 10000000)
 
