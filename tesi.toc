@@ -7,7 +7,7 @@
 \contentsline {chapter}{\numberline {2}Apache Kafka nel settore dell’Integrazione Aziendale}{6}{chapter.2}%
 \contentsline {section}{\numberline {2.1}L’evoluzione delle architetture di integrazione}{6}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Apache Kafka come Middleware}{6}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Il percorso di Stage}{6}{section.2.3}%
+\contentsline {section}{\numberline {2.3}Il percorso di Stage}{7}{section.2.3}%
 \contentsline {chapter}{\numberline {3}Apache Kafka in caso d’uso simulato}{8}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Pianificazione del percorso e \textit {Way of working}}{8}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Formazione e sviluppo del prodotto}{8}{section.3.2}%
