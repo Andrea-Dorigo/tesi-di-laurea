@@ -21,7 +21,15 @@
 \usepackage{hyperref}
 \usepackage{caption}
 \usepackage{float}
-% \usepackage{xurl}
+\usepackage{fancyhdr}
+
+\usepackage{datatool}
+\usepackage{acronym}
+\usepackage[acronym]{glossaries}
+\usepackage{textcomp}
+
+
+% \usepackage[hyphens]{url}
 % \usepackage{ragged2e}
 % \justifying
 
@@ -29,9 +37,40 @@
 %Formattazione url
 % \usepackage{url}\
 %
-% \usepackage{csquotes}
-% \usepackage[backend=biber, hyperref=true]{biblatex}
-% \addbibresource{tesi.bib}
+\usepackage{csquotes}
+\usepackage[citestyle=authortitle-ibid, backend=biber, hyperref=true]{biblatex}
+\addbibresource{tesi.bib}
+
+\makeglossaries
+
+\newacronym{ict}{ICT}{Information and Communication Technologies}
+\newacronym{j2ee}{J2EE}{Java 2 Platform Enterprise Edition}
+\newacronym{ejb}{EJB}{Enterprise Java Bean}
+\newacronym{cobra}{COBRA}{Common Object Request Broker Architecture}
+\newacronym{mom}{MOM}{Message Oriented Middleware}
+\newacronym{jms}{JMS}{Java Message Service}
+\newacronym{eai}{EAI}{Enterprise Application Integration}
+\newacronym{oo}{O-O}{Object Oriented}
+
+\captionsetup[figure]{font=small,labelfont=small}
+
+% \DeclareDelimFormat[bib]{nametitledelim}{\newline\bibsentence}
+
+% \usepackage{xpatch}
+% \makeatletter
+% \def\do#1{
+%   \ifcsdef{blx@bbx@#1}
+%     {\xpatchbibdriver{#1}
+%        {\printlist{language}%
+%         \newunit\newblock}
+%        {\printlist{language}%
+%         \printunit{\newline\bibsentence}}
+%        {}{}}
+%     {}}
+% \abx@doentrytypes
+% \makeatother
+
+
 % \DeclareFieldFormat{formaturl}{#1}
 % \newbibmacro*{url+urldate}{%
 % \printtext[formaturl]{%
@@ -43,9 +82,18 @@
 %    \newline
 %    \printfield{url}}%
 
+
 \urlstyle{tt}
 
 \begin{document}
+
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[LE,RO]{pag. \thepage}
+\fancyhead[LO,RE]{\slshape \textbf{\leftmark}}
+\fancyfoot[C]{}
+% \headrulewidth 0.4pt
+% \footrulewidth 0 pt
 
 % \newcommand{\textgreek}[1]{\begingroup\fontencoding{LGR}\selectfont#1\endgroup}
 % \newcommand\frontmatter{%
@@ -58,11 +106,34 @@
 %  % \@mainmattertrue
 %   \pagenumbering{arabic}}
 
+% \newcounter{mycount}
+% \newcounter{savefoot}
 % \pagestyle{fancy}
+% \newcommand\acrofoot[3]{%
+%   \acro{#1}{#2\protect\footnote{#3}\setcounter{mycount}{\value{footnote}}}%
+% }
+% \let\acorig\ac
+% \renewcommand\ac[1]{%
+%   \begingroup%
+%   \setcounter{savefoot}{\value{footnote}}%
+%   \setcounter{footnote}{\value{mycount}}%
+%   \addtocounter{footnote}{-1}%
+%   \renewcommand\@makefntext[1]{}%
+%   \acorig{#1}%
+%   \setcounter{footnote}{\value{savefoot}}%
+%   \endgroup%
+% }
+
+
 % \fancyhead{}
 
 \renewcommand{\chaptermark}[1]{\markboth{\small\textsc{\thechapter.\ #1}}{}}
 \renewcommand{\sectionmark}[1]{\markright{\small\textsc{\thesection.\ #1}}{}}
+\newcommand{\myacr}[1]{\acrshort{#1}$_g$}
+
+
+\newcommand{\myacrfoot}[1]{\myacr{#1}\footnote{\textit{\acrlong{#1}}}}
+
 % \fancyhead[LE]{\rightmark}
 % \fancyhead[RO]{\leftmark}
 
@@ -114,13 +185,24 @@
 \tableofcontents{} %Indice
 \listoffigures
 
+% \begin{acronym}[ICT]
+%       \acrofoot{ICT}{Alphabet}{\url{http://abc.example.org}}
+%       \acro{XYZ}{The End}
+%       \acrofoot{Foo}{Bar}{\url{http://foo.example.org}}
+% \end{acronym}
 % \mainmatter
+
+
+
 \input{chapters/1-Contesto_aziendale}
 \input{chapters/2-Apache_Kafka_nel_settore_dell_Integrazione_Aziendale}
 \input{chapters/3-Apache_Kafka_in_un_caso_d_uso_simulato}
 \input{chapters/4-Obiettivi_soddisfatti_e_bilancio_formativo}
 
-% \printbibliography
+\printglossary
+\printglossary[type=\acronymtype]
+
+\printbibliography
 % \clearpage{\pagestyle{plain}\cleardoublepage} %Numerazione araba per i capitoli
 % \pagenumbering{arabic}
 %
