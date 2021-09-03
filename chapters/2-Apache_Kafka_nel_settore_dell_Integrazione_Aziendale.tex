@@ -1,11 +1,22 @@
-\chapter{Apache Kafka nel settore dell’Integrazione Aziendale}
+\chapter{Apache Kafka nell’Integrazione Aziendale}
 
-\section{L'evoluzione delle architetture di integrazione}
-Per soddisfare le richieste clientelari ed essere sempre competitiva e all'avanguardia, una priorità aziendale sono le esplorazioni tecnologiche e di prodotto anche tramite l'utilizzo di percorsi di \textit{stage} insieme ai laureandi, come quanto accaduto nella mia esperienza.
+% \section{L'evoluzione delle architetture di integrazione}
+\section{Obiettivi aziendali}
 
+Per soddisfare le richieste clientelari ed essere sempre competitiva e all'avanguardia, una priorità di Sync Lab sono le esplorazioni tecnologiche e di prodotto anche tramite l'utilizzo di percorsi di \stage\ insieme ai laureandi, come quanto accaduto nella mia esperienza.
+Questi percorsi consentono all'azienda non solo di testare l'utilizzo di nuovi \software\ ma anche di conoscere e mettere alla prova le capacità del laureando in vista di una potenziale assunzione al termine dello \stage.
 % Introduzione al motivo aziendale per cui è nato questo percorso di stage: la propensione odierna alle architetture a microservizi, la gestione di grandi flussi di dati in modo efficiente ed eff1icace, una richiesta di un sistema innovativo da parte della clientela.3
-Nel settore dell'\textit{Enterprise Application Integration} in particolare, l'evoluzione tecnologica è diretta verso soluzioni sempre più distribuite e con un flusso di dati in continuo aumento.
-Uno degli obiettivi specifici dell'area EAI di Sync Lab è pertanto quello di trovare un software o tecnologia in grado di soddisfare i bisogni dei clienti di gestire un flusso di dati di dimensioni molto maggiori a quelle attuali, tramite architetture a messaggio che utilizzano servizi distribuiti.
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[width=0.6\textwidth]{images/distributed.png}
+    \caption{Illustrazione di un sistema distribuito}
+    \captionsetup{aboveskip=2pt}
+    \caption*{\begin{footnotesize}\textit{Fonte:} \url{https://www.delphitools.info/DWSH/}\end{footnotesize}}
+  \end{center}
+\end{figure}
+
+Nel settore dell'\gls{g_eai}, l'evoluzione tecnologica è diretta verso soluzioni sempre più distribuite e con un flusso di dati in continuo aumento.
+Uno degli obiettivi specifici nell'area \sacr{eai} di Sync Lab è pertanto quello di trovare un \software\ o tecnologia in grado di soddisfare i bisogni dei clienti di gestire un flusso di dati di dimensioni molto maggiori a quelle attuali, tramite architetture a messaggio che utilizzano servizi distribuiti.
 
 % \section{L’evoluzione delle architetture di integrazione}
 %
@@ -22,33 +33,46 @@ Uno degli obiettivi specifici dell'area EAI di Sync Lab è pertanto quello di tr
 % \end{figure}
 %
 % Kafka è una piattaforma di \textit{event streaming}, un sistema moderno e distribuito basato sugli eventi anzichè su di una soluzione più classica come può essere quella del \textit{request/response}.
-% L'adozione del \textit{software} nell'ambito dell'EAI è in crescita dato le dimostrate qualità nel gestire grandi moli di dati: la sua performance, sicurezza e scalabilità sono i punti che hanno portato il software al suo attuale successo.
+% L'adozione del \software\ nell'ambito dell'EAI è in crescita dato le dimostrate qualità nel gestire grandi moli di dati: la sua performance, sicurezza e scalabilità sono i punti che hanno portato il software al suo attuale successo.
 %
 % % \bigskip\noindent
 % % Esposizioni delle ragioni personali che hanno portato alla scelta di tale percorso.
 
 
-\section{Apache Kafka come Middleware}
+\subsection{Kafka come Middleware}
 
 Per soddisfare le esigenze di innovazione l'azienda ha avviato un percorso per indagare le capacità del software Apache Kafka nell'ambito dell'integrazione aziendale.
 
 \bigskip
 \begin{figure}[h]
   \begin{center}
-    \includegraphics[width=0.8\textwidth]{images/kafka.png}\\
-    \caption{Illustrazione di un sistema a servizi con Apache Kafka}
-    \captionsetup{aboveskip=2pt,font=it}
-    \caption*{Fonte: https://kafka.apache.org/20/documentation.html}
+    \includegraphics[width=0.14\textwidth]{images/kafka_logo.png}
+    \caption{Logo di Apache Kafka}
+    \captionsetup{aboveskip=2pt}
+    \caption*{\begin{footnotesize}\textit{Fonte:} \url{https://commons.wikimedia.org/wiki/File:Apache_kafka.svg}\end{footnotesize}}
   \end{center}
 \end{figure}
 
 Kafka è una piattaforma di \textit{event streaming}, un sistema moderno e distribuito basato sugli eventi anzichè su di una soluzione più classica come può essere quella del \textit{request/response}.
-Apache Kafka si integra ottimamente in molti sistemi basati sulle Architetture a messaggio, in cui lo scambio affidabile di dati in tempo reale è la priorità.
+Apache Kafka si integra ottimamente in molti sistemi basati sulle Architetture a messaggio, in cui lo scambio affidabile di dati in tempo reale è essenziale.
 
 Il software ha dimostrato negli anni recenti un notevole successo in diversi campi, come quello del flusso di \textit{Big Data}, del monitoraggio e dell'elaborazione dati in tempo reale.
-L'adozione del \textit{software} nell'ambito dell'EAI è in crescita dato le dimostrate qualità nel gestire grandi moli di dati: la sua performance, sicurezza e scalabilità sono i punti che hanno portato il software al suo attuale successo.
+L'adozione del \software\ nell'ambito dell'EAI è in crescita dato le dimostrate qualità nel gestire grandi moli di dati: la sua performance, sicurezza e scalabilità sono i punti che hanno portato il software al suo attuale successo.
 
-L'interesse di Sync Lab nel \textit{software} risiede dunque nell'utilizzo di Kafka come un  \textit{Middleware} per soddisfare i problemi di integrazione aziendale e reingegnerizzare i flussi di dati preesistenti, ovvero sviluppare un nuovo sistema che consenta la comunicazione tra differenti servizi con un rapido flusso di dati fra di essi.
+L'interesse di Sync Lab nel \software\ risiede dunque nell'utilizzo di Kafka come un  \textit{Middleware} per soddisfare i problemi di integrazione aziendale e reingegnerizzare i flussi di dati preesistenti, ovvero sviluppare un nuovo sistema che consenta la comunicazione tra differenti servizi con un rapido flusso di dati fra di essi.
+
+
+\bigskip
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[width=0.8\textwidth]{images/kafka.png}
+    \caption{Illustrazione di un sistema a servizi con Kafka}
+    \captionsetup{aboveskip=2pt}
+    \caption*{\begin{footnotesize}\textit{Fonte:} \url{https://kafka.apache.org/20/documentation.html}\end{footnotesize}}
+  \end{center}
+\end{figure}
+
+
 L'azienda ha avviato un percorso per testare le capacità di Kafka rispetto agli attuali strumenti utilizzati nel settore, per valutare i vantaggi e svantaggi che l'adozione di tale software può fornire al cliente.
 
 \bigskip\noindent
@@ -64,6 +88,23 @@ Sono numerosi i vantaggi che Kafka può portare nel settore, fra cui:
 
 % \bigskip\noindent
 % TODO: Come Kafka possa risolvere i problemi e le necessità viste qui sopra.
+
+\section{Motivazioni e obiettivi personali}
+
+\subsection{Scelta del percorso}
+
+Una delle ragioni che mi ha portato a scegliere questo percorso di \stage\ è l'interesse verso Apache Kafka.
+L'utilizzo della piattaforma di \textit{event streaming} è sempre più in crescita, come l'evoluzione verso sistemi sempre più distribuiti e a microservizi
+
+Un altro fattore fondamentale alla scelta del percorso sono stati la famigliarità con l'azienda, il personale giudizio positivo che ho avuto riguardo il loro metodo di lavoro e la libertà di sviluppo concessa: ho ritenuto importante la possibilità di elaborare personalmente un'architettura del caso d'uso con una visione ad alto livello, anzichè il semplice sviluppo di un software predeterminato e dal percorso strettamente imposto.
+
+\subsection{Obiettivi personali}
+L'obiettivo fondamentale dello \stage\ è colmare il divario tra il mondo accademico e quello lavorativo.
+Grazie al percorso di \stage\ in una ditta esterna ho avuto l'opportunità di conoscere l'ambiente di lavoro di un'azienda nel campo \sacr{ict}, facilitandomi l'inserimento nel mondo del lavoro.
+
+Un altro obiettivo è ottenere una formazione riguardo la tecnologia di Kafka, che ritengo possa arricchire fortemente le mie capacità e \textit{skill} professionali.
+Sono pertanto interessato a sviluppare la mia formazione riguardo l'utilizzo e le implicazioni di questa tecnologia in rapida espansione, la cui formazione potrà essermi utile in molti campi anche al di fuori degli obiettivi dell'azienda ospitante lo \stage.
+
 
 \section{Il percorso di Stage}
 
@@ -85,9 +126,12 @@ Sono numerosi i vantaggi che Kafka può portare nel settore, fra cui:
 % - motivazioni riguardo il percorso di stage proposto
 % - descrizione del percorso di stage tenendo conto del contesto e degli obiettivi citati sopra
 % - descrivere i miei obiettivi rispetto a quelli aziendali
-Il percorso di \textit{stage} offerto dall'azienda si inserisce all'interno della strategia aziendale più ampia descritta qui sopra.
-Al fine di esplorare la tecnologia di Apache Kafka nell'ambito di un \textit{Middleware} per l'integrazione aziendale, l'azienda ha proposto un percorso di stage il cui obiettivo è la reingegnerizzazione di un flusso di dati asincrono, utilizzando un'architettura basata su Kafka all'interno di un caso d'uso simulato tramite servizi indipendenti.
-Lo stagista ha il compito di osservare, testare e verificare che il \textit{software} possa svolgere alcuni compiti inerenti all'area dell'EAI, analizzando alcuni casi d'uso presenti in un \textit{Middleware} aziendale in ambito \textit{telco}.
+\subsection{Obiettivi dello \textit{stage}}
+
+Il percorso di \textit{stage} offerto dall'azienda si inserisce all'interno della strategia aziendale più ampia descritta sopra.
+Al fine di esplorare la tecnologia di Apache Kafka nell'ambito di un \textit{Middleware} per l'integrazione aziendale, l'azienda ha proposto un percorso di \textbf{\textit{stage} il cui obiettivo è la reingegnerizzazione di un flusso di dati asincrono, utilizzando un'architettura basata su Kafka all'interno di un caso d'uso simulato tramite servizi indipendenti.}
+
+Lo stagista ha il compito di osservare, testare e verificare che il \software\ possa svolgere alcuni compiti inerenti all'area dell'EAI, analizzando alcuni casi d'uso presenti in un \textit{Middleware} aziendale in ambito \textit{telco}.
 
 \bigskip\noindent
 Il percorso proposto prevede le seguenti attività e obiettivi generali:
@@ -98,7 +142,7 @@ Il percorso proposto prevede le seguenti attività e obiettivi generali:
 \end{itemize}
 
 \bigskip\noindent
-I prodotti attesi al termine dello \textit{stage} sono dunque associati alla realizzazione di tre flussi di integrazione, basati su dei casi d’uso reali, per la gestione dei paradigmi di integrazione asincrono e asincrono con Callback (due requisiti obbligatori), e sincrono ove fosse disponibile del tempo aggiuntivo e se ritenuto opportuno; durante il percorso considerato il contesto e le opportunità offerte dal \textit{software} questo obiettivo verrà sostituito per testare delle funzionalità aggiuntive di Kafka.
+I prodotti attesi al termine dello \textit{stage} sono dunque associati alla realizzazione di tre flussi di integrazione, basati su dei casi d’uso reali, per la gestione dei paradigmi di integrazione asincrono e asincrono con Callback (due requisiti obbligatori), e sincrono ove fosse disponibile del tempo aggiuntivo e se ritenuto opportuno; durante il percorso considerato il contesto e le opportunità offerte dal \software\ questo obiettivo verrà sostituito per testare delle funzionalità aggiuntive di Kafka.
 
 La realizzazione di questi prodotti necessita una sostanziale formazione dello stagista riguardo i principali concetti del settore del \textit{Enterprise Application Integration} e l'utilizzo della piattaforma di \textit{event streaming} Kafka.
 Più precisamente, i contenuti formativi previsti durante questo percorso di \textit{stage} sono i seguenti:
@@ -109,11 +153,3 @@ Più precisamente, i contenuti formativi previsti durante questo percorso di \te
   \item Architetture di Integrazione e Middleware
   \item Apache Kafka
 \end{itemize}
-
-
-\section{Motivazioni e obiettivi personali}
-
-La ragione principale che mi ha portato a scegliere questo percorso di \textit{stage} è l'interesse verso Apache Kafka, la cui formazione ritengo possa arricchire fortemente le mie capacità professionali.
-L'utilizzo della piattaforma di \textit{event streaming} è sempre più in crescita, come l'evoluzione verso sistemi sempre più distribuiti e a microservizi
-Sono pertanto interessato a sviluppare la mia formazione riguardo l'utilizzo e le implicazioni di questa tecnologia in rapida espansione, la cui formazione potrà essermi utile in molti campi anche al di fuori degli obiettivi dell'azienda ospitante lo \textit{stage}
-Altri fattori fondamentali alla scelta del percorso sono stati la famigliarità con l'azienda, il personale giudizio positivo che ho avuto riguardo il loro metodo di lavoro e la libertà di sviluppo concessa: ho ritenuto importante la possibilità di elaborare personalmente un'architettura del caso d'uso con una visione ad alto livello, anzichè il semplice sviluppo di un software predeterminato e dal percorso strettamente imposto.
