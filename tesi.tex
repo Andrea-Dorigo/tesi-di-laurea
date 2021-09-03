@@ -1,7 +1,7 @@
 \documentclass[a4paper]{report}
 
-\usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 % \usepackage{fancyhdr}
 
 %Lingua
@@ -43,13 +43,19 @@
 
 \makeglossaries
 
+\newglossaryentry{g_eai}
+{
+    name=\textit{Enterprise Application Integration},
+    description={il termine si riferisce al processo d'integrazione tra diversi tipi di sistemi informatici di un'azienda attraverso l'utilizzo di software e soluzioni architetturali.}
+}
+
 \newacronym{ict}{ICT}{Information and Communication Technologies}
 \newacronym{j2ee}{J2EE}{Java 2 Platform Enterprise Edition}
 \newacronym{ejb}{EJB}{Enterprise Java Bean}
 \newacronym{cobra}{COBRA}{Common Object Request Broker Architecture}
 \newacronym{mom}{MOM}{Message Oriented Middleware}
 \newacronym{jms}{JMS}{Java Message Service}
-\newacronym{eai}{EAI}{Enterprise Application Integration}
+\newacronym{eai}{EAI}{\gls{g_eai}}
 \newacronym{oo}{O-O}{Object Oriented}
 
 \captionsetup[figure]{font=small,labelfont=small}
@@ -89,8 +95,8 @@
 
 \pagestyle{fancy}
 \fancyhead{}
-\fancyhead[LE,RO]{\slshape \rightmark}
-\fancyhead[LO,RE]{\slshape \textbf{\leftmark}}
+\fancyhead[L,RO]{\rightmark}
+\fancyhead[LO,RE]{\textbf{\leftmark}}
 \fancyfoot[C]{\thepage}
 % \headrulewidth 0.4pt
 % \footrulewidth 0 pt
@@ -129,10 +135,16 @@
 
 \renewcommand{\chaptermark}[1]{\markboth{\small\textsc{\thechapter.\ #1}}{}}
 \renewcommand{\sectionmark}[1]{\markright{\small\textsc{\thesection.\ #1}}{}}
-\newcommand{\myacr}[1]{\acrshort{#1}$_g$}
+\newcommand{\sacr}[1]{\acrshort{#1}$_g$}
+\newcommand{\stage}{\textit{stage}}
+\newcommand{\software}{\textit{software}}
 
 
-\newcommand{\myacrfoot}[1]{\myacr{#1}\footnote{\textit{\acrlong{#1}}}}
+\newcommand{\sacrfoot}[1]{\sacr{#1}\footnote{\textit{\acrlong{#1}}}}
+\renewcommand{\sectionmark}[1]{\markright{\small\textsc{\thesection.\ #1}}{}}
+\let\oldgls\gls
+
+\renewcommand{\gls}[1]{\oldgls{#1}$_g$}
 
 % \fancyhead[LE]{\rightmark}
 % \fancyhead[RO]{\leftmark}
@@ -199,8 +211,8 @@
 \input{chapters/3-Apache_Kafka_in_un_caso_d_uso_simulato}
 \input{chapters/4-Obiettivi_soddisfatti_e_bilancio_formativo}
 
-\printglossary
 \printglossary[type=\acronymtype]
+\printglossary
 
 \printbibliography
 % \clearpage{\pagestyle{plain}\cleardoublepage} %Numerazione araba per i capitoli
@@ -229,4 +241,5 @@
 %
 % \clearpage{\pagestyle{plain}\cleardoublepage}
 % \input{bibliografia.tex}
+
 \end{document}
