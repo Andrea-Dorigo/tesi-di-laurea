@@ -1,53 +1,68 @@
 \documentclass[a4paper]{report}
-
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-% \usepackage{fancyhdr}
-
-%Lingua
 \usepackage[italian]{babel}
 \usepackage{setspace}
-
-% %Pacchetto per definire layout di pagina
 \usepackage[left=3cm, right=3cm, top=3cm, bottom=3cm]{geometry}
-
-
-%Inclusione immagini
 \usepackage{graphicx}
-%Colori
 \usepackage[usenames]{color}
 \usepackage{xcolor}
-%Crea link ipertestuali
 \usepackage{hyperref}
 \usepackage{caption}
 \usepackage{float}
 \usepackage{fancyhdr}
-
 \usepackage{datatool}
 \usepackage{acronym}
 \usepackage[acronym]{glossaries}
 \usepackage{textcomp}
-
-
-% \usepackage[hyphens]{url}
-% \usepackage{ragged2e}
-% \justifying
-
-
-%Formattazione url
-% \usepackage{url}\
-%
 \usepackage{csquotes}
 \usepackage[citestyle=authortitle-ibid, backend=biber, hyperref=true]{biblatex}
-\addbibresource{tesi.bib}
 
+
+\addbibresource{tesi.bib}
 \makeglossaries
 
 \newglossaryentry{g_eai}
 {
     name=\textit{Enterprise Application Integration},
-    description={il termine si riferisce al processo d'integrazione tra diversi tipi di sistemi informatici di un'azienda attraverso l'utilizzo di software e soluzioni architetturali.}
+    description={\hfill \\
+    Il termine si riferisce al processo d'integrazione tra diversi tipi di sistemi informatici di un'azienda attraverso l'utilizzo di software e soluzioni architetturali.
+    \hfill \\
+    {\footnotesize{\textit{Fonte:} \url{https://it.wikipedia.org/wiki/Enterprise_Application_Integration}}}
+    }
 }
+\newglossaryentry{g_soa}
+{
+    name=\textit{Service Oriented Architecture},
+    description={\hfill \\
+    La Service Oriented Architecture definisce un modo per rendere i componenti software riutilizzabili tramite interfacce di servizio. Queste interfacce utilizzano standard di comunicazione comuni in modo da poter essere rapidamente integrate in nuove applicazioni senza dover eseguire ogni volta una profonda integrazione.\\
+    Ogni servizio in una SOA incorpora il codice e le integrazioni dei dati necessari per eseguire una funzione aziendale completa e discreta (ad esempio, il controllo del credito del cliente, il calcolo di un pagamento di un prestito mensile o l'elaborazione di un'applicazione ipotecaria). Le interfacce di servizio forniscono un accoppiamento libero, il che significa che possono essere richiamate con poca o nessuna conoscenza della sottostante modalità di implementazione dell'integrazione.\\
+    I servizi sono esposti utilizzando protocolli di rete standard - come SOAP (simple object access protocol)/HTTP o JSON/HTTP - per inviare richieste di lettura o modifica dei dati. I servizi sono pubblicati per consentire agli sviluppatori di trovarli rapidamente e riutilizzarli per assemblare nuove applicazioni.
+    \hfill \\
+    {\footnotesize\textit{Fonte:} \url{https://www.ibm.com/it-it/cloud/learn/soa}}
+    }
+}
+
+% middleware
+% architetture a messaggio
+% Integrazione
+% Networking
+% distribuite? sistemi distribuiti? architetture distribuite? monolitiche?
+% big data?
+% object Oriented
+% design Pattern
+% uml?
+% Agile (+ manifesto?)
+% virtual machine
+% container
+% event streaming
+% request response
+% microservizi
+% open source
+% rest
+% proxy?
+% asincrono / sincrono
+% callback
 
 \newacronym{ict}{ICT}{Information and Communication Technologies}
 \newacronym{j2ee}{J2EE}{Java 2 Platform Enterprise Edition}
@@ -57,37 +72,12 @@
 \newacronym{jms}{JMS}{Java Message Service}
 \newacronym{eai}{EAI}{\gls{g_eai}}
 \newacronym{oo}{O-O}{Object Oriented}
+\newacronym{uml}{UML}{Unified Modeling Language}
+\newacronym{cli}{CLI}{Command Line Interface}
+\newacronym{soa}{SOA}{\gls{g_soa}}
+% ksql
 
 \captionsetup[figure]{font=small,labelfont=small}
-
-% \DeclareDelimFormat[bib]{nametitledelim}{\newline\bibsentence}
-
-% \usepackage{xpatch}
-% \makeatletter
-% \def\do#1{
-%   \ifcsdef{blx@bbx@#1}
-%     {\xpatchbibdriver{#1}
-%        {\printlist{language}%
-%         \newunit\newblock}
-%        {\printlist{language}%
-%         \printunit{\newline\bibsentence}}
-%        {}{}}
-%     {}}
-% \abx@doentrytypes
-% \makeatother
-
-
-% \DeclareFieldFormat{formaturl}{#1}
-% \newbibmacro*{url+urldate}{%
-% \printtext[formaturl]{%
-%   \iffieldundef{urlyear}
-%     {}
-%     {\setunit*{\addspace}%
-%      Visitato il
-%      \printtext[urldate]{\printurldate}}}
-%    \newline
-%    \printfield{url}}%
-
 
 \urlstyle{tt}
 
@@ -98,66 +88,24 @@
 \fancyhead[L,RO]{\rightmark}
 \fancyhead[LO,RE]{\textbf{\leftmark}}
 \fancyfoot[C]{\thepage}
-% \headrulewidth 0.4pt
-% \footrulewidth 0 pt
-
-% \newcommand{\textgreek}[1]{\begingroup\fontencoding{LGR}\selectfont#1\endgroup}
-% \newcommand\frontmatter{%
-%     \cleardoublepage
-%   %\@mainmatterfalse
-%   \pagenumbering{roman}}
-%
-% \newcommand\mainmatter{%
-%     \cleardoublepage
-%  % \@mainmattertrue
-%   \pagenumbering{arabic}}
-
-% \newcounter{mycount}
-% \newcounter{savefoot}
-% \pagestyle{fancy}
-% \newcommand\acrofoot[3]{%
-%   \acro{#1}{#2\protect\footnote{#3}\setcounter{mycount}{\value{footnote}}}%
-% }
-% \let\acorig\ac
-% \renewcommand\ac[1]{%
-%   \begingroup%
-%   \setcounter{savefoot}{\value{footnote}}%
-%   \setcounter{footnote}{\value{mycount}}%
-%   \addtocounter{footnote}{-1}%
-%   \renewcommand\@makefntext[1]{}%
-%   \acorig{#1}%
-%   \setcounter{footnote}{\value{savefoot}}%
-%   \endgroup%
-% }
-
-
-% \fancyhead{}
 
 \renewcommand{\chaptermark}[1]{\markboth{\small\textsc{\thechapter.\ #1}}{}}
 \renewcommand{\sectionmark}[1]{\markright{\small\textsc{\thesection.\ #1}}{}}
-\newcommand{\sacr}[1]{\acrshort{#1}$_g$}
+\newcommand{\sacr}[1]{\acrshort{#1}}
 \newcommand{\stage}{\textit{stage}}
 \newcommand{\software}{\textit{software}}
 
 
-\newcommand{\sacrfoot}[1]{\sacr{#1}\footnote{\textit{\acrlong{#1}}}}
+\newcommand{\sacrfoot}[1]{\sacr{#1}\footnote{\textit{\glsentrylong{#1}}}}
 \renewcommand{\sectionmark}[1]{\markright{\small\textsc{\thesection.\ #1}}{}}
 \let\oldgls\gls
 
 \renewcommand{\gls}[1]{\oldgls{#1}$_g$}
 
-% \fancyhead[LE]{\rightmark}
-% \fancyhead[RO]{\leftmark}
-
-
-% \frontmatter
-
 \begin{titlepage}
 \begin{center}
 \includegraphics[scale=0.1]{images/logo.png}\\
 
-%Per il frontespizio del dipartimenti di Ing. dell'Informazione commentare le riga precedente e decommentare la successiva
-%\includegraphics[scale=0.2]{images/logo_unipd.png} \hfill \includegraphics[scale=0.2]{images/logo_dei.png}\\
 \vspace{0.8cm}
 \textsc{\LARGE Università degli Studi di Padova}\\
 \vspace{0.45cm}
@@ -196,15 +144,6 @@
 \doublespacing
 \tableofcontents{} %Indice
 \listoffigures
-
-% \begin{acronym}[ICT]
-%       \acrofoot{ICT}{Alphabet}{\url{http://abc.example.org}}
-%       \acro{XYZ}{The End}
-%       \acrofoot{Foo}{Bar}{\url{http://foo.example.org}}
-% \end{acronym}
-% \mainmatter
-
-
 
 \input{chapters/1-Contesto_aziendale}
 \input{chapters/2-Apache_Kafka_nel_settore_dell_Integrazione_Aziendale}
