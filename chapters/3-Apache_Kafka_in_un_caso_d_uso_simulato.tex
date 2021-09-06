@@ -1,13 +1,61 @@
 \chapter{Apache Kafka in caso d’uso simulato}
 
-\section{Pianificazione del percorso e \textit{Way of working}}
+\section{Definizione di un \textit{way of working}}
 
-Descrizione del Piano di Lavoro presentato, le strategie e il metodo di lavoro stabilito.
+% Descrizione del Piano di Lavoro presentato, le strategie e il metodo di lavoro stabilito.
+All'inizio del percorso ho delineato un \textit{way of working}, ovvero un metodo di lavoro da mantenere per tutta la durata dello \textit{stage}, insieme al tutor aziendale, il responsabile del settore \sacr{eai} e gli esperti del settore.
 
-\section{Formazione e sviluppo del prodotto}
+Per mantenere un buon livello organizzativo, quantificare l'avanzamento e rendere agevole la verifica e il supporto tecnico l'azienda ha proposto l'utilizzo di una \textit{board} di progetto.
+Tra le tante opzioni disponibili, mi è stata proposta la piattaforma \textit{ClickUp}.
+Rispetto alla concorrenza questa \textit{board} è ricca di funzionalità, pulita nell'esposizione dello stato del progetto, e la maggior parte delle sue funzioni sono gratuite.
 
-Descrizione delle fasi del percorso, con le sfide e problemi che esso ha presentato.
+All'inizio del percorso il tutor aziendale e il responsabile del \sacr{eai} hanno creato delle \textit{card} contenenti le attività previste per ogni settimana (\textit{task}) al fine di fornire una struttura generale del progetto.
+All'interno di questi \textit{task} vi sono i concetti chiave, attività previste e obiettivi settimanali che lo stagista è tenuto a seguire per garantire l'efficacia del prodotto finale.
+Oltre a questi \textit{task} principali, ho potuto creare di \textit{task} ausiliari e dei \textit{subtask} per descrivere più adeguatamente l'attività in corso.
 
-\section{Risultati raggiunti dal prodotto}
+Ciascun \textit{task} contiene una colonna laterale dove ho mantenuto un \textit{log} di tutto ciò che è stato eseguito relativo al \textit{task} in questione, allo scopo di esplicitarne il progresso e rendere agevole un eventuale supporto dal tutor o l'evoluzione futura.
+
+Ogni settimana è previsto un \textit{online meeting} per la verifica del progresso ove necessario, la risposta ad eventuali questioni sollevate, e spiegazioni riguardo lo sviluppo della settimana successiva.
+Alcune di queste videoconferenze ha visto la partecipazione di altri esperti che mi hanno aiutato a comprendere meglio il caso d'uso da reingegnerizzare, riassumendo lo stato attuale del sistema d'integrazione per uno dei clienti con relativi \textit{file} utilizzati.
+
+Per mantenere alto il livello di organizzazione, efficienza ed efficacia, all'inizio di ogni giornata lavorativa ho creato un breve piano giornaliero con successivo consuntivo a fine giornata.
+Questo ha permesso al tutor di verificare rapidamente il corretto avanzamento del processo in corso e a me di mantenere il \textit{focus} su di esso.
+
+\section{Formazione}
+
+Il processo di Formazione ha avuto un importante ruolo all'interno dello \textit{stage}, con una durata complessiva di circa quattro settimane.
+La causa di questo lungo periodo è data dallo studio di diversi ambiti e concetti, in particolare il settore del \textit{\acrlong{eai}} e la nuova tecnologia di Kafka.
+
+Durante questo processo Sync Lab mi ha fornito del materiale didattico per l'apprendimento, quali diapositive e appunti di origine aziendale e l'accesso a dei corsi riguardo \textit{Software architecture}, \textit{\acrlong{soa}} (tramite i corsi online su \textit{Coursera}) e Apache Kafka (tramite i corsi online su \textit{Udemy}).
+
+Il tutor aziendale e responsabile \sacr{eai} hanno fornito durante i \textit{meeting} settimanali ulteriori chiarimenti e approfondimenti sul come Sync Lab applica questi concetti nello sviluppo di architetture \software.
+
+Per i corsi online a maggiore contenuto nozionistico ho redatto degli appunti riassuntivi, con lo scopo di consolidare l'apprendimento e velocizzare la verifica del tutor aziendale.
+
+\section{Analisi di un caso d'uso reale e sviluppo di un caso d'uso simulato}
+
+Ad alcune videoconferenze ha partecipato anche un altro esperto \textit{senior} aziendale, esterno al progetto di \stage\ in questione, per illustrarmi un caso d'uso in cui l'azienda ha esposto un prototipo di sistema di integrazione utilizzando i concetti di \textit{Web Service}, \sacrfoot{soap} e \textit{request/response}, permettendomi la visualizzazione dei file \sacrfoot{wsdl}, \sacrfoot{xml} e \sacrfoot{xsd} associati.
+Ho pertanto generato un caso d'uso adatto agli scopi dello \stage\ ispirandomi al caso d'uso reale illustrato.
+
+Il caso d'uso modellato tratta una richiesta di credito telefonico da parte di un cliente ad un'azienda di telecomunicazioni tramite \textit{Web Service}.
+La richiesta avviene tramite flusso di un file \sacrfoot{json} che viene trasmesso attraverso i vari servizi che compongono il sistema di integrazione.
+Va precisato che il contenuto di tale \sacr{json} non è strettamente rilevante allo sviluppo e funzionamento del \textit{Middleware}, ma aiuta a stabilire il contesto di utilizzo.
+
+\noindent
+Il caso d'uso è composto dai seguenti passaggi:
+\begin{enumerate}
+  \item il cliente (\textit{\sacrfoot{ws} Client}) effettua una richiesta di credito tramite invio di un file \sacr{json} al successivo Servizio Web in ascolto.
+  \item un servizio composto da \sacrfoot{rest} \sacr{ws} e \textit{Request Producer} riceve il \sacr{json} e lo inserisce in Kafka tramite l'apposito \textit{Kafka Producer}.
+\end{enumerate}
+
+\section{Progettazione architetturale}
+
+\section{\textit{Setup} dell'ambiente di lavoro}
+
+
+\section{Sviluppo}
+
+
+\section{Collaudo}
 
 Confronto con i requisiti posti nel piano di lavoro, valutazione riguardo i risultati raggiunti, quelli non raggiunti e i possibili sviluppi futuri

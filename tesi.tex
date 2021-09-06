@@ -18,7 +18,14 @@
 \usepackage{csquotes}
 \usepackage[citestyle=authortitle-ibid, backend=biber, hyperref=true]{biblatex}
 
+\definecolor{unipdred}{RGB}{149, 0, 19}
+\definecolor{pastelblue}{RGB}{17,93,118}
 
+\hypersetup{
+  colorlinks = true,
+  linkcolor = black,
+  urlcolor = pastelblue
+}
 \addbibresource{tesi.bib}
 \makeglossaries
 
@@ -75,6 +82,16 @@
 \newacronym{uml}{UML}{Unified Modeling Language}
 \newacronym{cli}{CLI}{Command Line Interface}
 \newacronym{soa}{SOA}{\gls{g_soa}}
+\newacronym{soap}{SOAP}{Simple Object Access Protocol}
+\newacronym{wsdl}{WSDL}{Web Service Description Language}
+\newacronym{xml}{XML}{eXtensible Markup Language}
+\newacronym{xsd}{XSD}{XML Schema Definition}
+\newacronym{json}{JSON}{JavaScript Object Notation}
+\newacronym{ws}{WS}{Web Service}
+\newacronym{rest}{REST}{REpresentational State Transfer}
+\newacronym{sso}{SSO}{Single Sign On}
+\newacronym{api}{API}{Application Programming Interface}
+
 % ksql
 
 \captionsetup[figure]{font=small,labelfont=small}
@@ -91,15 +108,14 @@
 
 \renewcommand{\chaptermark}[1]{\markboth{\small\textsc{\thechapter.\ #1}}{}}
 \renewcommand{\sectionmark}[1]{\markright{\small\textsc{\thesection.\ #1}}{}}
-\newcommand{\sacr}[1]{\acrshort{#1}}
+\newcommand{\sacr}[1]{\acrshort{#1}$_a$}
 \newcommand{\stage}{\textit{stage}}
 \newcommand{\software}{\textit{software}}
-
-
 \newcommand{\sacrfoot}[1]{\sacr{#1}\footnote{\textit{\glsentrylong{#1}}}}
 \renewcommand{\sectionmark}[1]{\markright{\small\textsc{\thesection.\ #1}}{}}
-\let\oldgls\gls
 
+
+\let\oldgls\gls
 \renewcommand{\gls}[1]{\oldgls{#1}$_g$}
 
 \begin{titlepage}
@@ -145,6 +161,9 @@
 \tableofcontents{} %Indice
 \listoffigures
 
+% \hypersetup{
+%   linkcolor = pastelblue
+% }
 \input{chapters/1-Contesto_aziendale}
 \input{chapters/2-Apache_Kafka_nel_settore_dell_Integrazione_Aziendale}
 \input{chapters/3-Apache_Kafka_in_un_caso_d_uso_simulato}
