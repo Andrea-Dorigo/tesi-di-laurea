@@ -3,21 +3,47 @@
 % \section{L'evoluzione delle architetture di integrazione}
 \section{Obiettivi aziendali}
 
-Per soddisfare le richieste clientelari ed essere sempre competitiva e all'avanguardia, una priorità di Sync Lab sono le esplorazioni tecnologiche e di prodotto anche tramite l'utilizzo di percorsi di \stage\ insieme ai laureandi, come quanto accaduto nella mia esperienza.
+Per soddisfare le richieste dei clienti ed essere sempre competitiva e all'avanguardia, una priorità di Sync Lab sono le esplorazioni tecnologiche e di prodotto anche tramite l'utilizzo di percorsi di \stage\ insieme ai laureandi, come quanto accaduto nella mia esperienza.
 Questi percorsi consentono all'azienda non solo di testare l'utilizzo di nuovi \software\ ma anche di conoscere e mettere alla prova le capacità del laureando in vista di una potenziale assunzione al termine dello \stage.
 % Introduzione al motivo aziendale per cui è nato questo percorso di stage: la propensione odierna alle architetture a microservizi, la gestione di grandi flussi di dati in modo efficiente ed eff1icace, una richiesta di un sistema innovativo da parte della clientela.3
 \begin{figure}[h]
   \begin{center}
-    \includegraphics[width=0.6\textwidth]{images/distributed.png}
+    \includegraphics[width=0.45\textwidth]{images/distributed.png}
     \caption{Illustrazione di un sistema distribuito}
     \captionsetup{aboveskip=2pt}
     \caption*{\begin{footnotesize}\textit{Fonte:} \url{https://www.delphitools.info/DWSH/}\end{footnotesize}}
   \end{center}
 \end{figure}
 
-Nel settore dell'\gls{g_eai}, l'evoluzione tecnologica è diretta verso soluzioni sempre più distribuite e con un flusso di dati in continuo aumento.
+Nel settore dell'\gls{g_eai}, l'evoluzione tecnologica è diretta verso soluzioni sempre più distribuite (figura \thefigure) e con un flusso di dati in continuo aumento.
 Uno degli obiettivi specifici nell'area \sacr{eai} di Sync Lab è pertanto quello di trovare un \software\ o tecnologia in grado di soddisfare i bisogni dei clienti di gestire un flusso di dati di dimensioni molto maggiori a quelle attuali, tramite architetture a messaggio che utilizzano servizi distribuiti.
 
+Nell'ambito dei \middleware\ per i sistemi di integrazione, l'aumento del flusso di dati e lo spostamento verso strutture distribuite provoca una difficoltà nella comunicazione e utilizzo di tali dati tra i diversi servizi.
+Nell'ambito dell'integrazione per un cliente di piccole dimensioni, in cui i dati circolano tra un numero di componenti limitato, può essere sufficiente un'architetture basata sul \sacrfoot{p2p}.
+
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[width=0.8\textwidth]{images/p2p.png}
+    \caption{Illustrazione di un sistema basato sul \sacr{p2p}}
+    \captionsetup{aboveskip=2pt}
+    \caption*{\begin{footnotesize}\textit{Fonte:} \url{https://news.pwc.be/messaging-architecture-with-salesforce/}\end{footnotesize}}
+  \end{center}
+\end{figure}
+
+Nel caso di un cliente di maggiori dimeensioni tuttavia questo approccio rende la manutenzione e gestione del flusso di dati molto difficoltoso e costoso in termini di risorse (figura \thefigure).
+Una delle soluzioni è la migrazione verso una \sacr{eda} (\textit{\acrlong{eda}}), un'architettura basata sugli eventi in grado di scambiare dati tra punti multipli.
+
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[width=0.6\textwidth]{images/eda.png}
+    \caption{Illustrazione di un sistema basato sulla \sacr{eda}}
+    \captionsetup{aboveskip=2pt}
+    \caption*{\begin{footnotesize}\textit{Fonte:} \url{https://news.pwc.be/messaging-architecture-with-salesforce/}\end{footnotesize}}
+  \end{center}
+\end{figure}
+
+Un evento è definito come un'occorrenza significativa o un cambiamento di stato del sistema;
+questo tipo di architettura è pertanto definita per gestire la produzione, il rilevamento e la reazione agli eventi (figura \thefigure) grazie ad un \textit{Design Pattern} di tipo \textit{Publish/Subscribe}, eliminando i problemi dati dal \sacr{p2p}.
 % \section{L’evoluzione delle architetture di integrazione}
 %
 % % Introduzione al motivo aziendale per cui è nato questo percorso di stage: la propensione odierna alle architetture a microservizi, la gestione di grandi flussi di dati in modo efficiente ed eff1icace, una richiesta di un sistema innovativo da parte della clientela.3
@@ -46,31 +72,29 @@ Per soddisfare le esigenze di innovazione l'azienda ha avviato un percorso per i
 \bigskip
 \begin{figure}[h]
   \begin{center}
-    \includegraphics[width=0.14\textwidth]{images/kafka_logo.png}
-    \caption{Logo di Apache Kafka}
+    \includegraphics[width=0.85\textwidth]{images/kafka2.png}
+    \caption{Illustrazione di Apache Kafka in un caso d'uso esemplificativo}
     \captionsetup{aboveskip=2pt}
-    \caption*{\begin{footnotesize}\textit{Fonte:} \url{https://commons.wikimedia.org/wiki/File:Apache_kafka.svg}\end{footnotesize}}
+    \caption*{\begin{footnotesize}\textit{Fonte:} \url{https://iotbyhvm.ooo/apache-kafka-a-distributed-streaming-platform/}\end{footnotesize}}
   \end{center}
 \end{figure}
 
-Kafka è una piattaforma di \textit{event streaming}, un sistema distribuito e moderno basato sugli eventi anzichè su di una soluzione più classica come può essere quella del \textit{request/response}.
-Apache Kafka si integra ottimamente in molti sistemi basati sulle Architetture a messaggio, in cui lo scambio affidabile di dati in tempo reale è essenziale.
+Kafka è una piattaforma di \textit{event streaming}, un sistema distribuito e moderno basato sugli eventi anzichè su di una soluzione più classica come può essere quella del \textit{request/response} e \sacr{p2p}.
+Apache Kafka si integra ottimamente in molti sistemi basati sul \textit{messaging pattern}, in cui lo scambio affidabile di dati in tempo reale è essenziale (in figura \thefigure è illustrato un caso d'uso esemplificativo di un sistema distribuito basato su Kafka).
 
 Il \software\ ha dimostrato negli anni recenti un notevole successo in diversi campi\footnote{Fonte: \url{https://kafka.apache.org/powered-by}}, come quello del flusso di \textit{Big Data}, del monitoraggio e dell'elaborazione dati in tempo reale.
 L'adozione del \software\ nell'ambito dell'EAI è in crescita dato le dimostrate qualità nel gestire grandi moli di dati: la sua performance, sicurezza e scalabilità sono i punti che hanno portato il software al suo attuale successo.
 
-L'interesse di Sync Lab nel \software\ risiede dunque nell'utilizzo di Kafka come un  \textit{Middleware} per soddisfare i problemi di integrazione aziendale e reingegnerizzare i flussi di dati preesistenti, ovvero sviluppare un nuovo sistema che consenta la comunicazione tra differenti servizi con un rapido flusso di dati fra di essi.
-
-
-\bigskip
 \begin{figure}[h]
   \begin{center}
-    \includegraphics[width=0.8\textwidth]{images/kafka.png}
-    \caption{Illustrazione di un sistema a servizi con Kafka}
+    \includegraphics[width=0.35\textwidth, trim={0.07cm 0 0 0},clip]{images/microservices.png}
+    \caption{Illustrazione di un sistema basato su microservizi}
     \captionsetup{aboveskip=2pt}
-    \caption*{\begin{footnotesize}\textit{Fonte:} \url{https://kafka.apache.org/20/documentation.html}\end{footnotesize}}
+    \caption*{\begin{footnotesize}\textit{Fonte:} \url{https://medium.com/@riyaznet/building-serverless-microservices-on-aws-3959a93c2549}\end{footnotesize}}
   \end{center}
 \end{figure}
+
+L'interesse di Sync Lab nel \software\ risiede dunque nell'utilizzo di Kafka come un  \textit{Middleware} per soddisfare i problemi di integrazione aziendale e reingegnerizzare i flussi di dati preesistenti, ovvero sviluppare un nuovo sistema che consenta la comunicazione tra differenti servizi con un rapido flusso di dati fra di essi (in figura \thefigure, un semplice sistema a microservizi indipendenti).
 
 
 L'azienda ha avviato un percorso per testare le capacità di Kafka rispetto agli attuali strumenti utilizzati nel settore, per valutare i vantaggi e svantaggi che l'adozione di tale \software\ può fornire al cliente.
@@ -130,14 +154,6 @@ Sono pertanto interessato a sviluppare la mia formazione riguardo l'utilizzo e l
 
 Il percorso di \textit{stage} offerto dall'azienda si inserisce all'interno della strategia aziendale più ampia descritta sopra.
 Al fine di esplorare la tecnologia di Apache Kafka nell'ambito di un \textit{Middleware} per l'integrazione aziendale, l'azienda ha proposto un percorso di \textbf{\textit{stage} il cui obiettivo è la reingegnerizzazione di un flusso di dati asincrono, utilizzando un'architettura basata su Kafka all'interno di un caso d'uso simulato tramite servizi indipendenti.}
-\begin{figure}[h]
-  \begin{center}
-    \includegraphics[width=0.35\textwidth, trim={0.07cm 0 0 0},clip]{images/microservices.png}
-    \caption{Illustrazione di un sistema basato su microservizi}
-    \captionsetup{aboveskip=2pt}
-    \caption*{\begin{footnotesize}\textit{Fonte:} \url{https://medium.com/@riyaznet/building-serverless-microservices-on-aws-3959a93c2549}\end{footnotesize}}
-  \end{center}
-\end{figure}
 
 \bigskip
 Lo stagista ha il compito di osservare, testare e verificare che il \software\ possa svolgere alcuni compiti inerenti all'area del \sacr{eai}, analizzando alcuni casi d'uso presenti in un \textit{Middleware} aziendale in ambito \textit{telco}.
@@ -154,6 +170,18 @@ Il percorso di prevede una durata di 300 ore lavorative.
 \subsection{Prodotti attesi}
 
 I prodotti attesi al termine dello \textit{stage} sono dunque associati alla realizzazione di tre flussi di integrazione, basati su dei casi d’uso reali, per la gestione dei paradigmi di integrazione asincrono e asincrono con \textit{callback} (due requisiti obbligatori), e sincrono ove fosse disponibile del tempo aggiuntivo e se ritenuto opportuno; durante il percorso considerato il contesto e le opportunità offerte dal \software\ questo obiettivo verrà sostituito per testare delle funzionalità aggiuntive di Kafka.
+
+\bigskip
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[width=0.8\textwidth]{images/kafka.png}
+    \caption{Illustrazione di un sistema a servizi con Kafka}
+    \captionsetup{aboveskip=2pt}
+    \caption*{\begin{footnotesize}\textit{Fonte:} \url{https://kafka.apache.org/20/documentation.html}\end{footnotesize}}
+  \end{center}
+\end{figure}
+
+Il prodotto \software\ finale sarà un sistema basato su servizi indipendenti costruito con un'architettura di tipo \sacr{eda} tramite l'utilizzo di Kafka (figura \thefigure).
 
 \subsection{Contenuti formativi previsti}
 
@@ -283,8 +311,16 @@ Ad ogni settimana sono assegnate le voci contenenti gli incrementi previsti in e
        \end{itemize}
 
 \end{itemize}
+
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[width=\textwidth]{images/gantt.png}
+    \caption{Diagramma di Gantt del piano di lavoro}
+  \end{center}
+\end{figure}
+
 \noindent
-Secondo questa pianificazione, le 300 ore di \stage\ previste sono approsimativamente divise in:
+Secondo questa pianificazione, (figura \thefigure) le 300 ore di \stage\ previste sono approsimativamente divise in:
 \begin{itemize}
   \item 160 ore di Formazione sulle tecnologie;
   \item 60 ore di Progettazione dei componenti e dei test;
