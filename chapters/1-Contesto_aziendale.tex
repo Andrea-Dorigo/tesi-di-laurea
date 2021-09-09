@@ -159,6 +159,7 @@ Una'architettura software basata su di un sistema distribuito necessita di una r
 
 \subsection{Servizi offerti dall'azienda}
 
+Per comprendere appropriatamente il contesto che ha portato alla nascita del progetto di \stage\, è bene conoscere la tipologia di servizi e prodotti che l'azienda offre ai propri clienti.
 Sync Lab offre per i propri clienti numerosi servizi, tra cui:
 \begin{itemize}
   \item Valutazione e controllo progetti
@@ -246,8 +247,8 @@ Inoltre, si adattano particolarmente bene a simulare l'ambiente distribuito, un 
   \end{center}
 \end{figure}
 
-La figura \thefigure rappresenta graficamente le due diverse implementazioni delle due tecnologie.
-Vi sono dunque delle notevoli differenze, vantaggi e svantaggi tra ll'utilizzo dell'una e dell'altra, tra cui:
+La figura \thefigure\ rappresenta graficamente le due diverse implementazioni delle due tecnologie.
+Vi sono dunque delle notevoli differenze, vantaggi e svantaggi tra l'utilizzo dell'una e dell'altra, tra cui:
 \begin{enumerate}
   \item i \container\ sono più rapidi delle \sacr{vm} nell'esecuzione;
   \item i \container\ sono più leggeri delle \sacr{vm} in termini di memoria;
@@ -262,6 +263,9 @@ La scelta della piattaforma di \container\ è stata quella di Docker.
 % La scelta, in accordo con il tutor aziendale, è dovuta
 Più precisamente, ho utilizzato l'estensione \textit{Docker-compose}\footfullcite{docker-compose} per gestire in modo elegante la generazione e collaudo di più servizi indipententi (figura \thefigure): non solo questo \software\ consente di creare velocemente una rete di \textit{container} comunicanti su di una rete isolata, ma rende anche rapido ed efficiente lo sviluppo grazie alla possibilità di modificare e riavviare rapidamente un singolo servizio.
 Il caso d'uso realizzato nel mio percorso ha simulato grazie ai \container\ un sistema a microservizi che simula le risorse di un grande cliente gestore di telecomunicazioni, secondo una visione coerente con il tipo di clientela reale dell'azienda.
+
+% TODO: completare il collegamento tra sopra e sotto;
+% TODO: magari ci sta bene un esempio di dockerfile
 
 Questo contesto dell'integrazione aziendale porta dunque l'impresa ad avere un'importante propensione all'innovazione, talvolta esplicitamente richiesta dai clienti.
 Una direzione dell'evoluzione attuale nel settore \sacr{eai} riguarda la migrazione verso sistemi sempre più distribuiti, in grado di gestire efficacemente ed in tempo reale flussi di dati in continua crescita.

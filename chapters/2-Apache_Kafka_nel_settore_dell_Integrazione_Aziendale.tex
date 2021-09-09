@@ -5,6 +5,7 @@
 
 Per soddisfare le richieste dei clienti ed essere sempre competitiva e all'avanguardia, una priorità di Sync Lab sono le esplorazioni tecnologiche e di prodotto anche tramite l'utilizzo di percorsi di \stage\ insieme ai laureandi, come quanto accaduto nella mia esperienza.
 Questi percorsi consentono all'azienda non solo di testare l'utilizzo di nuovi \software\ ma anche di conoscere e mettere alla prova le capacità del laureando in vista di una potenziale assunzione al termine dello \stage.
+\bigskip
 % Introduzione al motivo aziendale per cui è nato questo percorso di stage: la propensione odierna alle architetture a microservizi, la gestione di grandi flussi di dati in modo efficiente ed eff1icace, una richiesta di un sistema innovativo da parte della clientela.3
 
 Nel settore dell'\gls{g_eai}, l'evoluzione tecnologica è diretta verso soluzioni sempre più distribuite e con un flusso di dati in continuo aumento.
@@ -22,12 +23,13 @@ Nell'ambito dell'integrazione per un cliente di piccole dimensioni, in cui i dat
   \end{center}
 \end{figure}
 
-Nel caso di un cliente di maggiori dimeensioni tuttavia questo approccio rende la manutenzione e gestione del flusso di dati molto difficoltoso e costoso in termini di risorse (figura \thefigure).
-Una delle soluzioni è la migrazione verso una \sacr{eda} (\textit{\acrlong{eda}}), un'architettura basata sugli eventi in grado di scambiare dati tra punti multipli.
+Nel caso di un cliente di maggiori dimensioni tuttavia questo approccio rende la manutenzione e gestione del flusso di dati molto difficoltoso e costoso in termini di risorse (figura \thefigure), dato che il grande numero di collegamenti tra i vari punti.
+
+Una delle soluzioni che viene maggiormente implementata per risolvere questo problema è la migrazione verso una \sacr{eda} (\textit{\acrlong{eda}}), un'architettura basata sugli eventi in grado di scambiare dati tra punti multipli.
 
 \begin{figure}[h]
   \begin{center}
-    \includegraphics[width=0.6\textwidth]{images/eda.png}
+    \includegraphics[width=0.8\textwidth]{images/eda.png}
     \caption{Illustrazione di un sistema basato sulla \sacr{eda}}
     \captionsetup{aboveskip=2pt}
     \caption*{\begin{footnotesize}\textit{Fonte:} \url{https://news.pwc.be/messaging-architecture-with-salesforce/}\end{footnotesize}}
@@ -35,7 +37,9 @@ Una delle soluzioni è la migrazione verso una \sacr{eda} (\textit{\acrlong{eda}
 \end{figure}
 
 Un evento è definito come un'occorrenza significativa o un cambiamento di stato del sistema;
-questo tipo di architettura è pertanto definita per gestire la produzione, il rilevamento e la reazione agli eventi (figura \thefigure) grazie ad un \textit{Design Pattern} di tipo \textit{Publish/Subscribe}, eliminando i problemi dati dal \sacr{p2p}.
+questo tipo di architettura è pertanto definita per gestire la produzione, il rilevamento e la reazione agli eventi (figura \thefigure) grazie ad un \textit{Design Pattern} di tipo \textit{Publish/Subscribe}, eliminando i problemi visti precedentemente causati dal sistema \sacr{p2p}.
+Questa architettura prevede l'utilizzo di servizi chiamati \textit{Producer}, il cui scopo è fornire dati al \textit{event bus} centrale.
+Una volta che i dati sono inseriti all'interno del \textit{bus} centrale, ogni servizio in ascolto (\textit{Subscriber}) li riceverà idealmente in tempo reale.
 % \section{L’evoluzione delle architetture di integrazione}
 %
 % % Introduzione al motivo aziendale per cui è nato questo percorso di stage: la propensione odierna alle architetture a microservizi, la gestione di grandi flussi di dati in modo efficiente ed eff1icace, una richiesta di un sistema innovativo da parte della clientela.3
@@ -64,7 +68,7 @@ Per soddisfare le esigenze di innovazione l'azienda ha avviato un percorso per i
 \bigskip
 \begin{figure}[h]
   \begin{center}
-    \includegraphics[width=0.85\textwidth]{images/kafka2.png}
+    \includegraphics[width=0.45\textwidth, trim={0 0 11.5cm 0},clip]{images/kafka2.png}
     \caption{Illustrazione di Apache Kafka in un caso d'uso esemplificativo}
     \captionsetup{aboveskip=2pt}
     \caption*{\begin{footnotesize}\textit{Fonte:} \url{https://iotbyhvm.ooo/apache-kafka-a-distributed-streaming-platform/}\end{footnotesize}}
@@ -72,15 +76,15 @@ Per soddisfare le esigenze di innovazione l'azienda ha avviato un percorso per i
 \end{figure}
 
 Kafka è una piattaforma di \textit{event streaming}, un sistema distribuito e moderno basato sugli eventi anzichè su di una soluzione più classica come può essere quella del \textit{request/response} e \sacr{p2p}.
-Apache Kafka si integra ottimamente in molti sistemi basati sul \textit{messaging pattern}, in cui lo scambio affidabile di dati in tempo reale è essenziale (in figura \thefigure è illustrato un caso d'uso esemplificativo di un sistema distribuito basato su Kafka).
+Apache Kafka si integra ottimamente in molti sistemi basati sul \textit{messaging pattern}, in cui lo scambio affidabile di dati in tempo reale è essenziale (in figura \thefigure\ è illustrato un caso d'uso esemplificativo di un sistema distribuito basato su Kafka).
 
 Il \software\ ha dimostrato negli anni recenti un notevole successo in diversi campi\footnote{Fonte: \url{https://kafka.apache.org/powered-by}}, come quello del flusso di \textit{Big Data}, del monitoraggio e dell'elaborazione dati in tempo reale.
-L'adozione del \software\ nell'ambito dell'EAI è in crescita dato le dimostrate qualità nel gestire grandi moli di dati: la sua performance, sicurezza e scalabilità sono i punti che hanno portato il software al suo attuale successo.
+L'adozione del \software\ nell'ambito del \sacr{eai} è in crescita dato le dimostrate qualità nel gestire grandi moli di dati: la sua performance, sicurezza e scalabilità sono i punti che hanno portato il software al suo attuale successo.
 
 \begin{figure}[h]
   \begin{center}
     \includegraphics[width=0.35\textwidth, trim={0.07cm 0 0 0},clip]{images/microservices.png}
-    \caption{Illustrazione di un sistema basato su microservizi}
+    \caption{Illustrazione di un sistema a microservizi con comunicazioni tramite \sacr{api}}
     \captionsetup{aboveskip=2pt}
     \caption*{\begin{footnotesize}\textit{Fonte:} \url{https://medium.com/@riyaznet/building-serverless-microservices-on-aws-3959a93c2549}\end{footnotesize}}
   \end{center}
@@ -161,8 +165,6 @@ Il percorso di prevede una durata di 300 ore lavorative.
 
 \subsection{Prodotti attesi}
 
-I prodotti attesi al termine dello \textit{stage} sono dunque associati alla realizzazione di tre flussi di integrazione, basati su dei casi d’uso reali, per la gestione dei paradigmi di integrazione asincrono e asincrono con \textit{callback} (due requisiti obbligatori), e sincrono ove fosse disponibile del tempo aggiuntivo e se ritenuto opportuno; durante il percorso considerato il contesto e le opportunità offerte dal \software\ questo obiettivo verrà sostituito per testare delle funzionalità aggiuntive di Kafka.
-
 \bigskip
 \begin{figure}[h]
   \begin{center}
@@ -172,6 +174,8 @@ I prodotti attesi al termine dello \textit{stage} sono dunque associati alla rea
     \caption*{\begin{footnotesize}\textit{Fonte:} \url{https://kafka.apache.org/20/documentation.html}\end{footnotesize}}
   \end{center}
 \end{figure}
+
+I prodotti attesi al termine dello \textit{stage} sono dunque associati alla realizzazione di tre flussi di integrazione, basati su dei casi d’uso reali, per la gestione dei paradigmi di integrazione asincrono e asincrono con \textit{callback} (due requisiti obbligatori), e sincrono ove fosse disponibile del tempo aggiuntivo e se ritenuto opportuno; durante il percorso considerato il contesto e le opportunità offerte dal \software\ questo obiettivo verrà sostituito per testare delle funzionalità aggiuntive di Kafka.
 
 Il prodotto \software\ finale sarà un sistema basato su servizi indipendenti costruito con un'architettura di tipo \sacr{eda} tramite l'utilizzo di Kafka (figura \thefigure).
 
@@ -226,6 +230,8 @@ ove, da sinistra verso destra:
 Di seguito viene presentata la pianificazione settimanale delle ore lavorative previste.
 Ad ogni settimana sono assegnate le voci contenenti gli incrementi previsti in essa, ove i codici utilizzano la notazione descritta precedentemente.
 
+\noindent
+Tutte le settimane prevedono 40 ore lavorative, fatta eccezione per l'ultima che ne prevede 20.
 
 % \usepackage{lscape}
 % \newcolumntype{b}{>{\hsize=0.2\textwidth}X}
@@ -310,9 +316,8 @@ Ad ogni settimana sono assegnate le voci contenenti gli incrementi previsti in e
 
     \multirow{1}{*}{\normalsize\textbf{8}}
     & \centering O-8.1 & Analisi e reingegnerizzazione e collaudo del flusso di integrazione sincrono.\\
-    \Xhline{2\arrayrulewidth}
-
-
+    \hline
+    \caption{Pianificazione settimanale dello \textit{stage}}
     \end{longtable}
   \end{center}
 \end{small}
@@ -415,7 +420,7 @@ Ad ogni settimana sono assegnate le voci contenenti gli incrementi previsti in e
 \end{figure}
 
 \noindent
-Secondo questa pianificazione, (figura \thefigure) le 300 ore di \stage\ previste sono approsimativamente divise in:
+Secondo questa pianificazione, (di cui la figura \thefigure\ rappresenta il diagramma di Gantt) le 300 ore di \stage\ previste sono approsimativamente divise in:
 \begin{itemize}
   \item 160 ore di Formazione sulle tecnologie;
   \item 60 ore di Progettazione dei componenti e dei test;
