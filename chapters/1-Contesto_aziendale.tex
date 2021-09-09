@@ -1,33 +1,32 @@
 \chapter{Contesto aziendale}
 
 \section{Azienda ospitante}
-\subsection{Presentazione dell'azienda}
-\begin{figure}[h]
-  \begin{center}
-    \includegraphics[width=0.20\textwidth]{images/sync_lab_logo.jpg}
-    \caption{Logo dell'azienda ospitante lo \textit{stage}}
-    \captionsetup{aboveskip=1pt}
-    \caption*{\begin{footnotesize}\textit{Fonte:} \url{https://www.synclab.it/}\end{footnotesize}}
-  \end{center}
-\end{figure}
+% \subsection{Presentazione dell'azienda}
+% \begin{figure}[h]
+%   \begin{center}
+%     \includegraphics[width=0.20\textwidth]{images/sync_lab_logo.jpg}
+%     \caption{Logo dell'azienda ospitante lo \textit{stage}}
+%     \captionsetup{aboveskip=1pt}
+%     \caption*{\begin{footnotesize}\textit{Fonte:} \url{https://www.synclab.it/}\end{footnotesize}}
+%   \end{center}
+% \end{figure}
 % The \acfoot{ABC}\footnote{this works, too}.
-Sync Lab s.r.l.\footfullcite{sync-lab-site} (logo in figura \thefigure) è un'azienda di produzione software, \sacrfoot{ict} e consulenze informatiche nata nel 2002 a Napoli.
+Sync Lab s.r.l.\footfullcite{sync-lab-site} è un'azienda di produzione software, \sacrfoot{ict} e consulenze informatiche nata nel 2002 a Napoli.
 L'azienda al suo stato attuale presenta un organico aziendale composto da più di 200 risorse, con un fatturato annuo di 12 milioni, una solida base finanziaria e una diffusione sul territorio a livello nazionale.
 Sync Lab possiede delle significative fette di mercato riguardanti lo sviluppo di prodotti nel settore mobile, videosorveglianza e sicurezza delle strutture informatiche aziendali.
 
 L'azienda ha acquisito numerose certificazioni ISO LL-C per attestare la qualità dei servizi forniti.
-\begin{figure}[h]
-  \begin{center}
-    \includegraphics[width=0.65\textwidth]{images/sync_lab_certifications.png}
-    \caption{Certificazioni ISO LL-C di Sync Lab}
-    \captionsetup{aboveskip=2pt}
-    \caption*{\begin{footnotesize}\textit{Fonte:} \url{https://www.synclab.it/}\end{footnotesize}}
-  \end{center}
-\end{figure}
+% \begin{figure}[h]
+%   \begin{center}
+%     \includegraphics[width=0.65\textwidth]{images/sync_lab_certifications.png}
+%     \caption{Certificazioni ISO LL-C di Sync Lab}
+%     \captionsetup{aboveskip=2pt}
+%     \caption*{\begin{footnotesize}\textit{Fonte:} \url{https://www.synclab.it/}\end{footnotesize}}
+%   \end{center}
+% \end{figure}
+La certificazione ISO-9001 attesta la gestione della qualità, ISO-14001 la gestione dell'ambiente, ISO-27001 la sicurezza dei sistemi di gestione dati e ISO-45001 la sicurezza nel luogo di lavoro.
 
-La certificazione ISO-9001 attesta la gestione della qualità, ISO-14001 la gestione dell'ambiente, ISO-27001 la sicurezza dei sistemi di gestione dati e ISO-45001 la sicurezza nel luogo di lavoro (figura \thefigure).
-
-Tra i clienti di Sync Lab vi sono ditte a livello nazionale di grandi dimensioni e ampio organico, come Intesa San Paolo, TIM, Vodafone, Enel e Trenitalia che necessitano prodotti sicuri e adatti al considerevole flusso di dati aziendale.
+Tra i clienti di Sync Lab vi sono ditte a livello nazionale di grandi dimensioni e ampio organico, come Intesa San Paolo, TIM, Vodafone, Enel e Trenitalia che necessitano prodotti di un'elevata sicurezza e adatti al considerevole flusso di dati aziendale.
 
 \begin{figure}[h]
   \begin{center}
@@ -129,19 +128,33 @@ Questa \textit{card} contiene una casella di testo per inserire una descrizione 
 L'ambiente di lavoro di cui ho avuto esperienza risulta libero e flessibile.
 Lo sviluppo del prodotto nell'ambito del \sacr{eai} dev'essere indipendente dal linguaggio di programmazione, dagli strumenti utilizzati per l'esecuzione e sviluppo, e possibilmente anche dal Sistema Operativo su cui eseguire il \software.
 A tal scopo si utilizzano strumenti quali \textit{Virtual Machine} e \textit{Container}: essi non solo garantiscono l'indipendenza dal Sistema Operativo in uso, ma simulano efficacemente il caso d'uso reale in cui gli eseguibili sono dislocati in più dispositivi come spesso accade per il cliente finale.
+Nonostante il percorso formativo abbia visto l'apprendimento di entrambe le tecnologie tramite l'utilizzo dei \software\ \textit{Virtual Box}\footfullcite{virtualbox} e \textit{Docker}\footfullcite{docker}, solo quest'ultima è stata utilizzata durante il progetto.
 
-Nonostante il percorso formativo abbia visto l'apprendimento di entrambe le tecnologie tramite l'utilizzo dei \software\ \textit{Virtual Box}\footfullcite{virtualbox} e \textit{Docker}\footfullcite{docker}, solo quest'ultima è stata utilizzata durante il progetto poiché più efficente e minimale.
+Un altro concetto fondamentale che caratterizza l'ambiente di lavoro nel campo del \sacr{eai} è quello del sistema distribuito, di cui l'azienda ha un forte interesse per soffisdare le necessità dei suoi clienti.
 
 \begin{figure}[h]
   \begin{center}
-    \includegraphics[width=0.75\textwidth]{images/docker_compose.png}
-    \caption{Illustrazione di un sistema a servizi indipendenti in container Docker}
+    \includegraphics[width=0.45\textwidth]{images/distributed.png}
+    \caption{Illustrazione di un sistema distribuito}
     \captionsetup{aboveskip=2pt}
-    \caption*{\begin{footnotesize}\textit{Fonte:} \url{https://pspdfkit.com/blog/2018/how-to-use-docker-compose-to-run-multiple-instances-of-a-service-in-development/}\end{footnotesize}}
+    \caption*{\begin{footnotesize}\textit{Fonte:} \url{https://www.delphitools.info/DWSH/}\end{footnotesize}}
   \end{center}
 \end{figure}
 
-Più precisamente, ho utilizzato l'estensione \textit{Docker-compose}\footfullcite{docker-compose} per gestire in modo elegante la generazione e collaudo di più servizi indipententi (figura \thefigure): non solo questo \software\ consente di creare una rete di \textit{container} comunicanti, ma rende anche rapido ed efficaciente lo sviluppo grazie alla possibilità di modificare e riavviare un singolo servizio all'interno del sistema.
+Un sistema distribuito (figura \thefigure) è una collezione di componenti indipendenti (spesso collocati in macchine differenti) che condividono dei messaggi fra di loro per raggiungere un obiettivo comune.
+Una'architettura software basata su di un sistema distribuito necessita di una rete che connette tutti i singoli componenti (macchine, \textit{hardware} o \textit{software}), cosicchè sia possibile lo scambio dei messaggi.
+
+
+
+
+% \begin{figure}[h]
+%   \begin{center}
+%     \includegraphics[width=0.75\textwidth]{images/docker_compose.png}
+%     \caption{Illustrazione di un sistema a servizi indipendenti in container Docker}
+%     \captionsetup{aboveskip=2pt}
+%     \caption*{\begin{footnotesize}\textit{Fonte:} \url{https://pspdfkit.com/blog/2018/how-to-use-docker-compose-to-run-multiple-instances-of-a-service-in-development/}\end{footnotesize}}
+%   \end{center}
+% \end{figure}
 
 
 \subsection{Servizi offerti dall'azienda}
@@ -167,6 +180,9 @@ Sync Lab offre per i propri clienti numerosi servizi, tra cui:
 \end{itemize}
 
 \section{Dominio applicativo}
+
+\subsection{\sacr{eai} e \textit{Middleware}}
+
 % L'esperienza di \textit{stage}
 % Breve introduzione al settore del \textit{Enterprise Application Integration}, al tipo di clientela (ovvero pubblica e privata di grandi dimensioni, big data), alla tipologia di \software\ prodotti dall’azienda per la clientela (\textit{Middleware}), e alla propensione all’innovazione (richieste da parte della clientela
 % In conclusione al percorso di studi del corso di laurea in Informatica ho effettuato lo \textit{stage} presso \textit{Sync Lab}.
@@ -195,20 +211,57 @@ I \textit{Middleware} pertanto vedono due importanti utilizzi nel settore \sacr{
 \begin{itemize}
   \item \textbf{Integrazione su più livelli:} i \textit{Middleware} connettono i principali sistemi aziendali interni ed esterni. Capacità di integrazione quali trasformazione, connettività, componibilità e messaggistica enterprise, abbinate all'autenticazione \sacrfoot{sso}, aiutano gli sviluppatori a estendere tali capacità su diverse applicazioni.
   \item \textbf{Flussi di dati:} le \sacrfoot{api} rappresentano una modalità per condividere i dati tra le applicazioni. Un altro approccio è quello del flusso di dati asincrono, che consiste nella replica di un set di dati in un livello intermedio, da cui i dati possono essere condivisi con più applicazioni.
-  \item \textbf{Ottimizzazione di applicazioni esistenti:} con l'adozione del \textit{Middleware}, gli sviluppatori possono trasformare le applicazioni monolitiche esistenti in applicazioni \textit{cloud native}, mantenendo i validi strumenti già in uso ma migliorandone prestazioni e portabilità (figura \thefigure).
+  \item \textbf{Ottimizzazione di applicazioni esistenti:} con l'adozione del \textit{Middleware}, gli sviluppatori possono trasformare le applicazioni monolitiche esistenti in applicazioni \textit{cloud native} o a microservizi, mantenendo i validi strumenti già in uso ma migliorandone prestazioni e portabilità (figura \thefigure).
 \end{itemize}
 
 \begin{figure}[h]
   \begin{center}
     \includegraphics[width=0.85\textwidth]{images/mono_to_micro.png}
-    \caption{Dalle classiche soluzioni monolitiche ai moderni sistemi distribuiti}
+    \caption{Dalle classiche soluzioni monolitiche ai moderni sistemi a microservizi}
     \captionsetup{aboveskip=2pt}
     \caption*{\begin{footnotesize}\textit{Fonte:} \url{https://aymax.fr/en/why-a-microservices-architecture/}\end{footnotesize}}
   \end{center}
 \end{figure}
 
 
-% Il caso d'uso realizzato nel mio percorso ha simulato un grande cliente gestore di telecomunicazioni, secondo una visione coerente con il tipo di clientela reale dell'azienda.
+\subsection{\textit{Container} e \textit{Virtual Machine}}
+
+Come anticipato nella sezione precedente, tra le tecnologie più utilizzate in questo settore aziendale vi sono molte piattaforme che permettono di simulare ambienti distribuiti su più macchine fisiche, ove possibile anche indipendenti dal Sistema Operativo su cui viene eseguito il prodotto software.
+
+La simulazione di questi \textit{distributed environment} avviene grazie a sistemi basati sul concetto di \textit{container} (come Docker e Kubernetes) oppure interi Sistemi Operativi che vengono eseguiti all'interno di una \textit{Virtual Machine}.
+Il vantaggio principale di queste tecnologie è che rendono l'esecuzione del software al loro interno completamente indipendente dall'ambiente circostante, eliminando problemi di \sacrfoot{os} differenti tra i componenti del team o tra l'azienda e i clienti o divergenze nelle dipendenze con relative versioni.
+Un \textit{container} o una \textit{Virtual Machine} contengono tutto il necessario affinchè sia possibile eseguire il software al suo interno su diverse macchine fisiche (o anch'esse  virtuali).
+
+Queste piattaforme non solo rendono agevole l'esecuzione del software prodotto, ma anche lo sviluppo: la condivisione, \textit{debugging} e manutenzione risultano più agevoli grazie alla condivisione dell'intero \textit{container} o \sacr{vm} con gli altri membri del team.
+
+Inoltre, si adattano particolarmente bene a simulare l'ambiente distribuito, un concetto fondamentale nel settore del \textit{eai}; infatti è sufficiente generare molteplici \textit{container} o \sacr{vm} sulla stessa macchina fisica per simulare un sistema composto da più macchine fisiche distinte, minimizzando l'utilizzo di risorse senza compromettere il risultato del prodotto finale.
+È così possibile per l'azienda riprodurre un sistema complesso che si avvicina alle risorse ed esigenze effettive del cliente, che usualmente possiede molti computer e server dislocati.
+
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[width=0.85\textwidth]{images/vm_vs_container.png}
+    \caption{Differenti implementazioni legate alle \sacr{vm} e \container}
+    \captionsetup{aboveskip=2pt}
+    \caption*{\begin{footnotesize}\textit{Fonte:} \url{https://pawseysc.github.io/container-workflows/01-docker-intro/index.html}\end{footnotesize}}
+  \end{center}
+\end{figure}
+
+La figura \thefigure rappresenta graficamente le due diverse implementazioni delle due tecnologie.
+Vi sono dunque delle notevoli differenze, vantaggi e svantaggi tra ll'utilizzo dell'una e dell'altra, tra cui:
+\begin{enumerate}
+  \item i \container\ sono più rapidi delle \sacr{vm} nell'esecuzione;
+  \item i \container\ sono più leggeri delle \sacr{vm} in termini di memoria;
+  \item i \container\ sono più adatti a simulare un'architettura a microservizi, dato la relativa semplicità ed efficienza rispetto ad una \sacr{vm};
+  \item le \sacr{vm} sono considerate tendenzialmente più sicure dei \container\;
+  \item le infrastrutture e strumenti di gestione di grandi quantità di \sacr{vm} sono più consolidate dei corrispettivi strumenti associati ai \container.
+\end{enumerate}
+
+% Dati questi presupposti, ho optato per l'implementazione di un sistema basato su i \container\ nel mio progetto di \stage.
+Durante il percorso di stage ho approfondito le mie conoscenze riguardo entrambe le tecnologie, optando di utilizzare i \container\ all'interno del mio progetto di \stage, poichè più efficiente considerate le risorse a mia disposizione.
+La scelta della piattaforma di \container\ è stata quella di Docker.
+% La scelta, in accordo con il tutor aziendale, è dovuta
+Più precisamente, ho utilizzato l'estensione \textit{Docker-compose}\footfullcite{docker-compose} per gestire in modo elegante la generazione e collaudo di più servizi indipententi (figura \thefigure): non solo questo \software\ consente di creare velocemente una rete di \textit{container} comunicanti su di una rete isolata, ma rende anche rapido ed efficiente lo sviluppo grazie alla possibilità di modificare e riavviare rapidamente un singolo servizio.
+Il caso d'uso realizzato nel mio percorso ha simulato grazie ai \container\ un sistema a microservizi che simula le risorse di un grande cliente gestore di telecomunicazioni, secondo una visione coerente con il tipo di clientela reale dell'azienda.
 
 Questo contesto dell'integrazione aziendale porta dunque l'impresa ad avere un'importante propensione all'innovazione, talvolta esplicitamente richiesta dai clienti.
 Una direzione dell'evoluzione attuale nel settore \sacr{eai} riguarda la migrazione verso sistemi sempre più distribuiti, in grado di gestire efficacemente ed in tempo reale flussi di dati in continua crescita.

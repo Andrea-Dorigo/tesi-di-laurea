@@ -9,6 +9,7 @@
 \usepackage{xcolor}
 \usepackage{xurl}
 \usepackage{hyperref}
+\usepackage{array}
 \usepackage{caption}
 \usepackage{float}
 \usepackage{fancyhdr}
@@ -17,6 +18,13 @@
 \usepackage[acronym]{glossaries}
 \usepackage{textcomp}
 \usepackage{csquotes}
+\usepackage{tabularx}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{longtable}
+
+
+
 \usepackage[citestyle=authortitle-ibid, backend=biber, hyperref=true]{biblatex}
 
 \definecolor{unipdred}{RGB}{149, 0, 19}
@@ -96,6 +104,9 @@
 \newacronym{p2p}{P2P}{Point To Point}
 \newacronym{eda}{EDA}{Event Driven Architecture}
 \newacronym{uc}{UC}{Use Case}
+\newacronym{os}{OS}{Operating System}
+\newacronym{vm}{VM}{Virtual Machine}
+
 % ksql
 
 \captionsetup[figure]{font=small,labelfont=small}
@@ -116,6 +127,7 @@
 \newcommand{\stage}{\textit{stage}}
 \newcommand{\software}{\textit{software}}
 \newcommand{\middleware}{\textit{Middleware}}
+\newcommand{\container}{\textit{container}}
 \newcommand{\sacrfoot}[1]{\sacr{#1}\footnote{\textit{\glsentrylong{#1}}}}
 \renewcommand{\sectionmark}[1]{\markright{\small\textsc{\thesection.\ #1}}{}}
 

@@ -6,16 +6,8 @@
 Per soddisfare le richieste dei clienti ed essere sempre competitiva e all'avanguardia, una priorità di Sync Lab sono le esplorazioni tecnologiche e di prodotto anche tramite l'utilizzo di percorsi di \stage\ insieme ai laureandi, come quanto accaduto nella mia esperienza.
 Questi percorsi consentono all'azienda non solo di testare l'utilizzo di nuovi \software\ ma anche di conoscere e mettere alla prova le capacità del laureando in vista di una potenziale assunzione al termine dello \stage.
 % Introduzione al motivo aziendale per cui è nato questo percorso di stage: la propensione odierna alle architetture a microservizi, la gestione di grandi flussi di dati in modo efficiente ed eff1icace, una richiesta di un sistema innovativo da parte della clientela.3
-\begin{figure}[h]
-  \begin{center}
-    \includegraphics[width=0.45\textwidth]{images/distributed.png}
-    \caption{Illustrazione di un sistema distribuito}
-    \captionsetup{aboveskip=2pt}
-    \caption*{\begin{footnotesize}\textit{Fonte:} \url{https://www.delphitools.info/DWSH/}\end{footnotesize}}
-  \end{center}
-\end{figure}
 
-Nel settore dell'\gls{g_eai}, l'evoluzione tecnologica è diretta verso soluzioni sempre più distribuite (figura \thefigure) e con un flusso di dati in continuo aumento.
+Nel settore dell'\gls{g_eai}, l'evoluzione tecnologica è diretta verso soluzioni sempre più distribuite e con un flusso di dati in continuo aumento.
 Uno degli obiettivi specifici nell'area \sacr{eai} di Sync Lab è pertanto quello di trovare un \software\ o tecnologia in grado di soddisfare i bisogni dei clienti di gestire un flusso di dati di dimensioni molto maggiori a quelle attuali, tramite architetture a messaggio che utilizzano servizi distribuiti.
 
 Nell'ambito dei \middleware\ per i sistemi di integrazione, l'aumento del flusso di dati e lo spostamento verso strutture distribuite provoca una difficoltà nella comunicazione e utilizzo di tali dati tra i diversi servizi.
@@ -234,83 +226,184 @@ ove, da sinistra verso destra:
 Di seguito viene presentata la pianificazione settimanale delle ore lavorative previste.
 Ad ogni settimana sono assegnate le voci contenenti gli incrementi previsti in essa, ove i codici utilizzano la notazione descritta precedentemente.
 
-\begin{itemize}
-       \item \textbf{Prima Settimana (40 ore)}
+
+% \usepackage{lscape}
+% \newcolumntype{b}{>{\hsize=0.2\textwidth}X}
+% \newcolumntype{s}{>{\arraybackslash\hsize=0.2\textwidth}X}
+% \newcolumntype{m}{>{\arraybackslash\hsize=0.6\textwidth}X}
+\onehalfspacing
+\begin{small}
+  \begin{center}
+    \centering
+    \renewcommand\arraystretch{1.6}
+    \begin{longtable}{| >{\centering\arraybackslash}m{1.6cm}|m{1.2cm}|m{10.9cm}|}
+      \hline
+      \textbf{Settimana} & \textbf{Codice} & \textbf{Task associati} \\
+      \hline
+
+      \multirow{8}{*}{\normalsize\textbf{1}}
+      & \centering O-1.1 & Incontro con le persone coinvolte nel progetto per discutere i requisiti e le richieste relative al sistema da sviluppare\\
+      \cline{2-3}
+      & \centering O-1.2 & Verifica credenziali e strumenti di lavoro assegnati\\
+      \cline{2-3}
+      & \centering O-1.3 & Presa visione dell’infrastruttura esistente\\
+      \cline{2-3}
+      & \centering D-1.1 & Ripasso approfondito riguardo i seguenti argomenti:
+        \begin{itemize}
+           \item Ingegneria del \software;
+           \item Sistemi di versionamento;
+           \item Architetture \software;
+           \item Cenni di \textit{Networking}.
+         \end{itemize} \\
+     \Xhline{2\arrayrulewidth}
+
+      \multirow{8}{*}{\normalsize\textbf{2}}
+      & \centering O-2.1 & Nozioni fondamentali riguardo \sacr{eai} e \sacrfoot{soa}\\
+      \cline{2-3}
+      & \centering O-2.2 & Approfondimenti riguardo le Architetture a Messaggio, in particolare:
+        \begin{itemize}
+           \item \textit{Integration Styles};
+           \item \textit{Channel Patterns};
+           \item \textit{Message Construction Patterns};
+           \item \textit{Routing Patterns};
+           \item \textit{Transformation Patterns};
+           \item \textit{System Management Patterns}.
+         \end{itemize} \\
+     \Xhline{2\arrayrulewidth}
+
+      \multirow{2}{*}{\normalsize\textbf{3}}
+      & \centering O-3.1 & Apache Kafka:
+        \begin{itemize}
+            \item Introduzione a Kafka;
+            \item Concetti fondamentali di Kafka;
+            \item Avvio e \sacrfoot{cli};
+            \item Programmazione in Kafka con Java.
+          \end{itemize} \\
+      \cline{2-3}
+      & \centering D-3.1 & Esempi e applicazioni di Apache Kafka. \\
+     \Xhline{2\arrayrulewidth}
+
+     \multirow{1}{*}{\normalsize\textbf{4}}
+     & \centering O-4.1 & Confluent Platform:
        \begin{itemize}
-           \item \textbf{O-1.1} Incontro con le persone coinvolte nel progetto per discutere i requisiti e le richieste relative al sistema da sviluppare;
-           \item \textbf{O-1.2} Verifica credenziali e strumenti di lavoro assegnati;
-           \item \textbf{O-1.3} Presa visione dell’infrastruttura esistente;
-           \item \textbf{D-1.1} Ripasso approfondito riguardo i seguenti argomenti:
-             \begin{itemize}
-               \item Ingegneria del \software;
-               \item Sistemi di versionamento;
-               \item Architetture \software;
-               \item Cenni di \textit{Networking}.
-             \end{itemize}
-       \end{itemize}
+         \item \textit{Service registry};
+         \item \sacr{rest} \textit{proxy};
+         \item kSQL;
+         \item Confluent \textit{connectors};
+         \item \textit{Control center}.
+       \end{itemize} \\
+    \Xhline{2\arrayrulewidth}
 
-       \item \textbf{Seconda Settimana (40 ore)}
-       \begin{itemize}
-           \item \textbf{O-2.1} Nozioni fondamentali riguardo \sacr{eai} e \sacrfoot{soa};
-           \item \textbf{O-2.2} Approfondimenti riguardo le Architetture a Messaggio, in particolare:
-             \begin{itemize}
-               \item \textit{Integration Styles};
-               \item \textit{Channel Patterns};
-               \item \textit{Message Construction Patterns};
-               \item \textit{Routing Patterns};
-               \item \textit{Transformation Patterns};
-               \item \textit{System Management Patterns}.
-             \end{itemize}
-       \end{itemize}
+    \multirow{2}{*}{\normalsize\textbf{5}}
+    & \centering O-5.1 & Analisi dei casi d'uso reali\\
+    \cline{2-3}
+    & \centering O-5.2 & Realizzazione dei componenti per l'esecuzione dei casi di test\\
+    \Xhline{2\arrayrulewidth}
 
-       \item \textbf{Terza Settimana (40 ore)}
-       \begin{itemize}
-           \item \textbf{O-3.1} Apache Kafka:
-             \begin{itemize}
-               \item Introduzione a Kafka;
-               \item Concetti fondamentali di Kafka;
-               \item Avvio e \sacrfoot{cli};
-               \item Programmazione in Kafka con Java.
-             \end{itemize}
-           \item \textbf{D-3.1} Esempi e applicazioni di Apache Kafka.
-       \end{itemize}
+    \multirow{1}{*}{\normalsize\textbf{6}}
+    & \centering O-6.1 & Analisi reingegnerizzazione e collaudo del flusso di integrazione asincrono\\
+    \Xhline{2\arrayrulewidth}
+
+    \multirow{1}{*}{\normalsize\textbf{7}}
+    & \centering O-7.1 & Analisi e reingegnerizzazione e collaudo del flusso di integrazione asincrono con callback\\
+    \Xhline{2\arrayrulewidth}
+
+    \multirow{1}{*}{\normalsize\textbf{8}}
+    & \centering O-8.1 & Analisi e reingegnerizzazione e collaudo del flusso di integrazione sincrono.\\
+    \Xhline{2\arrayrulewidth}
 
 
-       \item \textbf{Quarta Settimana (40 ore)}
-       \begin{itemize}
-           \item \textbf{O-4.1} Confluent Platform:
-             \begin{itemize}
-               \item Service registry;
-               \item REST proxy;
-               \item kSQL;
-               \item Confluent connectors;
-               \item Control center.
-             \end{itemize}
-       \end{itemize}
+    \end{longtable}
+  \end{center}
+\end{small}
+\doublespacing
 
-       \item \textbf{Quinta Settimana (40 ore)}
-       \begin{itemize}
-         \item \textbf{O-5.1} Analisi dei casi d'uso reali;
-         \item \textbf{O-5.2} Realizzazione dei componenti per l'esecuzione dei casi di test.
-       \end{itemize}
-
-       \item \textbf{Sesta Settimana (40 ore)}
-       \begin{itemize}
-         \item \textbf{O-6.1} Analisi reingegnerizzazione e collaudo del flusso di integrazione asincrono.
-       \end{itemize}
-
-       \item \textbf{Settima Settimana (40 ore)}
-       \begin{itemize}
-           \item \textbf{O-7.1} Analisi e reingegnerizzazione e collaudo del flusso di integrazione asincrono con callback
-
-       \end{itemize}
-
-       \item \textbf{Ottava Settimana (20 ore)}
-       \begin{itemize}
-           \item \textbf{D-8.1} Analisi e reingegnerizzazione e collaudo del flusso di integrazione sincrono.
-       \end{itemize}
-
-\end{itemize}
+% \begin{table}
+%  \begin{tabularx}{\textwidth}{X*{5}{>{\centering\arraybackslash}X}}
+%  \hline
+%  Sample window & Probability cutoff value & Crises Correctly called (\%) &
+%  Non-crises correctly called (\%) & Missed crises & False Alarm  \\
+%  \hline
+% \end{tabular}
+% \end{table}
+%
+% \begin{itemize}
+%        \item \textbf{Prima Settimana (40 ore)}
+%        \begin{itemize}
+%            \item \textbf{O-1.1} Incontro con le persone coinvolte nel progetto per discutere i requisiti e le richieste relative al sistema da sviluppare;
+%            \item \textbf{O-1.2} Verifica credenziali e strumenti di lavoro assegnati;
+%            \item \textbf{O-1.3} Presa visione dell’infrastruttura esistente;
+%            \item \textbf{D-1.1} Ripasso approfondito riguardo i seguenti argomenti:
+%              \begin{itemize}
+%                \item Ingegneria del \software;
+%                \item Sistemi di versionamento;
+%                \item Architetture \software;
+%                \item Cenni di \textit{Networking}.
+%              \end{itemize}
+%        \end{itemize}
+%
+%        \item \textbf{Seconda Settimana (40 ore)}
+%        \begin{itemize}
+%            \item \textbf{O-2.1} Nozioni fondamentali riguardo \sacr{eai} e \sacrfoot{soa};
+%            \item \textbf{O-2.2} Approfondimenti riguardo le Architetture a Messaggio, in particolare:
+%              \begin{itemize}
+%                \item \textit{Integration Styles};
+%                \item \textit{Channel Patterns};
+%                \item \textit{Message Construction Patterns};
+%                \item \textit{Routing Patterns};
+%                \item \textit{Transformation Patterns};
+%                \item \textit{System Management Patterns}.
+%              \end{itemize}
+%        \end{itemize}
+%
+%        \item \textbf{Terza Settimana (40 ore)}
+%        \begin{itemize}
+%            \item \textbf{O-3.1} Apache Kafka:
+%              \begin{itemize}
+%                \item Introduzione a Kafka;
+%                \item Concetti fondamentali di Kafka;
+%                \item Avvio e \sacrfoot{cli};
+%                \item Programmazione in Kafka con Java.
+%              \end{itemize}
+%            \item \textbf{D-3.1} Esempi e applicazioni di Apache Kafka.
+%        \end{itemize}
+%
+%
+%        \item \textbf{Quarta Settimana (40 ore)}
+%        \begin{itemize}
+%            \item \textbf{O-4.1} Confluent Platform:
+%              \begin{itemize}
+%                \item Service registry;
+%                \item REST proxy;
+%                \item kSQL;
+%                \item Confluent connectors;
+%                \item Control center.
+%              \end{itemize}
+%        \end{itemize}
+%
+%        \item \textbf{Quinta Settimana (40 ore)}
+%        \begin{itemize}
+%          \item \textbf{O-5.1} Analisi dei casi d'uso reali;
+%          \item \textbf{O-5.2} Realizzazione dei componenti per l'esecuzione dei casi di test.
+%        \end{itemize}
+%
+%        \item \textbf{Sesta Settimana (40 ore)}
+%        \begin{itemize}
+%          \item \textbf{O-6.1} Analisi reingegnerizzazione e collaudo del flusso di integrazione asincrono.
+%        \end{itemize}
+%
+%        \item \textbf{Settima Settimana (40 ore)}
+%        \begin{itemize}
+%            \item \textbf{O-7.1} Analisi e reingegnerizzazione e collaudo del flusso di integrazione asincrono con callback
+%
+%        \end{itemize}
+%
+%        \item \textbf{Ottava Settimana (20 ore)}
+%        \begin{itemize}
+%            \item \textbf{D-8.1} Analisi e reingegnerizzazione e collaudo del flusso di integrazione sincrono.
+%        \end{itemize}
+%
+% \end{itemize}
 
 \begin{figure}[h]
   \begin{center}
