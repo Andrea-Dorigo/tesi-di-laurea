@@ -23,7 +23,9 @@
 \usepackage{multirow}
 \usepackage{longtable}
 
+% \newcommand{\mintedoptions}{cachedir=/tmp/mint,outputdir=/aux}
 
+\usepackage[outputdir=aux]{minted}
 
 \usepackage[citestyle=authortitle-ibid, backend=biber, hyperref=true]{biblatex}
 
@@ -106,6 +108,9 @@
 \newacronym{uc}{UC}{Use Case}
 \newacronym{os}{OS}{Operating System}
 \newacronym{vm}{VM}{Virtual Machine}
+\newacronym{http}{HTTP}{HyperText Transfer Protocol}
+\newacronym{esb}{ESB}{Enterprise Service Bus}
+\newacronym{tcp}{TCP}{Transmission Control Protocol}
 
 % ksql
 
@@ -130,6 +135,9 @@
 \newcommand{\container}{\textit{container}}
 \newcommand{\sacrfoot}[1]{\sacr{#1}\footnote{\textit{\glsentrylong{#1}}}}
 \renewcommand{\sectionmark}[1]{\markright{\small\textsc{\thesection.\ #1}}{}}
+
+% \newcommand{\mintedoptions}{outputdir=/aux}
+
 
 
 \let\oldgls\gls

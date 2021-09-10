@@ -36,8 +36,7 @@ Una delle soluzioni che viene maggiormente implementata per risolvere questo pro
   \end{center}
 \end{figure}
 
-Un evento è definito come un'occorrenza significativa o un cambiamento di stato del sistema;
-questo tipo di architettura è pertanto definita per gestire la produzione, il rilevamento e la reazione agli eventi (figura \thefigure) grazie ad un \textit{Design Pattern} di tipo \textit{Publish/Subscribe}, eliminando i problemi visti precedentemente causati dal sistema \sacr{p2p}.
+Questo tipo di architettura è pertanto definita per gestire la produzione, il rilevamento e la reazione agli eventi (figura \thefigure) grazie ad un \textit{Design Pattern} di tipo \textit{Publish/Subscribe}, eliminando i problemi visti precedentemente causati dal sistema \sacr{p2p}.
 Questa architettura prevede l'utilizzo di servizi chiamati \textit{Producer}, il cui scopo è fornire dati al \textit{event bus} centrale.
 Una volta che i dati sono inseriti all'interno del \textit{bus} centrale, ogni servizio in ascolto (\textit{Subscriber}) li riceverà idealmente in tempo reale.
 % \section{L’evoluzione delle architetture di integrazione}
@@ -75,20 +74,16 @@ Per soddisfare le esigenze di innovazione l'azienda ha avviato un percorso per i
   \end{center}
 \end{figure}
 
-Kafka è una piattaforma di \textit{event streaming}, un sistema distribuito e moderno basato sugli eventi anzichè su di una soluzione più classica come può essere quella del \textit{request/response} e \sacr{p2p}.
-Apache Kafka si integra ottimamente in molti sistemi basati sul \textit{messaging pattern}, in cui lo scambio affidabile di dati in tempo reale è essenziale (in figura \thefigure\ è illustrato un caso d'uso esemplificativo di un sistema distribuito basato su Kafka).
+Apache Kafka si integra ottimamente in molti sistemi basati sul \textit{messaging pattern} e una \sacr{eda}, in cui lo scambio affidabile di dati tra numerosi servizi in tempo reale è essenziale (in figura \thefigure\ è illustrato un caso d'uso esemplificativo di un sistema distribuito basato su Kafka).
 
-Il \software\ ha dimostrato negli anni recenti un notevole successo in diversi campi\footnote{Fonte: \url{https://kafka.apache.org/powered-by}}, come quello del flusso di \textit{Big Data}, del monitoraggio e dell'elaborazione dati in tempo reale.
-L'adozione del \software\ nell'ambito del \sacr{eai} è in crescita dato le dimostrate qualità nel gestire grandi moli di dati: la sua performance, sicurezza e scalabilità sono i punti che hanno portato il software al suo attuale successo.
-
-\begin{figure}[h]
-  \begin{center}
-    \includegraphics[width=0.35\textwidth, trim={0.07cm 0 0 0},clip]{images/microservices.png}
-    \caption{Illustrazione di un sistema a microservizi con comunicazioni tramite \sacr{api}}
-    \captionsetup{aboveskip=2pt}
-    \caption*{\begin{footnotesize}\textit{Fonte:} \url{https://medium.com/@riyaznet/building-serverless-microservices-on-aws-3959a93c2549}\end{footnotesize}}
-  \end{center}
-\end{figure}
+% \begin{figure}[h]
+%   \begin{center}
+%     \includegraphics[width=0.35\textwidth, trim={0.07cm 0 0 0},clip]{images/microservices.png}
+%     \caption{Illustrazione di un sistema a microservizi con comunicazioni tramite \sacr{api}}
+%     \captionsetup{aboveskip=2pt}
+%     \caption*{\begin{footnotesize}\textit{Fonte:} \url{https://medium.com/@riyaznet/building-serverless-microservices-on-aws-3959a93c2549}\end{footnotesize}}
+%   \end{center}
+% \end{figure}
 
 L'interesse di Sync Lab nel \software\ risiede dunque nell'utilizzo di Kafka come un  \textit{Middleware} per soddisfare i problemi di integrazione aziendale e reingegnerizzare i flussi di dati preesistenti, ovvero sviluppare un nuovo sistema che consenta la comunicazione tra differenti servizi con un rapido flusso di dati fra di essi (in figura \thefigure, un semplice sistema a microservizi indipendenti).
 
