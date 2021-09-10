@@ -142,6 +142,7 @@ Per tenere traccia del lavoro svolto riguardante una specifica attività ho util
 
 Questa \textit{card} contiene una casella di testo per inserire una descrizione e appunti utili ove sia richiesto, una \textit{checklist} approfondita, e una colonna che mantiene uno storico dei commenti; quest'ultima colonna non solo permette a me di mantenere un'importante resoconto sul lavoro svolto, ma consente anche al tutor aziendale e esperti del settore di quantificare il progresso e di fornire un aiuto rapido e contestuale.
 
+Per la condivisione di codice è stato possibile utilizzare uno strumento a mia discrezione, e pertanto ho utilizzato Git per creare una \textit{repository} e successivamente ne ho fatto l'upload in modalità privata (secondo indicazioni aziendali) su Github.
 
 \section{Ambiente di lavoro}
 
@@ -356,7 +357,7 @@ Più precisamente, ho utilizzato l'estensione \textit{Docker-compose}\footfullci
   \caption{Frammento di codice che espone un esempio di ambiente \textit{multi-container} con docker-compose }
 \end{figure}
 
-Come si può vedere in figura \thefigure, è relativamente semplice e veloce creare un ambiente composto da due container (il servizio intitolato "web", composto a partire dalla cartella corrente e accessibile alla porta 5000, e il servizio "redis", generato a partire da un'immagine predefinita, entrambi connessi alla stessa rete locale di default di Docker.
+Come si può vedere in figura \thefigure, è relativamente semplice e veloce creare un ambiente composto da due container (il servizio intitolato \texttt{web}, composto a partire dalla cartella corrente e accessibile alla porta 5000, e il servizio \texttt{redis}, generato a partire da un'immagine predefinita, entrambi connessi alla stessa rete locale di default di Docker.
 
 Il caso d'uso realizzato nel mio percorso ha simulato grazie ai \container\ un sistema a microservizi che simula le risorse di un grande cliente gestore di telecomunicazioni, secondo una visione coerente con il tipo di clientela reale dell'azienda.
 % TODO: completare il collegamento tra sopra e sotto;
