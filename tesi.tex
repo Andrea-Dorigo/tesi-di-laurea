@@ -120,6 +120,20 @@
 
 \urlstyle{tt}
 
+\newenvironment{mycode}[1]
+ {\VerbatimEnvironment
+  \begin{minted}[
+      xleftmargin=2em,
+      fontsize=\footnotesize,
+      bgcolor=lightgray!10,
+      autogobble=true,
+      numbers=left,
+      frame=none,
+      framesep=2mm,
+      baselinestretch=1
+      ]{#1}}
+  {\end{minted}}
+
 \begin{document}
 
 \pagestyle{fancy}

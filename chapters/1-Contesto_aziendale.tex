@@ -328,33 +328,73 @@ Durante il percorso di stage ho approfondito le mie conoscenze riguardo entrambe
 La scelta della piattaforma di \container\ è stata quella di Docker.
 % La scelta, in accordo con il tutor aziendale, è dovuta
 Più precisamente, ho utilizzato l'estensione \textit{Docker-compose}\footfullcite{docker-compose} per gestire in modo elegante la generazione e collaudo di più servizi indipententi (figura \thefigure): non solo questo \software\ consente di creare velocemente una rete di \textit{container} comunicanti su di una rete isolata, ma rende anche rapido ed efficiente lo sviluppo grazie alla possibilità di modificare e riavviare rapidamente un singolo servizio.
+%
+% \begin{figure}[H]
+%   \begin{minted}[
+%       xleftmargin=2em,
+%       fontsize=\small,
+%       bgcolor=lightgray!10,
+%       autogobble=true,
+%       numbers=left,
+%       frame=none,
+%       framesep=2mm,
+%       baselinestretch=1]
+%       {yaml}
+%   version: "3.9"
+%   services:
+%     web:
+%       build: .
+%       ports:
+%         - "5000:5000"
+%       volumes:
+%         - .:/code
+%         - logvolume01:/var/log
+%       links:
+%         - redis
+%     redis:
+%       image: redis
+%   \end{minted}
+%   \caption{Frammento di codice che espone un esempio di ambiente \textit{multi-container} con docker-compose }
+% \end{figure}
+% \begin{mycode}{json}{Frammento di codice che espone un esempio di ambiente \textit{multi-container} con docker-compose}
+%   version: "3.9"
+%   services:
+%     web:
+%       build: .
+%       ports:
+%         - "5000:5000"
+%       volumes:
+%         - .:/code
+%         - logvolume01:/var/log
+%       links:
+%         - redis
+%     redis:
+%       image: redis
+% \end{mycode}
 
+% \begin{mycode}{latex}{some caption}{code:label}
+% My code here
+% \end{mycode}
 \begin{figure}[H]
-  \begin{minted}[
-      xleftmargin=2em,
-      fontsize=\small,
-      bgcolor=lightgray!10,
-      autogobble=true,
-      numbers=left,
-      frame=none,
-      framesep=2mm,
-      baselinestretch=1]
-      {yaml}
-  version: "3.9"
-  services:
-    web:
-      build: .
-      ports:
-        - "5000:5000"
-      volumes:
-        - .:/code
-        - logvolume01:/var/log
-      links:
-        - redis
-    redis:
-      image: redis
-  \end{minted}
-  \caption{Frammento di codice che espone un esempio di ambiente \textit{multi-container} con docker-compose }
+  \begin{mycode}{yaml}
+      version: "3.9"
+      services:
+        web:
+          build: .
+          ports:
+            - "5000:5000"
+          volumes:
+            - .:/code
+            - logvolume01:/var/log
+          links:
+            - redis
+        redis:
+          image: redis
+  \end{mycode}
+  \caption{Frammento di codice che espone un esempio di ambiente \textit{multi-container} con docker-compose}
+  \captionsetup{aboveskip=2pt}
+  \caption*{\begin{footnotesize}\textit{Fonte: elaborazione personale}\end{footnotesize}}
+
 \end{figure}
 
 Come si può vedere in figura \thefigure, è relativamente semplice e veloce creare un ambiente composto da due container (il servizio intitolato \texttt{web}, composto a partire dalla cartella corrente e accessibile alla porta 5000, e il servizio \texttt{redis}, generato a partire da un'immagine predefinita, entrambi connessi alla stessa rete locale di default di Docker.
