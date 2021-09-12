@@ -28,7 +28,7 @@ Questo ha permesso al tutor di verificare rapidamente il corretto avanzamento de
 Il processo di Formazione ha avuto un importante ruolo all'interno dello \textit{stage}, con una durata complessiva di circa quattro settimane.
 La causa di questo lungo periodo di formazione è data dallo studio di diversi ambiti e concetti per me nuovi, in particolare il settore del \textit{\acrlong{eai}} e la tecnologia di Kafka.
 
-\bigskip
+% \bigskip
 \begin{figure}[h]
   \begin{center}
     \includegraphics[width=0.7\textwidth]{images/coursera_week2.png}
@@ -55,18 +55,18 @@ La \textit{request} avviene tramite flusso di un file \sacrfoot{json} che viene 
 
 Va precisato che il contenuto di tale \sacr{json} non è strettamente rilevante allo sviluppo e funzionamento del \textit{Middleware}, ma aiuta a stabilire il contesto di utilizzo.
 
-\bigskip
-\begin{figure}[h]
-  \begin{center}
-    \includegraphics[width=\textwidth, trim={0.08cm 0 0 0.08cm},clip]{images/uc_sequence.png}
-    \caption{Diagramma di sequenza \sacr{uml} per il prototipo di caso d'uso iniziale}
-    \captionsetup{aboveskip=2pt}
-    \caption*{\begin{footnotesize}\textit{Fonte: elaborazione personale}\end{footnotesize}}
-  \end{center}
-\end{figure}
+% \bigskip
+% \begin{figure}[h]
+%   \begin{center}
+%     \includegraphics[width=\textwidth, trim={0.08cm 0 0 0.08cm},clip]{images/uc_sequence.png}
+%     \caption{Diagramma di sequenza \sacr{uml} per il prototipo di caso d'uso iniziale}
+%     \captionsetup{aboveskip=2pt}
+%     \caption*{\begin{footnotesize}\textit{Fonte: elaborazione personale}\end{footnotesize}}
+%   \end{center}
+% \end{figure}
 
 \noindent
-Il caso d'uso (figura \thefigure) è composto dai seguenti passaggi:
+Il caso d'uso è composto dai seguenti passaggi:
 \begin{enumerate}
   \item il cliente (\textit{\sacrfoot{ws} Client}) effettua una richiesta di credito tramite invio di un file \sacr{json} al successivo Servizio Web in ascolto.
   \item il servizio composto da \sacrfoot{rest} \sacr{ws} e \textit{Request Producer} riceve il \sacr{json} e lo inserisce in Kafka tramite l'apposito \textit{Kafka Producer}, assumendo la funzione di \textit{publisher}.
@@ -97,7 +97,7 @@ L'obiettivo della progettazione è modellare un \middleware\ che sia implementab
 \end{figure}
 
 In figura \thefigure\ è rappresentata una visione ad alto livello dell'implementazione di un'applicazione a microservizi all'interno di una \sacr{soa}, evidenziando la differenza tra i due concetti.
-\bigskip
+% \bigskip
 
 Per rappresentare in modo chiaro ed elegante il modello descritto dal \sacr{uc} sopra, ho elaborato diversi diagrammi \sacr{uml}.
 % I diagrammi di maggiore rilevanza, oltre ad essere esposti all'interno di questa sezione accanto alla spiegazione associata, sono allegati in formato più grande a
@@ -105,34 +105,36 @@ Questi diagrammi rappresentano i componenti \textit{color coded}, notazione util
 
 \subsubsection{\sacr{uml} \textit{sequence diagrams}}
 
-\begin{figure}[H]
-  \begin{center}
-    \includegraphics[width=\textwidth, trim={0.2cm 0 0 0.2cm},clip]{images/a_sequence2.png}
-    \caption{Diagramma \sacr{uml} di sequenza per la reingegnerizzazione del flusso asincrono}
-    \captionsetup{aboveskip=2pt}
-    \caption*{\begin{footnotesize}\textit{Fonte: elaborazione personale}\end{footnotesize}}
-  \end{center}
-\end{figure}
+% \begin{figure}[H]
+%   \begin{center}
+%     \includegraphics[width=\textwidth, trim={0.2cm 0 0 0.2cm},clip]{images/a_sequence2.png}
+%     \caption{Diagramma \sacr{uml} di sequenza per la reingegnerizzazione del flusso asincrono}
+%     \captionsetup{aboveskip=2pt}
+%     \caption*{\begin{footnotesize}\textit{Fonte: elaborazione personale}\end{footnotesize}}
+%   \end{center}
+% \end{figure}
 
-A partire dallo \sacr{uc} descritto nela sezione precedente, ho prodotto un \sacr{uml} \textit{sequence diagram} più approfondito per rappresentare il flusso del \sacr{json} tra i vari componenti (figura \thefigure).
+A partire dallo \sacr{uc} descritto nela sezione precedente, ho prodotto un \sacr{uml} \textit{sequence diagram} più approfondito per rappresentare il flusso del \sacr{json} tra i vari componenti.
+% (figura \thefigure).
 
-\begin{figure}[h]
-  \begin{center}
-    \includegraphics[width=\textwidth]{images/ac_sequence.png}
-    \caption{Diagramma di sequenza \sacr{uml} per la reingegnerizzazione del flusso asincrono con \textit{callback}}
-    \captionsetup{aboveskip=2pt}
-    \caption*{\begin{footnotesize}\textit{Fonte: elaborazione personale}\end{footnotesize}}
-  \end{center}
-\end{figure}
+% \begin{figure}[h]
+%   \begin{center}
+%     \includegraphics[width=\textwidth]{images/ac_sequence.png}
+%     \caption{Diagramma di sequenza \sacr{uml} per la reingegnerizzazione del flusso asincrono con \textit{callback}}
+%     \captionsetup{aboveskip=2pt}
+%     \caption*{\begin{footnotesize}\textit{Fonte: elaborazione personale}\end{footnotesize}}
+%   \end{center}
+% \end{figure}
 
-La progettazione del sistema associato al caso asincrono con \textit{callback} comprende lo stesso schema \sacr{uml} del caso asincrono, con aggiunta del flusso di ritorno descritto nella figura \thefigure.
+La progettazione del sistema associato al caso asincrono con \textit{callback} comprende lo stesso schema \sacr{uml} del caso asincrono, con aggiunta del flusso di ritorno speculare flusso di andata
+% descritto nella figura \thefigure.
 
 La reingegnerizzazione del flusso sincrono è stata scartata in favore dello studio di funzionalità aggiuntive tramite l'utilizzo della piattaforma di \textit{event streaming}.
 La progettazione di un sistema basato su questo flusso era inizialmente prevista (come requisito desiderabile) nel piano di lavoro iniziale poiché associata ad un caso d'uso reale (di cui si è parlato nelle sezioni precedenti), ma infine è stata giudicata poco opportuna e fuori dagli scopi di Apache Kafka, un sistema basato sull'asincronicità.
 
 Il tempo associato a tale requisito è stato pertanto riproposto per testare un'altra funzione utile in un \middleware\, quali la trasformazione di alcuni dati presenti nel \sacr{json}.
 Più precisamente, è stato aggiunto un dato sensibile che viene nascosto e sostituito con asterischi "*" dopo la produzione del \textit{topic} in Kafka grazie all'utilizzo di Kafka Streams.
-\bigskip
+% \bigskip
 \begin{figure}[h]
   \begin{center}
     \includegraphics[width=\textwidth]{images/ap_sequence.png}
@@ -234,7 +236,8 @@ Ho pertanto creato un \sacr{http} \textit{server} minimale in Java attraverso il
 Sviluppi futuri vedrebbero probabilmente l'utilizzo di un \textit{framework} più evoluto come Spring Boot\footfullcite{spring}.
 Un altro \textit{thread} si occupa invece dell'invio delle \sacr{rest} \textit{request} al servizio di destinazione, una volta ricevuto un evento da parte del \textit{consumer}.
 
-\bigskip\noindent
+% \bigskip
+\noindent
 L'insieme di questi componenti formano i blocchi logici illustrati in verde nella sezione precedente, in cui il primo servizio è formato da:
 \begin{itemize}
   \item \sacr{rest} \textit{\acrlong{ws}} (\sacr{http} \textit{server} in ascolto);
@@ -311,7 +314,7 @@ a questa
   \captionsetup{aboveskip=2pt}
   \caption*{\begin{footnotesize}\textit{Fonte: elaborazione personale}\end{footnotesize}}
 \end{figure}
-
+\noindent
 in cui si può notare che l'ultimo dato ha subito la modifica descritta.
 
 Ho implementato questa funzione utilizzando Kafka Streams\footfullcite{streams}, che permette di leggere un \textit{topic} e modificarlo istantaneamente per un'elaborazione in \textit{real time}.
@@ -323,7 +326,7 @@ Questi provvedimenti riguardano principalmente l'ottimizzazione del sistema di \
 
 Tutti le misure prese sono strettamente legate alla mia famigliarità con alcune tecnologie e al risorse personali richieste per l'apprendimento e sviluppo di una nuova funzionalità.
 
-\bigskip\noindent
+\noindent
 Elenco i principali provvedimenti intrapresi per minimizzare il tempo di sviluppo:
 \begin{itemize}
   \item \textbf{ottimizzazione delle risorse utilizzati dai \textit{container}}.
