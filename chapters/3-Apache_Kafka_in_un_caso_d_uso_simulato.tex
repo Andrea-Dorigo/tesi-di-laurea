@@ -1,5 +1,5 @@
 % \chapter{Apache Kafka in caso d’uso simulato}
-\chapter{Il percorso di \textit{stage}}
+\chapter{Il percorso di stage}
 
 
 \section{Definizione di un \textit{way of working}}
@@ -146,6 +146,7 @@ In figura \thefigure\ possiamo vedere il nuovo flusso asincrono con protezione (
 La versione con \textit{callback} del flusso qui sopra prevede anche il flusso di ritorno (\textit{callback}), non illustrato in figura ma facilmente intuibile grazie al grafico che la precede.
 
 \subsubsection{\sacr{uml} \textit{deployment diagrams}}
+\label{sub:uml_deployment}
 
 A supporto di questi \sacr{uml} \textit{sequence diagram} che rappresentano efficacemente il flusso di dati, punto focale dell'intero sistema di integrazione (asincrono con la protezione del dato sensibile), ho prodotto ulteriori diagrammi, tra i quali il \textit{deployment diagram}.
 Questo diagramma ha lo scopo di rappresentare la configurazione dei processi \textit{run time}, modellando la struttura di base in cui eseguono i diversi servizi;
@@ -169,6 +170,7 @@ All'interno di questi nodi sono rappresentati gli artefatti che eseguono nel rel
 Si può inoltre notare che l'ambiente di Apache Kafka è composto da un \textit{cluster} composto da due servizi \textit{Broker} e tre servizi \textit{Zookeeper}, allo scopo di simulare un caso d'uso reale in cui i diversi componenti sono distribuiti in sistemi indipendenti e garantiscono l'affidabilità dello \textit{streaming} di eventi.
 
 \subsubsection{\sacr{uml} \textit{component diagram}}
+\label{sub:uml_component}
 
 \begin{figure}[H]
   \begin{center}
@@ -343,4 +345,4 @@ Elenco i principali provvedimenti intrapresi per minimizzare il tempo di svilupp
 A seguito di tutte le dovute verifiche, il prodotto finale è stato più volte collaudato con la supervisione del tutor aziendale e il responsabile del \sacr{eai}.
 Tutti i \textit{container} prodotti sono stati revisionati, compresa la loro corretta esecuzione.
 
-Infine, è stato presentato all'azienda in conclusione del percorso di \stage\ in un \textit{online meeting} con l'aiuto di alcune diapositive da me prodotte e una dimostrazione \textit{live} del \software\ in esecuzione tramite la condivisione del mio schermo.
+Infine, è stato presentato all'azienda in conclusione del percorso di \stage\ in un \textit{online meeting} con l'aiuto di alcune diapositive da me prodotte e una dimostrazione \textit{live} del \software\ in esecuzione tramite la condivisione dello schermo.

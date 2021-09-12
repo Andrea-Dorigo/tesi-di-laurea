@@ -194,7 +194,7 @@ I meeting saranno necessariamente online, dato il dislocamento dei vari membri i
 Lo scopo di questi incontri sarà quello di verificare lo stato di avanzamento, chiarire gli obiettivi ove necessario, affinare la ricerca e aggiornare la pianificazione iniziale.
 
 \subsection{Pianificazione del lavoro}
-
+\label{sec:pianificazione}
 Ad ogni incremento è associato un requisito obbligatorio, desiderabile o facoltativo.
 A questi requisiti vi è associato un codice identificativo per favorirne il tracciamento futuro, in che precede la voce descrittiva dell'incremento.
 \noindent
@@ -237,9 +237,9 @@ Tutte le settimane prevedono 40 ore lavorative, fatta eccezione per l'ultima che
   \begin{center}
     \centering
     \renewcommand\arraystretch{1.6}
-    \begin{longtable}{| >{\centering\arraybackslash}m{1.6cm}|m{1.2cm}|m{10.9cm}|}
+    \begin{longtable}{| >{\centering\arraybackslash}m{2cm}|m{1.2cm}|m{10.5cm}|}
       \hline
-      \textbf{Settimana} & \textbf{Codice} & \textbf{Task associati} \\
+      \textsc{\textbf{Settimana}} & \textsc{\textbf{Codice}} & \textsc{\textbf{Task associati}} \\
       \hline
 
       \multirow{8}{*}{\normalsize\textbf{1}}
@@ -250,6 +250,7 @@ Tutte le settimane prevedono 40 ore lavorative, fatta eccezione per l'ultima che
       & \centering O-1.3 & Presa visione dell’infrastruttura esistente\\
       \cline{2-3}
       & \centering D-1.1 & Ripasso approfondito riguardo i seguenti argomenti:
+      \smallskip
         \begin{itemize}
            \item Ingegneria del \software;
            \item Sistemi di versionamento;
@@ -281,7 +282,7 @@ Tutte le settimane prevedono 40 ore lavorative, fatta eccezione per l'ultima che
             \item Programmazione in Kafka con Java.
           \end{itemize} \\
       \cline{2-3}
-      & \centering D-3.1 & Esempi e applicazioni di Apache Kafka. \\
+      & \centering D-3.1 & Esempi e applicazioni di Apache Kafka \\
      \Xhline{2\arrayrulewidth}
 
      \multirow{1}{*}{\normalsize\textbf{4}}
@@ -310,9 +311,10 @@ Tutte le settimane prevedono 40 ore lavorative, fatta eccezione per l'ultima che
     \Xhline{2\arrayrulewidth}
 
     \multirow{1}{*}{\normalsize\textbf{8}}
-    & \centering O-8.1 & Analisi e reingegnerizzazione e collaudo del flusso di integrazione sincrono.\\
+    & \centering O-8.1 & Analisi e reingegnerizzazione e collaudo del flusso di integrazione sincrono\\
     \hline
     \caption{Pianificazione settimanale dello \textit{stage}}
+    \label{tab:pianificazione}
     \end{longtable}
   \end{center}
 \end{small}
