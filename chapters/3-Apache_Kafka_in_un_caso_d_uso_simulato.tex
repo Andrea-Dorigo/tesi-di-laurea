@@ -13,12 +13,12 @@ Rispetto alla concorrenza questa \textit{board} è ricca di funzionalità, pulit
 
 All'inizio del percorso il tutor aziendale e il responsabile del \sacr{eai} hanno creato delle \textit{card} contenenti le attività previste per ogni settimana (\textit{task}) al fine di fornire una struttura generale del progetto.
 All'interno di questi \textit{task} vi sono i concetti chiave, attività previste e obiettivi settimanali che lo stagista è tenuto a seguire per garantire l'efficacia del prodotto finale.
-Oltre a questi \textit{task} principali, ho potuto creare di \textit{task} ausiliari e dei \textit{subtask} per descrivere più adeguatamente l'attività in corso.
+Oltre a questi \textit{task} principali, ho potuto creare di \textit{task} ausiliari e dei \textit{sub-task} per descrivere più adeguatamente l'attività in corso.
 
 Ciascun \textit{task} contiene una colonna laterale dove ho mantenuto un \textit{log} di tutto ciò che è stato eseguito relativo al \textit{task} in questione, allo scopo di esplicitarne il progresso e rendere agevole un eventuale supporto dal tutor o l'evoluzione futura.
 
 Ogni settimana è previsto un \textit{online meeting} per la verifica del progresso ove necessario, la risposta ad eventuali questioni sollevate, e spiegazioni riguardo lo sviluppo della settimana successiva.
-Alcune di queste videoconferenze ha visto la partecipazione di altri esperti che mi hanno aiutato a comprendere meglio il caso d'uso da reingegnerizzare, riassumendo lo stato attuale del sistema d'integrazione per uno dei clienti con relativi \textit{file} utilizzati.
+Alcune di queste videoconferenze ha visto la partecipazione di altri esperti che mi hanno aiutato a comprendere meglio il caso d'uso da re-ingegnerizzare, riassumendo lo stato attuale del sistema d'integrazione per uno dei clienti con relativi \textit{file} utilizzati.
 
 Per mantenere alto il livello di organizzazione, efficienza ed efficacia, all'inizio di ogni giornata lavorativa ho creato un breve piano giornaliero con successivo consuntivo a fine giornata.
 Questo ha permesso al tutor di verificare rapidamente il corretto avanzamento del processo in corso e a me di mantenere il \textit{focus} su di esso.
@@ -50,8 +50,8 @@ Per i corsi online a maggiore contenuto nozionistico ho redatto degli appunti ri
 Ad alcune videoconferenze ha partecipato anche un esperto \textit{senior} aziendale, esterno al progetto di \stage\ in questione, per illustrarmi un caso d'uso in cui l'azienda ha esposto un prototipo di sistema di integrazione utilizzando i concetti di \textit{Web Service}, \sacrfoot{soap} e \textit{request/response}, permettendomi la visualizzazione dei file \sacrfoot{wsdl}, \sacrfoot{xml} e \sacrfoot{xsd} associati.
 Ho pertanto generato un caso d'uso adatto agli scopi dello \stage\ ispirandomi al caso d'uso reale illustrato.
 
-Il caso d'uso modellato tratta una richiesta di credito telefonico da parte di un cliente ad un'azienda di telecomunicazioni tramite \textit{Web Service}, per soddisfare il requisito dello sviluppo della reingegnerizzazione del flusso di dati asincrono.
-La \textit{request} avviene tramite flusso di un file \sacrfoot{json} che viene trasmesso attraverso i vari servizi che compongono il sistema di integrazione, basatosul \textit{Design Pattern} di tipo \textit{publish/subscribe}.
+Il caso d'uso modellato tratta una richiesta di credito telefonico da parte di un cliente ad un'azienda di telecomunicazioni tramite \textit{Web Service}, per soddisfare il requisito dello sviluppo della re-ingegnerizzazione del flusso di dati asincrono.
+La \textit{request} avviene tramite flusso di un file \sacrfoot{json} che viene trasmesso attraverso i vari servizi che compongono il sistema di integrazione, basato sul \textit{Design Pattern} di tipo \textit{publish/subscribe}.
 
 Va precisato che il contenuto di tale \sacr{json} non è strettamente rilevante allo sviluppo e funzionamento del \textit{Middleware}, ma aiuta a stabilire il contesto di utilizzo.
 
@@ -74,15 +74,16 @@ Il caso d'uso è composto dai seguenti passaggi:
   \item il servizio in coda chiamato \sacr{ws} \textit{Provider} riceve il \sacr{json}; grazie ai dati ricevuti è in grado di fornire il servizio richiesto dal \textit{Client} nello \textit{step} 1.
 \end{enumerate}
 
-La modellazione dell'architetture e struttura del sistema da sviluppare seguirà questo prototipo di \sacrfoot{uc}.
+La modellazione dell'architettura e struttura del sistema da sviluppare seguirà questo prototipo di \sacrfoot{uc}.
 Il modello associato al caso asincrono con \textit{callback} seguirà la stessa struttura e \textit{step} dello \sacr{uc} illustrato qui sopra, con l'aggiunta speculare del messaggio di ritorno.
 
 \section{Progettazione architetturale}\label{sec:progettazione}
+\subsection{Un \textit{middleware} basato su un \sacr{eda}}
 
 La progettazione architetturale ha portato alla produzione di diversi diagrammi \sacr{uml} per rappresentare efficacemente l'architettura del prodotto e fornire un modello da seguire durante il processo di sviluppo.
 Il processo ha richiesto frequenti \textit{meeting} e confronti per raggiungere un risultato finale soddisfacente al fine della sperimentazione.
 
-La progettazione architetturale del prodotto comprende un \middleware\ centrale basato su di una \textit{acrlong{eda}} con l'utilizzo di Apache Kafka, e due componenti di \textit{testing} chiamati \textit{service client} e \textit{service provider}, che simulano due servizi esterni che comunicano con il middleware attraverso \sacr{rest} \textit{request}.
+La progettazione architetturale del prodotto comprende un \middleware\ centrale basato su di una \textit{\acrlong{eda}} con l'utilizzo di Apache Kafka, e due componenti di \textit{testing} chiamati \textit{service client} e \textit{service provider}, che simulano due servizi esterni che comunicano con il middleware attraverso \sacr{rest} \textit{request}.
 
 Il sistema è composto da molteplici microservizi, che comunicano attraverso la rete di Docker.
 L'obiettivo della progettazione è modellare un \middleware\ che sia implementabile in una \textit{\acrlong{soa}}, e consentirne la verifica e collaudo grazie ai servizi di \textit{testing}.
@@ -103,7 +104,7 @@ Per rappresentare in modo chiaro ed elegante il modello descritto dal \sacr{uc} 
 % I diagrammi di maggiore rilevanza, oltre ad essere esposti all'interno di questa sezione accanto alla spiegazione associata, sono allegati in formato più grande a
 Questi diagrammi rappresentano i componenti \textit{color coded}, notazione utilizzata per dare continuità e chiarezza attraverso le diverse tipologie di \sacr{uml} \textit{diagrams}.
 
-\subsubsection{\sacr{uml} \textit{sequence diagrams}}
+\subsection{\sacr{uml} \textit{sequence diagrams}}
 
 % \begin{figure}[H]
 %   \begin{center}
@@ -114,7 +115,7 @@ Questi diagrammi rappresentano i componenti \textit{color coded}, notazione util
 %   \end{center}
 % \end{figure}
 
-A partire dallo \sacr{uc} descritto nela sezione precedente, ho prodotto un \sacr{uml} \textit{sequence diagram} più approfondito per rappresentare il flusso del \sacr{json} tra i vari componenti.
+A partire dallo \sacr{uc} descritto nella sezione precedente, ho prodotto un \sacr{uml} \textit{sequence diagram} più approfondito per rappresentare il flusso del \sacr{json} tra i vari componenti.
 % (figura \thefigure).
 
 % \begin{figure}[h]
@@ -129,8 +130,8 @@ A partire dallo \sacr{uc} descritto nela sezione precedente, ho prodotto un \sac
 La progettazione del sistema associato al caso asincrono con \textit{callback} comprende lo stesso schema \sacr{uml} del caso asincrono, con aggiunta del flusso di ritorno speculare flusso di andata
 % descritto nella figura \thefigure.
 
-La reingegnerizzazione del flusso sincrono è stata scartata in favore dello studio di funzionalità aggiuntive tramite l'utilizzo della piattaforma di \textit{event streaming}.
-La progettazione di un sistema basato su questo flusso era inizialmente prevista (come requisito desiderabile) nel piano di lavoro iniziale poiché associata ad un caso d'uso reale (di cui si è parlato nelle sezioni precedenti), ma infine è stata giudicata poco opportuna e fuori dagli scopi di Apache Kafka, un sistema basato sull'asincronicità.
+La re-ingegnerizzazione del flusso sincrono è stata scartata in favore dello studio di funzionalità aggiuntive tramite l'utilizzo della piattaforma di \textit{event streaming}.
+La progettazione di un sistema basato su questo flusso era inizialmente prevista (come requisito desiderabile) nel piano di lavoro iniziale poiché associata ad un caso d'uso reale (di cui si è parlato nelle sezioni precedenti), ma infine è stata giudicata poco opportuna e fuori dagli scopi di Apache Kafka, un sistema basato sull'asincronismo.
 
 Il tempo associato a tale requisito è stato pertanto riproposto per testare un'altra funzione utile in un \middleware\, quali la trasformazione di alcuni dati presenti nel \sacr{json}.
 Più precisamente, è stato aggiunto un dato sensibile che viene nascosto e sostituito con asterischi "*" dopo la produzione del \textit{topic} in Kafka grazie all'utilizzo di Kafka Streams.
@@ -138,7 +139,7 @@ Più precisamente, è stato aggiunto un dato sensibile che viene nascosto e sost
 \begin{figure}[h]
   \begin{center}
     \includegraphics[width=\textwidth]{images/ap_sequence.png}
-    \caption{Diagramma di sequenza \sacr{uml} per la reingegnerizzazione del flusso asincrono con protezione dei dati sensibili.}
+    \caption{Diagramma di sequenza \sacr{uml} per la re-ingegnerizzazione del flusso asincrono con protezione dei dati sensibili.}
     \captionsetup{aboveskip=2pt}
     \caption*{\begin{footnotesize}\textit{Fonte: elaborazione personale}\end{footnotesize}}
   \end{center}
@@ -147,7 +148,7 @@ Più precisamente, è stato aggiunto un dato sensibile che viene nascosto e sost
 In figura \thefigure\ possiamo vedere il nuovo flusso asincrono con protezione (mascheramento) del dato sensibile.
 La versione con \textit{callback} del flusso qui sopra prevede anche il flusso di ritorno (\textit{callback}), non illustrato in figura ma facilmente intuibile grazie al grafico che la precede.
 
-\subsubsection{\sacr{uml} \textit{deployment diagrams}}
+\subsection{\sacr{uml} \textit{deployment diagrams}}
 \label{sub:uml_deployment}
 
 A supporto di questi \sacr{uml} \textit{sequence diagram} che rappresentano efficacemente il flusso di dati, punto focale dell'intero sistema di integrazione (asincrono con la protezione del dato sensibile), ho prodotto ulteriori diagrammi, tra i quali il \textit{deployment diagram}.
@@ -159,7 +160,7 @@ Con l'approvazione degli esperti aziendali, ho deciso di appoggiare il sistema d
 \begin{figure}[h]
   \begin{center}
     \includegraphics[width=\textwidth,  trim={0 0.2cm 0.2cm 0},clip]{images/ap_deployment.png}
-    \caption{\sacr{uml} \textit{deployment diagram} per la reingegnerizzazione del flusso asincrono (protetto)}
+    \caption{\sacr{uml} \textit{deployment diagram} per la re-ingegnerizzazione del flusso asincrono (protetto)}
     \captionsetup{aboveskip=2pt}
     \caption*{\begin{footnotesize}\textit{Fonte: elaborazione personale}\end{footnotesize}}
   \end{center}
@@ -167,17 +168,17 @@ Con l'approvazione degli esperti aziendali, ho deciso di appoggiare il sistema d
 
 Il diagramma di \textit{deployment} (figura \thefigure) vede pertanto l'utilizzo di numerosi \textit{container} indipendenti che dialogano attraverso una rete locale all'interno di Docker.
 Questi \textit{container} sono raffigurati dai vari nodi (rappresentati dai cubi in rilievo in figura).
-A questa notazione fa eccezzione il nodo virtuale intitolato "Kafka Cluster", che ha solamente lo scopo di raggruppare i vari nodi legati al \textit{environment} di Kafka con funzione comune, ma che in realtà non compone un container reale a se stante.
+A questa notazione fa eccezione il nodo virtuale intitolato "Kafka Cluster", che ha solamente lo scopo di raggruppare i vari nodi legati al \textit{environment} di Kafka con funzione comune, ma che in realtà non compone un container reale a se stante.
 All'interno di questi nodi sono rappresentati gli artefatti che eseguono nel relativo \textit{container}, per esplicitare la presenza dei componenti.
 Si può inoltre notare che l'ambiente di Apache Kafka è composto da un \textit{cluster} composto da due servizi \textit{Broker} e tre servizi \textit{Zookeeper}, allo scopo di simulare un caso d'uso reale in cui i diversi componenti sono distribuiti in sistemi indipendenti e garantiscono l'affidabilità dello \textit{streaming} di eventi.
 
-\subsubsection{\sacr{uml} \textit{component diagram}}
+\subsection{\sacr{uml} \textit{component diagram}}
 \label{sub:uml_component}
 
 \begin{figure}[H]
   \begin{center}
     \includegraphics[width=\textwidth]{images/ap_component.png}
-    \caption{\sacr{uml} \textit{component diagram} per la reingegnerizzazione del flusso asincrono (protetto)}
+    \caption{\sacr{uml} \textit{component diagram} per la re-ingegnerizzazione del flusso asincrono (protetto)}
     \captionsetup{aboveskip=2pt}
     \caption*{\begin{footnotesize}\textit{Fonte: elaborazione personale}\end{footnotesize}}
   \end{center}
@@ -185,6 +186,7 @@ Si può inoltre notare che l'ambiente di Apache Kafka è composto da un \textit{
 
 Allo scopo di riassumere elegantemente i vari componenti del sistema ho elaborato un \sacr{uml} \textit{component diagram}.
 Esso riassume con una visione ad alto livello i componenti che compongono il sistema e le modalità con cui esse interagiscono attraverso le relative interfacce.
+% TODO: aggiungere testo
 
 
 % , basati su delle immagini Linux leggere e personalizzate.
@@ -201,15 +203,15 @@ Esso riassume con una visione ad alto livello i componenti che compongono il sis
 Il primo passo del processo di sviluppo è stato quello del \textit{setup} dell'ambiente di Kafka in locale.
 La guida rapida online fornita direttamente da Apache per un'installazione minimale di Kafka porta al \textit{download} di un pacchetto e l'esecuzione di un servizio Zookeeper e un \textit{broker} di Kafka.
 
-Zookeeper è un servizio attualmente essenziale al funzionamento di Kafka, gestisce i nodi del \textit{cluster} e mantiene una lista dei topic e dei messaggi.
+Zookeeper è un servizio attualmente essenziale al funzionamento di Kafka, gestisce i nodi del \textit{cluster} e mantiene una lista dei \textit{topic} e dei messaggi.
 Le versioni future di Kafka renderanno questo servizio non necessario, ma attualmente sono ancora in fase di sviluppo e non adatta all'ambiente di produzione.
 I due \textit{broker} si occupano di ricevere i messaggi dai \textit{producer}.
 
 Dopo un breve collaudo del corretto funzionamento dei servizi tramite l'inserimento di un evento in un \textit{topic} e la relativa lettura, ho iniziato ad espandere e trasportare il sistema su dei \textit{container} Docker.
 
-Il \textit{cluster} di Kafka utilizzato nel progetto di \stage\ è composto dai componenti descritti dalla progettazione architetturale nella sezione precedente, ovvero tre servizi di Zookeeper e due \textit{broker} per rappresetare un sistema di piccole dimensioni che tuttavia si avvicina ad un caso d'uso reale poichè contiene multipli Zookeeper e multipli \textit{broker}.
+Il \textit{cluster} di Kafka utilizzato nel progetto di \stage\ è composto dai componenti descritti dalla progettazione architetturale nella sezione precedente, ovvero tre servizi di Zookeeper e due \textit{broker} per rappresentare un sistema di piccole dimensioni che tuttavia si avvicina ad un caso d'uso reale poiché contiene multipli Zookeeper e multipli \textit{broker}.
 
-Questi cinque servizi necessitano dunque di eseguire contemporaneamente in un ambiente containerizzato con Docker connessi alla stessa \textit{network} locale, che consente ai diversi servizi di scambiare messaggi tra di essi.
+Questi cinque servizi necessitano dunque di eseguire contemporaneamente in un ambiente "containerizzato" con Docker connessi alla stessa \textit{network} locale, che consente ai diversi servizi di scambiare messaggi tra di essi.
 
 Ho implementato questo \textit{cluster} tramite un
 \textit{file} di tipo \texttt{yml} utilizzato dall'estensione Docker-compose.
@@ -259,7 +261,7 @@ Al fine di testare il prototipo di \middleware\ prodotto, ho realizzato due ulte
 Il servizio intitolato \sacr{ws} \textit{Provider} è fondamentalmente simile ai servizi descritti nella sottosezione precedente: anch'esso possiede un \sacr{http} \textit{server} per rimanere in ascolto delle \sacr{rest} \textit{request} inviate dal \textit{request consumer} oltre ad un metodo per elaborare la \sacr{rest} \textit{request} di risposta associata al \textit{callback}.
 
 L'altro servizio, che idealmente potrebbe essere molto simile al precedente servizio di test, in realtà presenta delle considerevoli differenze.
-La causa di ciò non è una differenza reale in termini di funzionalità, quanto una questione di rapidità di testing e sviluppo.
+La causa di ciò non è una differenza reale in termini di funzionalità, quanto una questione di rapidità di \textit{testing} e sviluppo.
 
 Il servizio è molto più leggero in termini di memoria, essendo composto da un semplice \textit{container} con una distribuzione di Alpine Linux\footfullcite{alpine}; esso possiede un'installazione del \software\ \texttt{curl} (accessibile via \sacr{cli}), ma è privo di ulteriori \software\ aggiuntivi da me prodotti.
 
@@ -270,7 +272,7 @@ La seconda mi consente di restare in ascolto di eventuali \textit{request} su di
 % I vantaggi di questa modalità manuale risiedono come anticipato nello sviluppo rapido, non solo di questo servizio ma anche dei restanti.
 % Infatti grazie alle funzioni offerte da docker-compose, è semplice eseguire il \textit{restart} di un singolo \textit{container} contenente un servizio per testarne la nuova versione, e successivamente è sufficiente eseguire manualmente la \textit{request} dal \sacr{ws} \textit{Client} per verificare il funzionamento del sistema.
 
-\subsection{Protezione dei dati sensibili}
+\subsection{Protezione dei dati sensibili con Kafka Streams}
 
 Come visto nella sezione \ref{sec:progettazione}, alcuni dei dati trasmessi nel \sacr{json} vengono trasformati per mascherare i dati sensibili.
 
@@ -322,7 +324,7 @@ Ho implementato questa funzione utilizzando Kafka Streams\footfullcite{streams},
 \subsection{Efficienza nello sviluppo}
 
 Durante lo sviluppo, ho adottato diverse misure per minimizzare il tempo di sviluppo.
-Questi provvedimenti riguardano principalmente l'ottimizzazione del sistema di \textit{container}, non allo scopo di migliorare l'efficienza, rapidità d'esecuzione e di \textit{build} del prodotto finale (che è stata comunque raggiunta come effetto secondario) ma a quello di ridurre il tempo e risorse necessarie per il testing, riducendo di conseguenza le ore e le risorse necessarie allo sviluppo.
+Questi provvedimenti riguardano principalmente l'ottimizzazione del sistema di \textit{container}, non allo scopo di migliorare l'efficienza, rapidità d'esecuzione e di \textit{build} del prodotto finale (che è stata comunque raggiunta come effetto secondario) ma a quello di ridurre il tempo e risorse necessarie per il \textit{testing}, riducendo di conseguenza le ore e le risorse necessarie allo sviluppo.
 
 Tutti le misure prese sono strettamente legate alla mia famigliarità con alcune tecnologie e al risorse personali richieste per l'apprendimento e sviluppo di una nuova funzionalità.
 
@@ -331,14 +333,14 @@ Elenco i principali provvedimenti intrapresi per minimizzare il tempo di svilupp
 \begin{itemize}
   \item \textbf{ottimizzazione delle risorse utilizzati dai \textit{container}}.
   Molti dei container prodotti possiedono delle versioni \textit{premade} sulla libreria di DockerHub\footfullcite{dockerhub} (ad esempio i \textit{container} che formano il \textit{cluster} di Kafka).
-  Tuttavia, utilizzare delle versioni \textit{ad-hoc} da me costruite mi ha permesso di ridurre considerevolmente le dimensioni del \textit{container} e mantenere solamente le funzioni a me necessarie, e conseguentente ridurre il tempo della \textit{build} delle immagini e la loro esecuzione. Dato le numerose operazioni di \textit{build} e \textit{testing}, nel lungo termine ha portato ad un risparmio di tempo significativo.
+  Tuttavia, utilizzare delle versioni \textit{ad-hoc} da me costruite mi ha permesso di ridurre considerevolmente le dimensioni del \textit{container} e mantenere solamente le funzioni a me necessarie, e conseguentemente ridurre il tempo della \textit{build} delle immagini e la loro esecuzione. Dato le numerose operazioni di \textit{build} e \textit{testing}, nel lungo termine ha portato ad un risparmio di tempo significativo.
   \item \textbf{invio della richiesta \sacr{rest} del \textit{service client} tramite \sacr{cli}}.
   I vantaggi di questa modalità manuale risiedono come anticipato nella rapidità di sviluppo, non solo di questo servizio ma anche dei restanti.
   Infatti grazie alle funzioni offerte da docker-compose, è semplice eseguire il \textit{restart} di un singolo \textit{container} contenente un servizio per testarne la nuova versione, e successivamente è sufficiente eseguire manualmente la \textit{request} dal \sacr{ws} \textit{Client} per verificare il funzionamento del sistema.
   È sicuramente possibile l'automatizzazione di questo processo (ad esempio effettuando richieste continue in modo automatico) ma lo sviluppo di questa funzione avrebbe, secondo la mia stima personale, richiesto più tempo della soluzione attuata o posto problemi nel filtro dell'\textit{output}.
   \item \textbf{la \textit{build} delle applicazioni costruite con Maven avviene in locale}.
   Questo porta a due vantaggi.
-  Il primo è che la \textit{build} impiega meno tempo, dato che non è necessario lanciare alcun \textit{container} e Maven non deve sincronizzare o controllare la versione delle dipendenze online più di volte (la sincronizzazione è disattivabile, ma richiede comunque più tempo).
+  Il primo è che la \textit{build} impiega meno tempo, dato che non è necessario lanciare alcun \textit{container} e Maven non deve sincronizzare o controllare la versione delle dipendenze online più di volte (è possibile  disattivare la sincronizzazione, ma richiede comunque più tempo).
   La seconda, più importante, è che l'immagine Docker stessa non richiede né \textit{build} né Maven.
   Il \textit{container} si occupa solamente di copiare l'eseguibile pre-costruito al suo interno e di eseguirlo con Java.
 \end{itemize}
@@ -347,5 +349,9 @@ Elenco i principali provvedimenti intrapresi per minimizzare il tempo di svilupp
 
 A seguito di tutte le dovute verifiche, il prodotto finale è stato più volte collaudato con la supervisione del tutor aziendale e il responsabile del \sacr{eai}.
 Tutti i \textit{container} prodotti sono stati revisionati, compresa la loro corretta esecuzione.
+Questi collaudi hanno visto il processo di \textit{build} e successivo avvio simultaneo di ogni singolo servizio all'interno del \textit{cluster} tramite l'apposito comando di Docker-compose "\texttt{docker-compose up --build}".
+Dopodiché, al fine di testare che il \software\ eseguisse effettivamente le funzioni richieste dal progetto di sperimentazione,
 
 Infine, è stato presentato all'azienda in conclusione del percorso di \stage\ in un \textit{online meeting} con l'aiuto di alcune diapositive da me prodotte e una dimostrazione \textit{live} del \software\ in esecuzione tramite la condivisione dello schermo.
+
+Come si può osservare
