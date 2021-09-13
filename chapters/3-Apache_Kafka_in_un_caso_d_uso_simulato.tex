@@ -345,13 +345,37 @@ Elenco i principali provvedimenti intrapresi per minimizzare il tempo di svilupp
   Il \textit{container} si occupa solamente di copiare l'eseguibile pre-costruito al suo interno e di eseguirlo con Java.
 \end{itemize}
 
-\section{Collaudo}
+\section{Collaudo del prodotto finale}
 
-A seguito di tutte le dovute verifiche, il prodotto finale è stato più volte collaudato con la supervisione del tutor aziendale e il responsabile del \sacr{eai}.
+Il prodotto finale del progetto è composto da i diversi componenti illustrati nella sottosezione \ref{sub:uml_component}, per un totale di dieci servizi ognuno nel proprio
+\textit{container} Docker (conformi con il \textit{deployment diagram} alla sottosezione \ref{sub:uml_deployment}).
+
+Nella figura seguente è presente una bozza riassuntiva dalla \textit{board} di progetto ClickUp.
+
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=0.65\textwidth]{images/riass_componenti.png}
+    \caption{\sacr{uml} Riassunto dei componenti prodotti nel caso asincrono con \textit{callback} e della loro comunicazione}
+    \captionsetup{aboveskip=2pt}
+    \caption*{\begin{footnotesize}\textit{Fonte: elaborazione personale}\end{footnotesize}}
+  \end{center}
+\end{figure}
+
+L'immagine illustra i servizi prodotti per il flusso asincrono con \textit{callback} e di come essi comunichino tra di loro attraverso le varie porte, elaborata durante il processo di Progettazione iniziale (in cui non è ancora presente la protezione del dato sensibile con Kafka Streams).
+
+Una visione ad alto livello può esprimere il prodotto risultante dallo \stage\ come \textbf{due servizi di test quali \sacr{ws} \textit{Client} e \sacr{ws} \textit{Provider} che scambiano messaggi sotto forma di \texttt{file} \sacr{json} tramite un \middleware\ basato su Apache Kafka in un'architettura focalizzata sugli eventi.}
+% Questi microservizi hanno raggiunto efficacemente il risultato preposto, creando il sistema richiesto dalla sperimentazione; i due servizi di test quali \sacr{ws} \textit{Client} e \sacr{ws} \textit{Provider} si scambiano messaggi tramite un \middleware\ basato su Apache Kafka.
+
+A seguito di tutte le dovute verifiche del \software, il prodotto è stato più volte collaudato con la supervisione del tutor aziendale e il responsabile del \sacr{eai}.
 Tutti i \textit{container} prodotti sono stati revisionati, compresa la loro corretta esecuzione.
+
+Il tempo dedicato al processo di Collaudo è stato relativamente breve rispetto alla maggior parte dei prodotti \software: la causa di questa durata minore è la natura sperimentale del progetto di \stage\ che, come visto nella sotto-sezione \ref{sub:obiettivi_stage}, è incentrato sulla re-ingegnerizzazione del flusso di dati ma senza l'obiettivo di produrre un \middleware\ da implementare in produzione (quest'ultimo è un obiettivo aziendale nel lungo termine, ma non di questo specifico progetto di sperimentazione).
+
 Questi collaudi hanno visto il processo di \textit{build} e successivo avvio simultaneo di ogni singolo servizio all'interno del \textit{cluster} tramite l'apposito comando di Docker-compose "\texttt{docker-compose up --build}".
-Dopodiché, al fine di testare che il \software\ eseguisse effettivamente le funzioni richieste dal progetto di sperimentazione,
+Dopodiché, al fine di testare che il \software\ eseguisse effettivamente le funzioni richieste dal progetto di sperimentazione (\textit{test} d'efficacia), ho effettuato delle \sacr{http} \sacr{rest} \textit{request} contenenti il \sacr{json} con i dati.
+Ho eseguito questo processo connettendomi al \textit{container} contenente il servizio \sacr{ws} \textit{client}, per poi dare manualmente il comando di \textit{request} grazie all'\textit{utility} \texttt{curl}.
+L'analisi del \sacr{json} in entrata e in uscita da ogni servizio mi ha garantito l'efficacia del \software\ sperimentale prodotto.
 
-Infine, è stato presentato all'azienda in conclusione del percorso di \stage\ in un \textit{online meeting} con l'aiuto di alcune diapositive da me prodotte e una dimostrazione \textit{live} del \software\ in esecuzione tramite la condivisione dello schermo.
+Infine, il prodotto finale è stato presentato all'azienda in conclusione del percorso di \stage\ in un \textit{online meeting} con l'aiuto di alcune diapositive da me prodotte e una dimostrazione \textit{live} del \software\ in esecuzione tramite la condivisione dello schermo.
 
-Come si può osservare
+% Come si può osservare
