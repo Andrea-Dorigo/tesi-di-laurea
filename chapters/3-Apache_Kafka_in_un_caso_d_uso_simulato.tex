@@ -80,7 +80,7 @@ Il modello associato al caso asincrono con \textit{callback} seguirà la stessa 
 \section{Progettazione architetturale}\label{sec:progettazione}
 \subsection{Un \textit{middleware} basato su un \sacr{eda}}
 
-La progettazione architetturale ha portato alla produzione di diversi diagrammi \sacr{uml} per rappresentare efficacemente l'architettura del prodotto e fornire un modello da seguire durante il processo di sviluppo.
+La progettazione architetturale ha portato alla produzione di diversi diagrammi \sacr{uml} per rappresentare efficacemente l'architettura del prodotto e fornire un modello da seguire durante il processo di programmazione.
 Il processo ha richiesto frequenti \textit{meeting} e confronti per raggiungere un risultato finale soddisfacente al fine della sperimentazione.
 
 La progettazione architetturale del prodotto comprende un \middleware\ centrale basato su di una \textit{\acrlong{eda}} con l'utilizzo di Apache Kafka, e due componenti di \textit{testing} chiamati \textit{service client} e \textit{service provider}, che simulano due servizi esterni che comunicano con il middleware attraverso \sacr{rest} \textit{request}.
@@ -196,11 +196,11 @@ Esso riassume con una visione ad alto livello i componenti che compongono il sis
 % \section{\textit{Setup} dell'ambiente di lavoro}
 
 
-\section{Sviluppo}
+\section{Programmazione}
 
 \subsection{Kafka \textit{cluster}}
 
-Il primo passo del processo di sviluppo è stato quello del \textit{setup} dell'ambiente di Kafka in locale.
+Il primo passo del processo di programmazione è stato quello del \textit{setup} dell'ambiente di Kafka in locale.
 La guida rapida online fornita direttamente da Apache per un'installazione minimale di Kafka porta al \textit{download} di un pacchetto e l'esecuzione di un servizio Zookeeper e un \textit{broker} di Kafka.
 
 Zookeeper è un servizio attualmente essenziale al funzionamento di Kafka, gestisce i nodi del \textit{cluster} e mantiene una lista dei \textit{topic} e dei messaggi.
@@ -261,7 +261,7 @@ Al fine di testare il prototipo di \middleware\ prodotto, ho realizzato due ulte
 Il servizio intitolato \sacr{ws} \textit{Provider} è fondamentalmente simile ai servizi descritti nella sottosezione precedente: anch'esso possiede un \sacr{http} \textit{server} per rimanere in ascolto delle \sacr{rest} \textit{request} inviate dal \textit{request consumer} oltre ad un metodo per elaborare la \sacr{rest} \textit{request} di risposta associata al \textit{callback}.
 
 L'altro servizio, che idealmente potrebbe essere molto simile al precedente servizio di test, in realtà presenta delle considerevoli differenze.
-La causa di ciò non è una differenza reale in termini di funzionalità, quanto una questione di rapidità di \textit{testing} e sviluppo.
+La causa di ciò non è una differenza reale in termini di funzionalità, quanto una questione di rapidità di \textit{testing} e programmazione.
 
 Il servizio è molto più leggero in termini di memoria, essendo composto da un semplice \textit{container} con una distribuzione di Alpine Linux\footfullcite{alpine}; esso possiede un'installazione del \software\ \texttt{curl} (accessibile via \sacr{cli}), ma è privo di ulteriori \software\ aggiuntivi da me prodotti.
 
@@ -323,7 +323,7 @@ Ho implementato questa funzione utilizzando Kafka Streams\footfullcite{streams},
 
 \subsection{Efficienza nello sviluppo}
 
-Durante lo sviluppo, ho adottato diverse misure per minimizzare il tempo di sviluppo.
+Durante la programmazione, ho adottato diverse misure per minimizzare il tempo necessario.
 Questi provvedimenti riguardano principalmente l'ottimizzazione del sistema di \textit{container}, non allo scopo di migliorare l'efficienza, rapidità d'esecuzione e di \textit{build} del prodotto finale (che è stata comunque raggiunta come effetto secondario) ma a quello di ridurre il tempo e risorse necessarie per il \textit{testing}, riducendo di conseguenza le ore e le risorse necessarie allo sviluppo.
 
 Tutti le misure prese sono strettamente legate alla mia famigliarità con alcune tecnologie e al risorse personali richieste per l'apprendimento e sviluppo di una nuova funzionalità.
@@ -337,7 +337,7 @@ Elenco i principali provvedimenti intrapresi per minimizzare il tempo di svilupp
   \item \textbf{invio della richiesta \sacr{rest} del \textit{service client} tramite \sacr{cli}}.
   I vantaggi di questa modalità manuale risiedono come anticipato nella rapidità di sviluppo, non solo di questo servizio ma anche dei restanti.
   Infatti grazie alle funzioni offerte da docker-compose, è semplice eseguire il \textit{restart} di un singolo \textit{container} contenente un servizio per testarne la nuova versione, e successivamente è sufficiente eseguire manualmente la \textit{request} dal \sacr{ws} \textit{Client} per verificare il funzionamento del sistema.
-  È sicuramente possibile l'automatizzazione di questo processo (ad esempio effettuando richieste continue in modo automatico) ma lo sviluppo di questa funzione avrebbe, secondo la mia stima personale, richiesto più tempo della soluzione attuata o posto problemi nel filtro dell'\textit{output}.
+  È sicuramente possibile l'automatizzazione di questo processo (ad esempio effettuando richieste continue in modo automatico) ma l'implementazione di questa funzione avrebbe, secondo la mia stima personale, richiesto più tempo della soluzione attuata o posto problemi nel filtro dell'\textit{output}.
   \item \textbf{la \textit{build} delle applicazioni costruite con Maven avviene in locale}.
   Questo porta a due vantaggi.
   Il primo è che la \textit{build} impiega meno tempo, dato che non è necessario lanciare alcun \textit{container} e Maven non deve sincronizzare o controllare la versione delle dipendenze online più di volte (è possibile  disattivare la sincronizzazione, ma richiede comunque più tempo).
