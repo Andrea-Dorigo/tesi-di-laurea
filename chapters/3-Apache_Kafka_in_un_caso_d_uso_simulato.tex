@@ -1,28 +1,6 @@
 % \chapter{Apache Kafka in caso d’uso simulato}
 \chapter{Il percorso di stage}
 
-
-\section{Definizione di un \textit{way of working}}
-
-% Descrizione del Piano di Lavoro presentato, le strategie e il metodo di lavoro stabilito.
-All'inizio del percorso ho delineato un \textit{way of working}, ovvero un metodo di lavoro da mantenere per tutta la durata dello \textit{stage}, insieme al tutor aziendale, il responsabile dell'area \sacr{eai} e gli esperti del settore.
-
-Per garantire un buon livello organizzativo, quantificare l'avanzamento e rendere agevole la verifica e il supporto tecnico l'azienda ha proposto l'utilizzo di una \textit{board} di progetto.
-Tra le tante opzioni disponibili, mi è stata proposta la piattaforma \textit{ClickUp}.
-Rispetto alla concorrenza questa \textit{board} è ricca di funzionalità, pulita nell'esposizione dello stato del progetto, e la maggior parte delle sue funzioni sono gratuite.
-
-All'inizio del percorso il tutor aziendale e il responsabile del \sacr{eai} hanno creato delle \textit{card} contenenti le attività previste per ogni settimana (\textit{task}) al fine di fornire una struttura generale del progetto.
-All'interno di questi \textit{task} vi sono i concetti chiave, attività previste e obiettivi settimanali che lo stagista è tenuto a seguire per garantire l'efficacia del prodotto finale.
-Oltre a questi \textit{task} principali, ho potuto creare di \textit{task} ausiliari e dei \textit{sub-task} per descrivere più adeguatamente l'attività in corso.
-
-Ciascun \textit{task} contiene una colonna laterale dove ho mantenuto un \textit{log} di tutto ciò che è stato eseguito relativo al \textit{task} in questione, allo scopo di esplicitarne il progresso e rendere agevole un eventuale supporto dal tutor o l'evoluzione futura.
-
-Ogni settimana è previsto un \textit{online meeting} per la verifica del progresso ove necessario, la risposta ad eventuali questioni sollevate, e spiegazioni riguardo lo sviluppo della settimana successiva.
-Alcune di queste videoconferenze ha visto la partecipazione di altri esperti che mi hanno aiutato a comprendere meglio il caso d'uso da re-ingegnerizzare, riassumendo lo stato attuale del sistema d'integrazione per uno dei clienti con relativi \textit{file} utilizzati.
-
-Per mantenere alto il livello di organizzazione, efficienza ed efficacia, all'inizio di ogni giornata lavorativa ho creato un breve piano giornaliero con successivo consuntivo a fine giornata.
-Questo ha permesso al tutor di verificare rapidamente il corretto avanzamento del processo in corso e a me di mantenere il \textit{focus} su di esso.
-
 \section{Formazione}
 
 Il processo di Formazione ha avuto un importante ruolo all'interno dello \textit{stage}, con una durata complessiva di circa quattro settimane.
@@ -364,6 +342,7 @@ Nella figura seguente è presente una bozza riassuntiva dalla \textit{board} di 
 L'immagine illustra i servizi prodotti per il flusso asincrono con \textit{callback} e di come essi comunichino tra di loro attraverso le varie porte, elaborata durante il processo di Progettazione iniziale (in cui non è ancora presente la protezione del dato sensibile con Kafka Streams).
 
 Una visione ad alto livello può esprimere il prodotto risultante dallo \stage\ come \textbf{due servizi di test quali \sacr{ws} \textit{Client} e \sacr{ws} \textit{Provider} che scambiano messaggi sotto forma di \texttt{file} \sacr{json} tramite un \middleware\ basato su Apache Kafka in un'architettura focalizzata sugli eventi.}
+Il\middleware\ presenta inoltre la funzionalità aggiuntiva di trasformazione dei dati grazie all'utilizzo di Kafka Streams.
 % Questi microservizi hanno raggiunto efficacemente il risultato preposto, creando il sistema richiesto dalla sperimentazione; i due servizi di test quali \sacr{ws} \textit{Client} e \sacr{ws} \textit{Provider} si scambiano messaggi tramite un \middleware\ basato su Apache Kafka.
 
 A seguito di tutte le dovute verifiche del \software, il prodotto è stato più volte collaudato con la supervisione del tutor aziendale e il responsabile del \sacr{eai}.
