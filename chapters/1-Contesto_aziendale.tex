@@ -67,7 +67,7 @@ Sync Lab offre per i propri clienti numerosi servizi, tra cui:
 % Esposizioni delle ragioni personali che hanno portato alla scelta di tale percorso.
 
 
-\section{Processi interni e strumenti organizzativi}
+\section{\textit{Way of working} aziendale}
 
 % Esposizione delle norme organizzative (\textit{online meeting}, \textit{smart working}, presenze in sede), degli strumenti utilizzati nel rapporto con l’azienda (chat, email e \textit{Project Board}), e delle norme di progetto.
 %
@@ -77,13 +77,10 @@ Sync Lab offre per i propri clienti numerosi servizi, tra cui:
 % \bigskip\noindent
 % Breve presentazione dei ruoli delle persone coinvolte nel percorso di \textit{stage}.
 
-L'azienda adotta dei processi interni per delineare l'avanzamento di un progetto.
-Sync Lab utilizza una strategia \textit{Agile} per gestire i progetti in modo da consentire un'evoluzione e adattabilità in base alle richieste del cliente e fornire soluzioni \textit{ad-hoc}.
-
 \subsection{Processi interni}
 
-Durante il percorso di \textit{stage} sono stato coinvolto nei processi di Formazione, Progettazione architetturale, Programmazione, Verifica e Collaudo; i processi di Manutenzione ed Evoluzione sono stati solamente accennati in quanto al di fuori dello scopo del percorso.
-Questi processi, nella mia esperienza personale, non sono stati delineati rigorosamente: ciò ha lo scopo di garantire libertà e flessibilità allo stagista e di conseguenza all'intero progetto.
+Durante il percorso di \textit{stage} sono stato coinvolto nei processi aziendali di Formazione, Progettazione architetturale, Codifica, Verifica e Collaudo; i processi di Manutenzione ed Evoluzione sono stati solamente accennati in quanto al di fuori dello scopo del percorso.
+Questi processi, nella mia esperienza personale, non sono delineati in modo rigido e rigoroso nei progetti di sperimentazione: ciò ha lo scopo di garantire libertà e flessibilità al team di sviluppo e di conseguenza all'intero progetto, attributi necessari in ambito sperimentale.
 
 \begin{figure}[h]
   \begin{center}
@@ -98,19 +95,66 @@ Ogni processo è suddiviso in attività modulari, per rendere l'avanzamento effi
 
 Per il processo di Formazione, Sync Lab fornisce materiale sotto forma di corsi \textit{online} tramite le piattaforme \textit{Coursera}\footfullcite{coursera} e \textit{Udemy}\footfullcite{udemy} e diapositive aziendali che illustrano i concetti chiave del settore \sacr{eai}.
 
-Il processo di Programmazione nella mia esperienza personale è risultato abbastanza libero per quanto riguarda le tecnologie e i \software\ utilizzati, purché le scelte fossero adeguatamente motivate e adeguate.
+Per il processo di Analisi, Sync Lab mi ha fornito il materiale relativo al caso d'uso da sviluppare, al fine di consentirmi la conoscenza dei requisiti e funzioni finali richieste dal prodotto.
 
 Il processo di Progettazione architetturale è uno dei più complessi, che necessita di una buona dose di esperienza nell'ambito.
 Per affrontare questo processo, oltre ad approfondire le mie conoscenze riguardo i diversi \textit{design pattern} e \textit{software architecture style}, l'azienda mi ha accompagnato e supportato nella progettazione stessa, con relative motivazioni.
 Il tutor aziendale  Francesco Sanges e il responsabile del settore \sacr{eai} Salvatore Dore
 sono stati di fondamentale aiuto in questo processo.
 
+Il processo di Codifica nella mia esperienza personale è risultato abbastanza libero per quanto riguarda le tecnologie e i \software\ utilizzati, purché le scelte fossero adeguatamente motivate e adeguate.
+
 Il processo di Verifica è stato eseguito dal tutor aziendale e dal Responsabile del settore \sacr{eai} a scadenza settimanale, tramite colloqui \textit{online} o resoconti sulla \textit{online board} di riferimento.
 
 Il processo di Collaudo è avvenuto tramite una presentazione \textit{online} e dimostrazione \textit{live} del prodotto sviluppato all'intera azienda.
 
+\subsection{Gestione di progetto}
+% metodo piu appropriato per il team e per il progetto
+
+% metodo agile
+
+% L'azienda adotta dei processi interni per delineare l'avanzamento di un progetto.
+Sync Lab utilizza una strategia di gestione di progetto (\textit{project management}) ispirata al metodo \textit{Agile}.
+
+\noindent
+La strategia \textit{Agile} è composta da quattro valori fondamentali:
+\begin{itemize}
+  \item gli individui hanno importanza maggiore rispetto ai processi;
+  \item il funzionamento del \software\ ha la priorità rispetto alla documentazione esaustiva;
+  \item la collaborazione tra fornitore e cliente è più importante della negoziazione del contratto;
+  \item adattare il progetto ai cambiamenti ha la priorità rispetto al seguire la pianificazione.
+\end{itemize}
+
+Questo metodo di lavoro consente all'azienda un alto livello di adattabilità ed evoluzione del prodotto, in base alle richieste del cliente e alle esigenze del \textit{team} di progetto, al fine di fornire soluzioni \textit{ad-hoc} e soddisfare le loro richieste in modo efficiente ed efficace.
+
 \subsection{Strumenti organizzativi}
-aaaaaaaaaa
+
+Per mantenere un alto livello di organizzazione del progetto l'azienda fa uso di molteplici piattaforme dedicate al \textit{project management}, tra cui l'utilizzo di Kanban \textit{board} di progetto.
+Questo tipo di \textit{board} sono specialmente adatte alla gestione di un progetto che utilizza la metodologia \textit{Agile} vista sopra.
+
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[width=\textwidth]{images/kanban.png}
+    \caption{Schema riassuntivo degli elementi di una Kanban \textit{board}}
+    \captionsetup{aboveskip=2pt}
+    \caption*{\begin{footnotesize}\textit{Fonte:} \url{https://www.atlassian.com/agile/kanban/boards}\end{footnotesize}}
+  \end{center}
+\end{figure}
+
+L'obiettivo di una Kanban \textit{board} è quello di presentare in modo rapido e chiaro una panoramica del progetto.
+Lo stato di avanzamento delle attività è reso esplicito dalla posizione degli elementi, con un movimento che parte dall'estremo sinistro e si conclude all'estremo destro.
+
+\noindent
+Questo scopo viene raggiunto grazie al delineamento di cinque elementi principali:
+\begin{itemize}
+  \item delle \textit{card}, che contengono le diverse attività o \textit{ticket};
+  \item delle colonne, che rappresentano lo stato d'avanzamento di ogni \textit{card};
+  \item dei limiti di capacità imposti alle diverse colonne, con lo scopo di evitare impedimenti e rallentamenti nel flusso di lavoro;
+  \item una colonna dedicata al \textit{commitment point} (punto di impegno), in cui vengono raccolte le varie idee o attività che possono essere implementate nel progetto;
+  \item un punto di consegna (\textit{delivery point}), una colonna usualmente posta all'estremo destro della \textit{board}, che indica il completamento del lavoro richiesto per quell'attività.
+\end{itemize}
+
+Il percorso di \stage\ ha visto anch'esso l'utilizzo di una Kanban \textit{board} per la gestione del progetto.
 \section{Dominio tecnologico}
 
 % Sviluppo indipendente dal sistema operativo, produzione di \software\ non strettamente legati ad uno specifico linguaggio, utilizzo di ambienti virtuali quali \textit{Virtual Machine} e \textit{container} per simulare sistemi indipendenti.
@@ -173,7 +217,7 @@ Questo tipo di architettura consente a Sync Lab di creare sistemi basati sui mic
 
 \subsection{\textit{Messaging pattern}}
 
-\begin{figure}[H]
+\begin{figure}[h]
   \begin{center}
     \includegraphics[width=0.65\textwidth]{images/messaging_pattern.jpeg}
     \caption{Schema di un \textit{messaging design pattern}}

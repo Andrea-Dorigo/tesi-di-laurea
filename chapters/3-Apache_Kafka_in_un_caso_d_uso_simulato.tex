@@ -58,7 +58,7 @@ Il modello associato al caso asincrono con \textit{callback} seguirà la stessa 
 \section{Progettazione architetturale}\label{sec:progettazione}
 \subsection{Un \textit{middleware} basato su un \sacr{eda}}
 
-La progettazione architetturale ha portato alla produzione di diversi diagrammi \sacr{uml} per rappresentare efficacemente l'architettura del prodotto e fornire un modello da seguire durante il processo di programmazione.
+La progettazione architetturale ha portato alla produzione di diversi diagrammi \sacr{uml} per rappresentare efficacemente l'architettura del prodotto e fornire un modello da seguire durante il processo di codifica.
 Il processo ha richiesto frequenti \textit{meeting} e confronti per raggiungere un risultato finale soddisfacente al fine della sperimentazione.
 
 La progettazione architetturale del prodotto comprende un \middleware\ centrale basato su di una \textit{\acrlong{eda}} con l'utilizzo di Apache Kafka, e due componenti di \textit{testing} chiamati \textit{service client} e \textit{service provider}, che simulano due servizi esterni che comunicano con il middleware attraverso \sacr{rest} \textit{request}.
@@ -126,14 +126,10 @@ Più precisamente, è stato aggiunto un dato sensibile che viene nascosto e sost
 In figura \thefigure\ possiamo vedere il nuovo flusso asincrono con protezione (mascheramento) del dato sensibile.
 La versione con \textit{callback} del flusso qui sopra prevede anche il flusso di ritorno (\textit{callback}), non illustrato in figura ma facilmente intuibile grazie al grafico che la precede.
 
-\subsection{\sacr{uml} \textit{deployment diagrams}}
+\subsection{\sacr{uml} \textit{deployment diagram}}
 \label{sub:uml_deployment}
 
 A supporto di questi \sacr{uml} \textit{sequence diagram} che rappresentano efficacemente il flusso di dati, punto focale dell'intero sistema di integrazione (asincrono con la protezione del dato sensibile), ho prodotto ulteriori diagrammi, tra i quali il \textit{deployment diagram}.
-Questo diagramma ha lo scopo di rappresentare la configurazione dei processi \textit{run time}, modellando la struttura di base in cui eseguono i diversi servizi;
-il diagramma esprime l'ambiente in cui i vari componenti risiedono e ove essi comunicano tra di loro.
-
-Con l'approvazione degli esperti aziendali, ho deciso di appoggiare il sistema di integrazione sulla piattaforma Docker.
 
 \begin{figure}[h]
   \begin{center}
@@ -144,7 +140,12 @@ Con l'approvazione degli esperti aziendali, ho deciso di appoggiare il sistema d
   \end{center}
 \end{figure}
 
-Il diagramma di \textit{deployment} (figura \thefigure) vede pertanto l'utilizzo di numerosi \textit{container} indipendenti che dialogano attraverso una rete locale all'interno di Docker.
+Questo diagramma (figura \thefigure) ha lo scopo di rappresentare la configurazione dei processi \textit{run time}, modellando la struttura di base in cui eseguono i diversi servizi;
+il diagramma esprime l'ambiente in cui i vari componenti risiedono e ove essi comunicano tra di loro.
+
+Con l'approvazione degli esperti aziendali, ho deciso di appoggiare il sistema di integrazione sulla piattaforma Docker.
+
+Il diagramma di \textit{deployment} vede pertanto l'utilizzo di numerosi \textit{container} indipendenti che dialogano attraverso una rete locale all'interno di Docker.
 Questi \textit{container} sono raffigurati dai vari nodi (rappresentati dai cubi in rilievo in figura).
 A questa notazione fa eccezione il nodo virtuale intitolato "Kafka Cluster", che ha solamente lo scopo di raggruppare i vari nodi legati al \textit{environment} di Kafka con funzione comune, ma che in realtà non compone un container reale a se stante.
 All'interno di questi nodi sono rappresentati gli artefatti che eseguono nel relativo \textit{container}, per esplicitare la presenza dei componenti.
@@ -174,11 +175,11 @@ Esso riassume con una visione ad alto livello i componenti che compongono il sis
 % \section{\textit{Setup} dell'ambiente di lavoro}
 
 
-\section{Programmazione}
+\section{Codifica}
 
 \subsection{Kafka \textit{cluster}}
 
-Il primo passo del processo di programmazione è stato quello del \textit{setup} dell'ambiente di Kafka in locale.
+Il primo passo del processo di codifica è stato quello del \textit{setup} dell'ambiente di Kafka in locale.
 La guida rapida online fornita direttamente da Apache per un'installazione minimale di Kafka porta al \textit{download} di un pacchetto e l'esecuzione di un servizio Zookeeper e un \textit{broker} di Kafka.
 
 Zookeeper è un servizio attualmente essenziale al funzionamento di Kafka, gestisce i nodi del \textit{cluster} e mantiene una lista dei \textit{topic} e dei messaggi.
@@ -239,7 +240,7 @@ Al fine di testare il prototipo di \middleware\ prodotto, ho realizzato due ulte
 Il servizio intitolato \sacr{ws} \textit{Provider} è fondamentalmente simile ai servizi descritti nella sottosezione precedente: anch'esso possiede un \sacr{http} \textit{server} per rimanere in ascolto delle \sacr{rest} \textit{request} inviate dal \textit{request consumer} oltre ad un metodo per elaborare la \sacr{rest} \textit{request} di risposta associata al \textit{callback}.
 
 L'altro servizio, che idealmente potrebbe essere molto simile al precedente servizio di test, in realtà presenta delle considerevoli differenze.
-La causa di ciò non è una differenza reale in termini di funzionalità, quanto una questione di rapidità di \textit{testing} e programmazione.
+La causa di ciò non è una differenza reale in termini di funzionalità, quanto una questione di rapidità di \textit{testing} e codifica.
 
 Il servizio è molto più leggero in termini di memoria, essendo composto da un semplice \textit{container} con una distribuzione di Alpine Linux\footfullcite{alpine}; esso possiede un'installazione del \software\ \texttt{curl} (accessibile via \sacr{cli}), ma è privo di ulteriori \software\ aggiuntivi da me prodotti.
 
@@ -301,7 +302,7 @@ Ho implementato questa funzione utilizzando Kafka Streams\footfullcite{streams},
 
 \subsection{Efficienza nello sviluppo}
 
-Durante la programmazione, ho adottato diverse misure per minimizzare il tempo necessario.
+Durante la codifica, ho adottato diverse misure per minimizzare il tempo necessario.
 Questi provvedimenti riguardano principalmente l'ottimizzazione del sistema di \textit{container}, non allo scopo di migliorare l'efficienza, rapidità d'esecuzione e di \textit{build} del prodotto finale (che è stata comunque raggiunta come effetto secondario) ma a quello di ridurre il tempo e risorse necessarie per il \textit{testing}, riducendo di conseguenza le ore e le risorse necessarie allo sviluppo.
 
 Tutti le misure prese sono strettamente legate alla mia famigliarità con alcune tecnologie e al risorse personali richieste per l'apprendimento e sviluppo di una nuova funzionalità.
@@ -328,14 +329,15 @@ Elenco i principali provvedimenti intrapresi per minimizzare il tempo di svilupp
 Il prodotto finale del progetto è composto da i diversi componenti illustrati nella sottosezione \ref{sub:uml_component}, per un totale di dieci servizi ognuno nel proprio
 \textit{container} Docker (conformi con il \textit{deployment diagram} alla sottosezione \ref{sub:uml_deployment}).
 
-Nella figura seguente è presente una bozza riassuntiva dalla \textit{board} di progetto ClickUp.
+Nella figura \ref{fig:riass_componenti} è presente una bozza riassuntiva dalla \textit{board} di progetto ClickUp.
 
-\begin{figure}[H]
+\begin{figure}[h]
   \begin{center}
-    \includegraphics[width=0.65\textwidth]{images/riass_componenti.png}
+    \includegraphics[width=0.63\textwidth]{images/riass_componenti.png}
     \caption{\sacr{uml} Riassunto dei componenti prodotti nel caso asincrono con \textit{callback} e della loro comunicazione}
     \captionsetup{aboveskip=2pt}
     \caption*{\begin{footnotesize}\textit{Fonte: elaborazione personale}\end{footnotesize}}
+    \label{fig:riass_componenti}
   \end{center}
 \end{figure}
 
