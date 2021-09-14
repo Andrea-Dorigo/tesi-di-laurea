@@ -197,6 +197,8 @@ Lo scopo di questi incontri sarà quello di verificare lo stato di avanzamento, 
 
 \subsection{\textit{Way of working} di progetto}
 
+\subsubsection{\textsc{Kanban board di progetto}}
+
 % Descrizione del Piano di Lavoro presentato, le strategie e il metodo di lavoro stabilito.
 All'inizio del percorso ho delineato un \textit{way of working}, ovvero un metodo di lavoro da mantenere per tutta la durata dello \textit{stage}, insieme al tutor aziendale, il responsabile dell'area \sacr{eai} e gli esperti del settore.
 
@@ -234,7 +236,7 @@ Per tenere traccia del lavoro svolto riguardante una specifica attività ho util
   \end{center}
 \end{figure}
 
-Questa \textit{card} (di cui è presente un'esempio in figura \thefigure) contiene una casella di testo per inserire una descrizione e appunti utili ove sia richiesto, una \textit{checklist} approfondita, e una colonna che mantiene uno storico dei commenti; quest'ultima colonna non solo permette a me di mantenere un'importante resoconto sul lavoro svolto, ma consente anche al tutor aziendale e esperti del settore di quantificare il progresso e di fornire un aiuto rapido e contestuale.
+Questa \textit{card} (di cui è presente un esempio in figura \thefigure) contiene una casella di testo per inserire una descrizione e appunti utili ove sia richiesto, una \textit{checklist} approfondita, e una colonna che mantiene uno storico dei commenti; quest'ultima colonna non solo permette a me di mantenere un'importante resoconto sul lavoro svolto, ma consente anche al tutor aziendale e esperti del settore di quantificare il progresso e di fornire un aiuto rapido e contestuale.
 
 Per la condivisione di codice è stato possibile utilizzare uno strumento a mia discrezione, e pertanto ho utilizzato Git per creare una \textit{repository} e successivamente ne ho fatto l'\textit{upload} in modalità privata (secondo indicazioni aziendali) su Github.
 L'inserimento del codice identificativo del \texttt{commit} all'interno di un commento allo scopo di \textit{log} ha favorito ulteriormente il tracciamento del progresso e reso agevole l'eventuale supporto da parte degli esperti aziendali.
@@ -245,12 +247,51 @@ Oltre a questi \textit{task} principali, ho potuto creare di \textit{task} ausil
 
 Ciascun \textit{task} contiene una colonna laterale dove ho mantenuto un \textit{log} di tutto ciò che è stato eseguito relativo al \textit{task} in questione, allo scopo di esplicitarne il progresso e rendere agevole un eventuale supporto dal tutor o l'evoluzione futura.
 
+\subsubsection{\textsc{Meeting con gli esperti di Sync Lab}}
+
 Ogni settimana è previsto un \textit{online meeting} per la verifica del progresso ove necessario, la risposta ad eventuali questioni sollevate, e spiegazioni riguardo lo sviluppo della settimana successiva.
 Alcune di queste videoconferenze ha visto la partecipazione di altri esperti che mi hanno aiutato a comprendere meglio il caso d'uso da re-ingegnerizzare, riassumendo lo stato attuale del sistema d'integrazione per uno dei clienti con relativi \textit{file} utilizzati.
 
 Per mantenere alto il livello di organizzazione, efficienza ed efficacia, all'inizio di ogni giornata lavorativa ho creato un breve piano giornaliero con successivo consuntivo a fine giornata.
 Questo ha permesso al tutor di verificare rapidamente il corretto avanzamento del processo in corso e a me di mantenere il \textit{focus} su di esso.
 
+\subsubsection{\textsc{Auto-miglioramento personale}}
+\label{subsub:auto-miglioramento}
+
+A partire dalle prime settimane del percorso di \stage, \textbf{ho deciso di integrare nel mio \textit{way of working} il ciclo di Deming, altrimenti detto \sacr{pdca}, ovvero un metodo di lavoro legato al concetto di auto-miglioramento (\acrlong{pdca}).}
+Ho applicato il metodo \sacr{pdca} per il miglioramento delle mie capacità organizzative, comunicative e formative, in intervalli di 1 o 2 settimane a seconda del miglioramento scelto.
+Tra i miglioramenti più rilevanti cito l'implementazione della \textit{Pomodoro Technique} per tutta la durata del percorso.
+La \textit{Pomodoro Technique} è una tecnica di gestione del tempo che prevede la suddivisione del lavoro in intervalli di tempo stabiliti, ed è costituita dai seguenti passaggi:
+\begin{enumerate}
+  \item scelta del compito da eseguire;
+  \item impostazione del \textit{timer} a 25 minuti;
+  \item lavoro riguardo il relativo compito, senza alcuna distrazione data da agenti esterni, fino allo scadere dei 25 minuti;
+  \item pausa per un intervallo di 5 minuti;
+  \item ogni quattro cicli completi ("pomodori" di 30 minuti), prendere una pausa più lunga di circa 15/30 minuti.
+\end{enumerate}
+La tecnica, che ha presentato delle difficoltà iniziali nell'inserimento all'interno del mio \textit{workflow}, si è rivelata per me un successo nel lungo termine, che ha portato ad una minore stanchezza e maggiore concentrazione nel progetto, a cui ha pertanto conseguito una maggiore efficienza lavorativa.
+
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[width=0.65\textwidth]{images/pomodoro.jpg}
+    \caption{\textit{Pomodoro Technique}}
+    \captionsetup{aboveskip=2pt}
+    \caption*{\begin{footnotesize}\textit{Fonte:} \url{https://productiveclub.com/pomodoro-technique/}\end{footnotesize}}
+  \end{center}
+\end{figure}
+
+Se correttamente applicata, può portare a numerosi vantaggi, quali:
+\begin{itemize}
+  \item consente di mantenere un alto livello di concentrazione;
+  \item dedicare un pomodoro al \textit{long term goal} progettuale aiuta a visualizzare l'obiettivo finale, decidere se mantenersi al piano o modificarlo, e mantenere la giusta direzione evitando di andare \textit{out of focus} di progetto.
+  Ho particolarmente apprezzato questo punto, che mi ha mantenuto focalizzato sull'obbiettivo finale. All'inizio di ogni settimana ho dedicato due "pomodori" alla pianificazione settimanale, rapportandola a quella del percorso completo e suddividendo i compiti in base ai giorni disponibili.
+  \item riduce considerevolmente le distrazioni nei 25 minuti di lavoro;
+  \item aiuta il tracciamento delle risorse; grazie alla suddivisione in intervalli di tempo ben stabiliti, è semplice annotarsi il tempo impiegato per un determinato \textit{task}. Questo è un altro punto che porta a molti vantaggi: combinato con una stima iniziale delle risorse iniziali previste, permette di paragonare il tempo pianificato per un compito con il tempo effettivo impiegato. Nel lungo termine, mi ha permesso una stima sempre più precisa delle risorse necessarie per un determinato \textit{task}, una \textit{skill} molto utile in ambito lavorativo soprattutto all'interno di un \textit{team}.
+\end{itemize}
+L'inserimento efficace di questa tecnica nel mio \textit{way of working} ha richiesto approssimativamente due settimane.
+Talvolta ho sostituito due intervalli di 25/5 minuti con un unico intervallo 50/10, in base al compito o alla disponibilità degli esperti di Sync Lab.
+
+Tra gli altri miglioramenti dati dall'implementazione del Ciclo di Deming nel percorso di \stage\ vi sono il miglioramento dell'ambiente desktop di lavoro per una codifica più efficiente, la capacità di esporre in modo chiaro e rapido un problema che richiede il supporto degli esperti aziendali, e la \textit{skill} legata al tracciamento del lavoro svolto.
 
 \subsection{Pianificazione del lavoro}
 \label{sec:pianificazione}

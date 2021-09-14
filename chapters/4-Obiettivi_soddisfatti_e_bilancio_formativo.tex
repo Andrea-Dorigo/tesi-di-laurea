@@ -1,134 +1,177 @@
-% \chapter{Valutazione retrospettiva}
+\chapter{Valutazione retrospettiva}
+
+% \section{Obiettivi soddisfatti dallo stage}
 %
-% % \section{Obiettivi soddisfatti dallo stage}
-% %
-% % Valutazione oggettiva riguardo il percorso e i risultati raggiunti da esso.
-% %
-% % \section{Maturazione professionale acquisita}
-% %
-% % Descrizione delle conoscenze e abilità professionali acquisite grazie al percorso di \textit{stage}.
-% % Valutazione del miglioramento personale portato avanti durante il percorso di stage.
-% %
-% %
-% % \section{Distanza tra le competenze necessarie e quelle acquisite nel corso di studi}
-% %
-% % Breve valutazione riguardo le difficoltà riscontrate, e considerazioni riguardo le competenze ottenute durante il corso di laurea che più mi hanno aiutato durante il percorso.
+% Valutazione oggettiva riguardo il percorso e i risultati raggiunti da esso.
 %
-% \section{Obiettivi dello stage raggiunti}
+% \section{Maturazione professionale acquisita}
 %
-% Gli obiettivi principali dello stage sono stati raggiunti con successo.
-%
-% I microservizi che compongono il prodotto finale hanno raggiunto efficacemente il risultato preposto, creando il sistema richiesto dalla sperimentazione; i due servizi di test quali \sacr{ws} \textit{Client} e \sacr{ws} \textit{Provider} si scambiano messaggi tramite un \middleware\ basato su Apache Kafka.
-%
-% La sperimentazione ha testato alcune delle capacità di Apache Kafka con esito positivo, fornendo le basi per ulteriori percorsi di approfondimento che possono portare all'implementazione della piattaforma di \textit{event streaming} all'interno degli attuali sistemi di integrazione con il ruolo di \middleware.
-%
-% Un possibile percorso potrebbe ad esempio simulare un caso d'uso molto più complesso, con simulazione di un flusso di dati continuo e di grandi dimensioni, con dati provenienti da fonti multiple, un numero maggiore di \textit{producer} e \textit{consumer}, e la sperimentazione di ulteriori funzionalità presenti nei \middleware\ attualmente utilizzati.
-%
-% \bigskip\noindent
-% Di seguito viene ripresa parte della tabella \ref{tab:pianificazione} vista nella sezione \ref{sec:pianificazione}.
-%
-% \onehalfspacing
-% \begin{small}
-%   \begin{center}
-%     \centering
-%     \renewcommand\arraystretch{1.6}
-%     \begin{longtable}{| >{\centering\arraybackslash}m{2cm}|m{9.5cm}|>{\centering\arraybackslash}m{2.2cm}|}
-%       \hline
-%       \textsc{\textbf{Requisito}} & \textsc{\textbf{Task associati}} & \textsc{\textbf{Completato}} \\
-%       \hline
-%       O-5.1 & Analisi dei casi d'uso reali & \textsc{si} \\
-%       \hline
-%       O-5.2 & Realizzazione dei componenti per l'esecuzione dei casi di test & \textsc{si}\\
-%       \Xhline{2\arrayrulewidth}
-%       O-6.1 & Analisi re-ingegnerizzazione e collaudo del flusso di integrazione asincrono & \textsc{si} \\
-%       \Xhline{2\arrayrulewidth}
-%       O-7.1 & Analisi e re-ingegnerizzazione e collaudo del flusso di integrazione asincrono con callback & \textsc{si}\\
-%       \Xhline{2\arrayrulewidth}
-%       O-8.1 & Analisi e re-ingegnerizzazione e collaudo del flusso di integrazione sincrono & \textsc{no}\\
-%       \hline
-%       \textsc{Non previsto} & Sperimentazione di funzioni aggiuntive: protezione di un dato sensibile & \textsc{si}\\
-%       \hline
-%
-%       \caption{Obiettivi dello stage raggiunti}
-%     \end{longtable}
-%   \end{center}
-% \end{small}
-% % \doublespacing
-%
-% Come detto in precedenza, il requisito O-8.1 è stato scartato in favore della sperimentazione di alcune funzioni aggiuntive di Kafka, inizialmente non pianificate.
-%
-% % \section{Prodotti sviluppati}
-% %
-% % Il prodotto finale del progetto è composto da i diversi componenti illustrati nella sottosezione \ref{sub:uml_component}, per un totale di dieci servizi ognuno nel proprio
-% % \textit{container} Docker (conformi con il \textit{deployment diagram} alla sottosezione \ref{sub:uml_deployment}).
-% %
-% % Questi microservizi hanno raggiunto efficacemente il risultato preposto, creando il sistema richiesto dalla sperimentazione; i due servizi di test quali \sacr{ws} \textit{Client} e \sacr{ws} \textit{Provider} si scambiano messaggi tramite un \middleware\ basato su Apache Kafka.
-%
-% \section{Contenuti formativi acquisiti}
-% \onehalfspacing
-% \begin{small}
-%   \begin{center}
-%     \centering
-%     \renewcommand\arraystretch{1.6}
-%     \begin{longtable}{| >{\centering\arraybackslash}m{2cm}|m{9.5cm}|>{\centering\arraybackslash}m{2.2cm}|}
-%       \hline
-%       \textsc{\textbf{Requisito}} & \textsc{\textbf{Task associati}} & \textsc{\textbf{Completato}} \\
-%       \hline
-%      %  O-1.1 & Incontro con le persone coinvolte nel progetto per discutere i requisiti e le richieste relative al sistema da sviluppare & \textsc{si} \\
-%      %  \hline
-%      %  O-1.2 & Verifica credenziali e strumenti di lavoro assegnati & \textsc{si}\\
-%      %  \hline
-%      %  O-1.3 & Presa visione dell’infrastruttura esistente & \textsc{si}\\
-%      %  \hline
-%      %  D-1.1 & Ripasso approfondito riguardo i seguenti argomenti:
-%      %    \smallskip
-%      %    \begin{itemize}
-%      %       \item Ingegneria del \software;
-%      %       \item Sistemi di versionamento;
-%      %       \item Architetture \software;
-%      %       \item Cenni di \textit{Networking}.
-%      %     \end{itemize} &  \textsc{si}\\
-%      % \Xhline{2\arrayrulewidth}
-%      O-2.1 & Nozioni fondamentali riguardo \sacr{eai} e \sacr{soa} & \textsc{si}\\
-%      \hline
-%      O-2.2 & Approfondimenti riguardo le Architetture a Messaggio, in particolare:
-%        \begin{itemize}
-%           \item \textit{Integration Styles};
-%           \item \textit{Channel Patterns};
-%           \item \textit{Message Construction Patterns};
-%           \item \textit{Routing Patterns};
-%           \item \textit{Transformation Patterns};
-%           \item \textit{System Management Patterns}.
-%         \end{itemize} & \textsc{si}\\
-%     \Xhline{2\arrayrulewidth}
-%
-%     O-3.1 & Apache Kafka:
-%       \begin{itemize}
-%           \item Introduzione a Kafka;
-%           \item Concetti fondamentali di Kafka;
-%           \item Avvio e \sacrfoot{cli};
-%           \item Programmazione in Kafka con Java.
-%         \end{itemize} & \textsc{si}\\
-%     \hline
-%     D-3.1 & Esempi e applicazioni di Apache Kafka & \textsc{si} \\
-%     \Xhline{2\arrayrulewidth}
-%
-%     O-4.1 & Confluent Platform:
-%       \begin{itemize}
-%           \item \textit{Service registry};
-%           \item \sacr{rest} \textit{proxy};
-%           \item kSQL;
-%           \item Confluent \textit{connectors};
-%           \item \textit{Control center}.
-%       \end{itemize} & \textsc{si}\\
-%     \Xhline{2\arrayrulewidth}
+% Descrizione delle conoscenze e abilità professionali acquisite grazie al percorso di \textit{stage}.
+% Valutazione del miglioramento personale portato avanti durante il percorso di stage.
 %
 %
-%       \caption{Obiettivi dello stage raggiunti}
-%     \end{longtable}
-%   \end{center}
-% \end{small}
-% % \doublespacing
+% \section{Distanza tra le competenze necessarie e quelle acquisite nel corso di studi}
 %
-% \section{Obiettivi personali raggiunti}
-% \section{Distanza dai contenuti del corso di studi}
+% Breve valutazione riguardo le difficoltà riscontrate, e considerazioni riguardo le competenze ottenute durante il corso di laurea che più mi hanno aiutato durante il percorso.
+
+\section{Obiettivi dello stage raggiunti}
+
+Gli obiettivi principali dello stage sono stati raggiunti con successo.
+
+I microservizi che compongono il prodotto finale hanno raggiunto efficacemente il risultato preposto, creando il sistema richiesto dalla sperimentazione; i due servizi di test quali \sacr{ws} \textit{Client} e \sacr{ws} \textit{Provider} si scambiano messaggi tramite un \middleware\ basato su Apache Kafka.
+
+La sperimentazione ha testato alcune delle capacità di Apache Kafka con esito positivo, fornendo le basi per ulteriori percorsi di approfondimento che possono portare all'implementazione della piattaforma di \textit{event streaming} all'interno degli attuali sistemi di integrazione con il ruolo di \middleware.
+
+Un possibile percorso potrebbe ad esempio modellare e sviluppare un caso d'uso molto più complesso, con simulazione di un flusso di dati continuo e di grandi dimensioni, con dati provenienti da fonti multiple, un numero maggiore di \textit{producer} e \textit{consumer}, e la sperimentazione di ulteriori funzionalità presenti nei \middleware\ attualmente utilizzati.
+
+\noindent
+Di seguito viene ripresa parte della tabella \ref{tab:pianificazione} vista nella sezione \ref{sec:pianificazione}.
+
+\onehalfspacing
+\begin{small}
+  \begin{center}
+    \centering
+    \renewcommand\arraystretch{1.6}
+    \begin{longtable}{| >{\centering\arraybackslash}m{2cm}|m{9.5cm}|>{\centering\arraybackslash}m{2.2cm}|}
+      \hline
+      \textsc{\textbf{Requisito}} & \textsc{\textbf{Task associati}} & \textsc{\textbf{Completato}} \\
+      \hline
+      O-5.1 & Analisi dei casi d'uso reali & \textsc{si} \\
+      \hline
+      O-5.2 & Realizzazione dei componenti per l'esecuzione dei casi di test & \textsc{si}\\
+      \Xhline{2\arrayrulewidth}
+      O-6.1 & Analisi re-ingegnerizzazione e collaudo del flusso di integrazione asincrono & \textsc{si} \\
+      \Xhline{2\arrayrulewidth}
+      O-7.1 & Analisi e re-ingegnerizzazione e collaudo del flusso di integrazione asincrono con callback & \textsc{si}\\
+      \Xhline{2\arrayrulewidth}
+      O-8.1 & Analisi e re-ingegnerizzazione e collaudo del flusso di integrazione sincrono & \textsc{no}\\
+      \hline
+      \textsc{Non previsto} & Sperimentazione di funzioni aggiuntive: protezione di un dato sensibile & \textsc{si}\\
+      \hline
+
+      \caption{Obiettivi dello stage raggiunti}
+    \end{longtable}
+  \end{center}
+\end{small}
+% \doublespacing
+
+Come detto in precedenza, il requisito O-8.1 è stato scartato in favore della sperimentazione di alcune funzioni aggiuntive di Kafka, inizialmente non pianificate.
+
+% \section{Prodotti sviluppati}
+%
+% Il prodotto finale del progetto è composto da i diversi componenti illustrati nella sottosezione \ref{sub:uml_component}, per un totale di dieci servizi ognuno nel proprio
+% \textit{container} Docker (conformi con il \textit{deployment diagram} alla sottosezione \ref{sub:uml_deployment}).
+%
+% Questi microservizi hanno raggiunto efficacemente il risultato preposto, creando il sistema richiesto dalla sperimentazione; i due servizi di test quali \sacr{ws} \textit{Client} e \sacr{ws} \textit{Provider} si scambiano messaggi tramite un \middleware\ basato su Apache Kafka.
+
+\section{Contenuti formativi acquisiti}
+
+Il processo di formazione ha riguardato principalmente i concetti riguardo il settore del \textit{\acrlong{eai}} e le tecnologie legate ad Apache Kafka.
+
+Di seguito espongo i requisiti formativi soddisfatti, in relazione al piano di lavoro iniziale.
+
+\onehalfspacing
+\begin{small}
+  \begin{center}
+    \centering
+    \renewcommand\arraystretch{1.6}
+    \begin{longtable}{| >{\centering\arraybackslash}m{2cm}|m{9.5cm}|>{\centering\arraybackslash}m{2.2cm}|}
+      \hline
+      \textsc{\textbf{Requisito}} & \textsc{\textbf{Task associati}} & \textsc{\textbf{Completato}} \\
+      \hline
+     %  O-1.1 & Incontro con le persone coinvolte nel progetto per discutere i requisiti e le richieste relative al sistema da sviluppare & \textsc{si} \\
+     %  \hline
+     %  O-1.2 & Verifica credenziali e strumenti di lavoro assegnati & \textsc{si}\\
+     %  \hline
+     %  O-1.3 & Presa visione dell’infrastruttura esistente & \textsc{si}\\
+     %  \hline
+     %  D-1.1 & Ripasso approfondito riguardo i seguenti argomenti:
+     %    \smallskip
+     %    \begin{itemize}
+     %       \item Ingegneria del \software;
+     %       \item Sistemi di versionamento;
+     %       \item Architetture \software;
+     %       \item Cenni di \textit{Networking}.
+     %     \end{itemize} &  \textsc{si}\\
+     % \Xhline{2\arrayrulewidth}
+     O-2.1 & Nozioni fondamentali riguardo \sacr{eai} e \sacr{soa} & \textsc{si}\\
+     \hline
+     O-2.2 & Approfondimenti riguardo le Architetture a Messaggio, in particolare:
+       \begin{itemize}
+          \item \textit{Integration Styles};
+          \item \textit{Channel Patterns};
+          \item \textit{Message Construction Patterns};
+          \item \textit{Routing Patterns};
+          \item \textit{Transformation Patterns};
+          \item \textit{System Management Patterns}.
+        \end{itemize} & \textsc{si}\\
+    \Xhline{2\arrayrulewidth}
+
+    O-3.1 & Apache Kafka:
+      \begin{itemize}
+          \item Introduzione a Kafka;
+          \item Concetti fondamentali di Kafka;
+          \item Avvio e \sacr{cli};
+          \item Programmazione in Kafka con Java.
+        \end{itemize} & \textsc{si}\\
+    \hline
+    D-3.1 & Esempi e applicazioni di Apache Kafka & \textsc{si} \\
+    \Xhline{2\arrayrulewidth}
+
+    O-4.1 & Confluent Platform:
+      \begin{itemize}
+          \item \textit{Service registry};
+          \item \sacr{rest} \textit{proxy};
+          \item kSQL;
+          \item Confluent \textit{connectors};
+          \item \textit{Control center}.
+      \end{itemize} & \textsc{si}\\
+    \Xhline{2\arrayrulewidth}
+
+
+      \caption{Contenuti formativi acquisiti}
+    \end{longtable}
+  \end{center}
+\end{small}
+% \doublespacing
+
+\section{Obiettivi personali raggiunti}
+%
+% - molto soddisfacenti
+%
+% - espansione delle conoscenze tecnologiche
+%
+% - maturazione professionale
+%
+% - inserimento in un contesto Aziendale
+%
+% - gestione e organizzazione di progetto
+Valuto i risultati personali raggiunti dal percorso di \stage\ molto soddisfacenti dal punto di vista di una maturazione professionale.
+
+La formazione ricevuta affine al settore del \textit{\acrlong{eai}} ha allargato le mie conoscenze tecnologiche nell'ambito dell'ingegneria del \software\, in particolare ho apprezzato l'approfondimento riguardo le architecture \software\ moderne e i sistemi di integrazione associati al mondo del \textit{Big Data}.
+Ho apprezzato molto lo studio delle tecnologie emergenti per un'innovazione aziendale nel \sacr{eai}, quali Apache Kafka e Confluent, e le conseguenze importanti dovute alla migrazione di un sistema verso una \acrlong{eda}.
+
+L'alto livello di organizzazione personale che ho tenuto durante il percorso ha garantito un buona qualità nel \textit{way of working}, preparandomi all'inserimento nel mondo del lavoro e a un contesto aziendale innovativo e all'avanguardia.
+
+Gli esperti aziendali che mi hanno fornito il supporto e le linee guida necessarie al compimento dello \stage\ sono stati per me una grande fonte di apprendimento; in particolare, ho imparato gli importanti passi e considerazioni necessarie che guidano la sperimentazione associata all'implementazione di tecnologie innovative, sia in ambito tecnico che architetturale.
+
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[width=0.85\textwidth]{images/pdca.png}
+    \caption{\acrlong{pdca}}
+    \captionsetup{aboveskip=2pt}
+    \caption*{\begin{footnotesize}\textit{Fonte:} \url{http://quickstart-indonesia.com/siklus-pdca/}\end{footnotesize}}
+  \end{center}
+\end{figure}
+
+L'adozione del \sacrfoot{pdca} (figura \thefigure) nel mio metodo di lavoro è stato essenziale per dei miglioramenti personali in diversi ambiti, soprattutto quelli legati alla gestione del tempo (come visto nella sotto-sezione \ref{subsub:auto-miglioramento}), efficienza organizzativa ed efficacia di sviluppo.
+
+\section{Distanza rispetto ai contenuti del corso di studi}
+
+Nonostante le tecnologie e i concetti appresi siano totalmente nuovi rispetto agli insegnamenti del corso, quest'ultimi hanno fornito la preparazione necessaria all'apprendimento rapido di tali novità; in un settore lavorativo in rapida evoluzione come quello dell'informatica, la capacità di adattamento all'utilizzo di strumenti moderni come Apache Kafka e quella di comprendere facilmente le architetture innovative è di fondamentale importanza.
+
+I risultati dei vari corsi di studi hanno esplicitato la loro utilità nello \stage, culmine del percorso che porta alla Laurea in Informatica.
+
+Alcuni corsi in particolare hanno provveduto sostanzialmente la distanza tra l'ambiente universitario e quello lavorativo, quali ingegneria del software (con progetto associato), basi di dati, tecnologie web, e i vari corsi di programmazione.
+
+Riassumendo, il corso di studi ha pienamente soddisfatto i requisiti di cui il mio percorso di \stage\ ha necessitato e dato una rapida accelerazione alla mia carriera lavorativa.
