@@ -205,7 +205,7 @@ Il \textit{file} contiene una lista di servizi, in cui in ognuno viene specifica
   \item l'indirizzo \sacr{ipv4} statico e le porte attraverso cui è possibile raggiungere il servizio all'interno della rete locale dagli altri \textit{container}.
 \end{itemize}
 
-\subsection{Kafka \textit{producer} e \textit{consumer}}
+\subsection{\textit{Request producer} e \textit{request conconsumer}}
 
 Il passo successivo è stato quello di sviluppare dei semplici \textit{producer} e \textit{consumer} in grado di inserire e leggere i dati in Kafka.
 Una volta collaudati rapidamente questi due eseguibili scritti in Java, li ho incapsulati all'interno di un'applicazione utilizzando lo strumento di \textit{build} e gestione delle dipendenze Maven\footfullcite{maven}.
@@ -215,22 +215,24 @@ Nel caso più complesso del flusso asincrono con \textit{callback}, entrambi que
 
 Ho pertanto creato un \sacr{http} \textit{server} minimale in Java attraverso il \textit{framework} Netty\footfullcite{netty}, in esecuzione in un \textit{thread} Java.
 Sviluppi futuri vedrebbero probabilmente l'utilizzo di un \textit{framework} più evoluto come Spring Boot\footfullcite{spring}.
-Un altro \textit{thread} si occupa invece dell'invio delle \sacr{rest} \textit{request} al servizio di destinazione, una volta ricevuto un evento da parte del \textit{consumer}.
-
+Un altro \textit{thread} si occupa invece dell'invio delle \sacr{rest} \textit{request} al servizio di destinazione, una volta ricevuto un evento da parte del relativo \textit{consumer}.
+Per abbreviare, chiamerò il servizio che si interpone tra il \sacr{ws} \textit{Client} e Kafka "\textit{request producer}", e quello che si interpone tra Kafka e \sacr{ws} \textit{Provider} "\textit{request consumer}", in base al loro scopo principale: essi inviano e ricevono la \textit{request} relativa al dialogo dal \textit{client} al \textit{provider}.
 % \bigskip
 \noindent
-L'insieme di questi componenti formano i blocchi logici illustrati in verde nella sezione precedente, in cui il primo servizio è formato da:
+L'insieme di questi componenti formano i blocchi logici illustrati in verde nella sezione precedente, in cui il servizio \textit{request producer} è formato da:
 \begin{itemize}
-  \item \sacr{rest} \textit{\acrlong{ws}} (\sacr{http} \textit{server} in ascolto);
-  \item \textit{request producer};
-  \item \textit{response consumer} (\textit{callback});
+  \item \sacr{rest} \textit{\acrlong{ws}} (\sacr{http} \textit{server} in ascolto della \textit{client request});
+  \item \textit{client request producer};
+  \item \textit{callback request consumer};
+  \item \sacr{rest} \textit{\acrlong{ws}} (invio della \textit{callback request});
 \end{itemize}
 \noindent
-e il secondo da:
+e il \textit{request consumer} da:
 \begin{itemize}
-  \item \textit{request consumer};
-  \item \sacr{rest} \textit{\acrlong{ws}} (invio della \textit{request});
-  \item \textit{response producer} (\textit{callback}).
+  \item \textit{client request consumer};
+  \item \sacr{rest} \textit{\acrlong{ws}} (invio della \textit{client request});
+  \item \sacr{rest} \textit{\acrlong{ws}} (\sacr{http} \textit{server} in ascolto della \textit{callback request});
+  \item \textit{callback request producer}.
 \end{itemize}
 
 \subsection{\sacr{ws} \textit{Client} e \sacr{ws} \textit{Provider} }
@@ -324,10 +326,26 @@ Elenco i principali provvedimenti intrapresi per minimizzare il tempo di svilupp
   Il \textit{container} si occupa solamente di copiare l'eseguibile pre-costruito al suo interno e di eseguirlo con Java.
 \end{itemize}
 
-\section{Collaudo del prodotto finale}
+\section{Prodotto finale, verifica e collaudo}
 
 Il prodotto finale del progetto è composto da i diversi componenti illustrati nella sotto-sezione \ref{sub:uml_component}, per un totale di dieci servizi ognuno nel proprio
 \textit{container} Docker (conformi con il \textit{deployment diagram} alla sotto-sezione \ref{sub:uml_deployment}).
+Tre di questi servizi risultano più strutturati e complessi, ovvero il \textit{request producer}, \textit{request consumer} e il \sacr{ws} \textit{Provider}.
+Questi infatti sono degli applicativi \textit{multi-thread}, con struttura generata da Maven e formati da diversi \texttt{file} Java che si occupano di inviare e ricevere \sacr{rest} \textit{request}, "produrre" e "consumare" i dati utilizzando Kafka.
+
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=0.5\textwidth]{images/folder_tree.png}
+    \caption{\textit{Folder tree} dell'applicativo relativo al servizio \textit{request producer}}
+    \caption*{\begin{footnotesize}\textit{Fonte: elaborazione personale}\end{footnotesize}}
+  \end{center}
+\end{figure}
+
+I cinque servizi del \textit{cluster} di Apache Kafka risultano relativamente semplici: sono composti da un'immagine di Alpine Linux con un'installazione di Java \sacrfoot{jre} versione 8, con all'interno gli eseguibili di Kafka e i file di configurazione personalizzati.
+
+% TODO: completare con i 2 servizi rimanenti
+
+
 Nella figura \ref{fig:riass_componenti} è presente una bozza riassuntiva dalla \textit{board} di progetto ClickUp.
 
 \begin{figure}[h]
