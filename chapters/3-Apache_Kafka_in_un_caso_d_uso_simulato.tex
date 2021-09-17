@@ -387,14 +387,17 @@ Tramite l'utilizzo degli eseguibili di supporto messi a disposizione dal \textit
 \subsection{Collaudo}
 
 % Il tempo dedicato al processo di Collaudo è stato relativamente breve rispetto alla maggior parte dei prodotti \software: la causa di questa durata minore è la natura sperimentale del progetto di \stage\ che, come visto nella sotto-sezione \ref{sub:obiettivi_stage}, è incentrato sulla re-ingegnerizzazione del flusso di dati ma senza l'obiettivo di produrre un \middleware\ da implementare in produzione (quest'ultimo è un obiettivo aziendale nel lungo termine, ma non di questo specifico progetto di sperimentazione).
-Come per il processo di Verifica, anche il processo di Collaudo ha visto un utilizzo di risorse ridotto rispetto a quello di un \software\ da distribuire in produzione.
+Come per il processo di Verifica, anche il processo di Collaudo ha visto un utilizzo di risorse ridotto rispetto a quelle richieste per un \software\ da distribuire in produzione.
 
-Questi collaudi hanno visto il processo di \textit{build} e successivo avvio simultaneo di ogni singolo servizio all'interno del \textit{cluster} tramite l'apposito comando di Docker-compose "\texttt{docker-compose up --build}".
+Il processo è stato effettuato con la supervisione del tutor e degli esperti aziendali.
+hanno visto il processo di \textit{build} e successivo avvio simultaneo di ogni singolo servizio all'interno del \textit{cluster} tramite l'apposito comando di Docker-compose "\texttt{docker-compose up --build}".
+
 Dopodiché, al fine di testare che il \software\ eseguisse effettivamente le funzioni richieste dal progetto di sperimentazione (\textit{test} d'efficacia), ho effettuato delle \sacr{http} \sacr{rest} \textit{request} contenenti il \sacr{json} con i dati.
-Ho eseguito questo processo connettendomi al \textit{container} contenente il servizio \sacr{ws} \textit{client}, per poi dare manualmente il comando di \textit{request} grazie all'\textit{utility} \texttt{curl}.
-L'analisi del \sacr{json} in entrata e in uscita da ogni servizio mi ha garantito l'efficacia del \software\ sperimentale prodotto.
+Ho eseguito questo collaudo tramite una connessione manuale al \textit{container} contenente il servizio \sacr{ws} \textit{client}, per poi dare manualmente il comando di \textit{request} grazie all'\textit{utility} \texttt{curl}.
+L'analisi del \sacr{json} in entrata e in uscita dal sistema hanno garantito l'efficacia del \software\ sperimentale prodotto: la richiesta contenente i dati necessari viene correttamente trasmessa dal cliente al fornitore di tale servizio, e infine il cliente riceve un messaggio di risposta (\textit{callback}, in questo caso sperimentale la risposta è un semplice inoltro dei dati di partenza).
 
-Infine, il prodotto finale è stato presentato all'azienda in conclusione del percorso di \stage\ in un \textit{online meeting} con l'aiuto di alcune diapositive da me prodotte e una dimostrazione \textit{live} del \software\ in esecuzione tramite la condivisione dello schermo.
+Per dimostrare i risultati raggiunti e le capacità del prodotto finale, esso è stato presentato all'azienda in conclusione del percorso di \stage\ in un \textit{online meeting}.
+Il \textit{meeting} si è tenuto in due fasi distinte: la prima costituita da un'introduzione concettuale dell'architettura e degli scopi del percorso di \stage\ tramite l'aiuto di alcune diapositive da me prodotte, e la seconda da una dimostrazione \textit{live} del \software\ in esecuzione tramite la condivisione dello schermo.
 
 % TODO: expand
 % Come si può osservare
