@@ -165,7 +165,6 @@ Si può inoltre notare che l'ambiente di Apache Kafka è composto da un \textit{
 
 Allo scopo di riassumere elegantemente i vari componenti del sistema ho elaborato un \sacr{uml} \textit{component diagram}.
 Esso riassume con una visione ad alto livello i componenti che compongono il sistema e le modalità con cui esse interagiscono attraverso le relative interfacce.
-% TODO: aggiungere testo
 
 
 % , basati su delle immagini Linux leggere e personalizzate.
@@ -328,9 +327,15 @@ Elenco i principali provvedimenti intrapresi per minimizzare il tempo di svilupp
 
 \section{Prodotto finale, verifica e collaudo}
 
+\subsection{Prodotto finale}
+
+
 Il prodotto finale del progetto è composto da i diversi componenti illustrati nella sotto-sezione \ref{sub:uml_component}, per un totale di dieci servizi ognuno nel proprio
 \textit{container} Docker (conformi con il \textit{deployment diagram} alla sotto-sezione \ref{sub:uml_deployment}).
-Tre di questi servizi risultano più strutturati e complessi, ovvero il \textit{request producer}, \textit{request consumer} e il \sacr{ws} \textit{Provider}.
+Una visione ad alto livello può esprimere il prodotto risultante dallo \stage\ come \textbf{due servizi di test quali \sacr{ws} \textit{Client} e \sacr{ws} \textit{Provider} che scambiano messaggi sotto forma di \texttt{file} \sacr{json} tramite un \middleware\ basato su Apache Kafka in un'architettura focalizzata sugli eventi.}
+Il\middleware\ presenta inoltre la funzionalità aggiuntiva di trasformazione dei dati grazie all'utilizzo di Kafka Streams.
+
+Tra i diversi servizi prodotti, tre risultano più strutturati e complessi, ovvero il \textit{request producer}, \textit{request consumer} e il \sacr{ws} \textit{Provider}.
 Questi infatti sono degli applicativi \textit{multi-thread}, con struttura generata da Maven e formati da diversi \texttt{file} Java che si occupano di inviare e ricevere \sacr{rest} \textit{request}, "produrre" e "consumare" i dati utilizzando Kafka.
 
 \begin{figure}[H]
@@ -341,16 +346,17 @@ Questi infatti sono degli applicativi \textit{multi-thread}, con struttura gener
   \end{center}
 \end{figure}
 
-I cinque servizi del \textit{cluster} di Apache Kafka risultano relativamente semplici: sono composti da un'immagine di Alpine Linux con un'installazione di Java \sacrfoot{jre} versione 8, con all'interno gli eseguibili di Kafka e i file di configurazione personalizzati.
+I cinque servizi del \textit{cluster} di Apache Kafka risultano relativamente semplici: sono composti da un'immagine di Alpine Linux con un'installazione di Java \sacrfoot{jre} versione 8, con all'interno gli eseguibili di Kafka e i file di configurazione personalizzati per il \textit{setup} del cluster (porte e indirizzi).
 
-% TODO: completare con i 2 servizi rimanenti
+Il servizio che compone il \sacr{ws} \textit{Client} è quello di dimensioni più ridotte, essendo composto da un'immagine minimale di Linux con all'interno le \textit{network utility} trattate in precedenza.
 
+Infine, il servizio che utilizza Kafka Streams per il mascheramento dei dati sensibili è simile ai primi tre, con la differenza che esso non richiede dei processi \textit{multi-thread} ma solamente un'unica classe Java per il processo di \textit{streaming} dei messaggi.
 
-Nella figura \ref{fig:riass_componenti} è presente una bozza riassuntiva dalla \textit{board} di progetto ClickUp.
+Nella figura \ref{fig:riass_componenti} è presente una bozza riassuntiva dei componenti e della loro comunicazione, presa dalla \textit{board} di progetto ClickUp.
 
 \begin{figure}[h]
   \begin{center}
-    \includegraphics[width=0.63\textwidth]{images/riass_componenti.png}
+    \includegraphics[width=0.60\textwidth]{images/riass_componenti.png}
     \caption{\sacr{uml} Riassunto dei componenti prodotti nel caso asincrono con \textit{callback} e della loro comunicazione}
     \captionsetup{aboveskip=2pt}
     \caption*{\begin{footnotesize}\textit{Fonte: elaborazione personale}\end{footnotesize}}
@@ -358,16 +364,30 @@ Nella figura \ref{fig:riass_componenti} è presente una bozza riassuntiva dalla 
   \end{center}
 \end{figure}
 
-L'immagine illustra i servizi prodotti per il flusso asincrono con \textit{callback} e di come essi comunichino tra di loro attraverso le varie porte, elaborata durante il processo di Progettazione iniziale (in cui non è ancora presente la protezione del dato sensibile con Kafka Streams).
 
-Una visione ad alto livello può esprimere il prodotto risultante dallo \stage\ come \textbf{due servizi di test quali \sacr{ws} \textit{Client} e \sacr{ws} \textit{Provider} che scambiano messaggi sotto forma di \texttt{file} \sacr{json} tramite un \middleware\ basato su Apache Kafka in un'architettura focalizzata sugli eventi.}
-Il\middleware\ presenta inoltre la funzionalità aggiuntiva di trasformazione dei dati grazie all'utilizzo di Kafka Streams.
+
+L'immagine illustra i servizi prodotti per il flusso asincrono con \textit{callback} e di come essi comunichino tra di loro attraverso le varie porte, elaborata durante il processo di Progettazione iniziale (si può notare come non sia ancora presente la protezione del dato sensibile con Kafka Streams, funzionalità aggiunta negli ultimi giorni di \stage).
+
+
+\subsection{Verifica}
+
+
 % Questi microservizi hanno raggiunto efficacemente il risultato preposto, creando il sistema richiesto dalla sperimentazione; i due servizi di test quali \sacr{ws} \textit{Client} e \sacr{ws} \textit{Provider} si scambiano messaggi tramite un \middleware\ basato su Apache Kafka.
+Il tempo dedicato al processo di Verifica è stato relativamente breve rispetto alla maggior parte dei prodotti \software: la causa di questa durata minore è la natura sperimentale del progetto di \stage\ che, come visto nella sotto-sezione \ref{sub:obiettivi_stage}, è incentrato sulla re-ingegnerizzazione del flusso di dati ma senza l'obiettivo di produrre un \middleware\ da implementare in produzione (quest'ultimo è un obiettivo aziendale nel lungo termine, ma non di questo specifico progetto di sperimentazione).
+Il processo di Verifica è stato applicato per tutta la durata del processo di Codifica, con particolare attenzione nelle fasi finali.
 
-A seguito di tutte le dovute verifiche del \software, il prodotto è stato più volte collaudato con la supervisione del tutor aziendale e il responsabile del \sacr{eai}.
+Il prodotto è stato più volte verificato con la supervisione del tutor aziendale e il responsabile del \sacr{eai}.
 Tutti i \textit{container} prodotti sono stati revisionati, compresa la loro corretta esecuzione.
+I passaggi principali del processo hanno visto la verifica manuale dell'\textit{input} e \textit{output} di ogni singolo \textit{container} sia nel flusso di dati in andata che nel flusso di ritorno di \textit{callback}, con eccezione del \textit{cluster} Kafka.
+La stampa su console del movimento del dato, contenuta nei servizi scritti in Java, ha aiutato la verifica costante della funzionalità principale permettendo il rilevamento immediato di casi di regressione.
+Il \textit{cluster} Kafka invece è stato il soggetto di una verifica differente: ho analizzato approfonditamente l'output in console dei vari \textit{container}, per assicurarmi la corretta comunicazione tra di essi.
+Tramite l'utilizzo degli eseguibili di supporto messi a disposizione dal \textit{team} di Apache Kafka, ho periodicamente controllato i contenuti dei \textit{topic} generati durante il progetto ed il corretto funzionamento del \textit{cluster}.
 
-Il tempo dedicato al processo di Collaudo è stato relativamente breve rispetto alla maggior parte dei prodotti \software: la causa di questa durata minore è la natura sperimentale del progetto di \stage\ che, come visto nella sotto-sezione \ref{sub:obiettivi_stage}, è incentrato sulla re-ingegnerizzazione del flusso di dati ma senza l'obiettivo di produrre un \middleware\ da implementare in produzione (quest'ultimo è un obiettivo aziendale nel lungo termine, ma non di questo specifico progetto di sperimentazione).
+
+\subsection{Collaudo}
+
+% Il tempo dedicato al processo di Collaudo è stato relativamente breve rispetto alla maggior parte dei prodotti \software: la causa di questa durata minore è la natura sperimentale del progetto di \stage\ che, come visto nella sotto-sezione \ref{sub:obiettivi_stage}, è incentrato sulla re-ingegnerizzazione del flusso di dati ma senza l'obiettivo di produrre un \middleware\ da implementare in produzione (quest'ultimo è un obiettivo aziendale nel lungo termine, ma non di questo specifico progetto di sperimentazione).
+Come per il processo di Verifica, anche il processo di Collaudo ha visto un utilizzo di risorse ridotto rispetto a quello di un \software\ da distribuire in produzione.
 
 Questi collaudi hanno visto il processo di \textit{build} e successivo avvio simultaneo di ogni singolo servizio all'interno del \textit{cluster} tramite l'apposito comando di Docker-compose "\texttt{docker-compose up --build}".
 Dopodiché, al fine di testare che il \software\ eseguisse effettivamente le funzioni richieste dal progetto di sperimentazione (\textit{test} d'efficacia), ho effettuato delle \sacr{http} \sacr{rest} \textit{request} contenenti il \sacr{json} con i dati.
@@ -376,4 +396,5 @@ L'analisi del \sacr{json} in entrata e in uscita da ogni servizio mi ha garantit
 
 Infine, il prodotto finale è stato presentato all'azienda in conclusione del percorso di \stage\ in un \textit{online meeting} con l'aiuto di alcune diapositive da me prodotte e una dimostrazione \textit{live} del \software\ in esecuzione tramite la condivisione dello schermo.
 
+% TODO: expand
 % Come si può osservare
