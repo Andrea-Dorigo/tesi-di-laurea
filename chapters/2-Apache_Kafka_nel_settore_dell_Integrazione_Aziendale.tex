@@ -4,13 +4,13 @@
 \section{Obiettivi aziendali}
 \subsection{Migrazione verso un'\textit{Event Driven Architecture}}
 
-Per soddisfare le richieste dei clienti ed essere sempre competitiva e all'avanguardia, una priorità di Sync Lab sono le esplorazioni tecnologiche e di prodotto anche tramite l'utilizzo di percorsi di \stage\ insieme ai laureandi, come quanto accaduto nella mia esperienza.
+Per soddisfare le richieste dei clienti ed essere sempre competitiva e all'avanguardia, una priorità di Sync Lab sono le esplorazioni tecnologiche e di prodotto anche tramite l'utilizzo di percorsi di \stage\ insieme ai laureandi, come accaduto nella mia esperienza.
 Questi percorsi consentono all'azienda non solo di testare l'utilizzo di nuovi \software\ ma anche di conoscere e mettere alla prova le capacità del laureando in vista di una potenziale assunzione al termine dello \stage.
 % \bigskip
 % Introduzione al motivo aziendale per cui è nato questo percorso di stage: la propensione odierna alle architetture a microservizi, la gestione di grandi flussi di dati in modo efficiente ed eff1icace, una richiesta di un sistema innovativo da parte della clientela.3
 
 Nel settore dell'\gls{g_eai}, l'evoluzione tecnologica è diretta verso soluzioni sempre più distribuite e con un flusso di dati in continuo aumento.
-Uno degli obiettivi specifici nell'area \sacr{eai} di Sync Lab è pertanto quello di trovare un \software\ o tecnologia in grado di soddisfare i bisogni dei clienti di gestire un flusso di dati di dimensioni molto maggiori a quelle attuali, tramite architetture a messaggio che utilizzano servizi distribuiti.
+Uno degli obiettivi specifici nell'area \sacr{eai} di Sync Lab è pertanto quello di individuare un \software\ o tecnologia in grado di soddisfare i bisogni dei clienti di gestire un flusso di dati di dimensioni molto maggiori a quelle attuali, tramite architetture a messaggio che utilizzano servizi distribuiti.
 
 \begin{figure}[h]
   \begin{center}
@@ -24,7 +24,7 @@ Uno degli obiettivi specifici nell'area \sacr{eai} di Sync Lab è pertanto quell
 Nei \middleware\ per i sistemi di integrazione, l'aumento del flusso di dati e lo spostamento verso strutture distribuite provoca una difficoltà nella trasmissione dei dati tra i diversi servizi.
 Nell'ambito dell'integrazione per un cliente di piccole dimensioni, in cui i dati circolano tra un numero di componenti limitato, può essere sufficiente un'architettura di tipo \sacrfoot{p2p}.
 
-Nel caso di un cliente di maggiori dimensioni tuttavia questo approccio rende la manutenzione e gestione del flusso di dati molto difficoltoso e costoso in termini di risorse (figura \thefigure), dato che il grande numero di collegamenti tra i vari punti.
+Nel caso di un cliente di maggiori dimensioni tuttavia, questo approccio rende la manutenzione e gestione del flusso di dati molto difficoltoso e costoso in termini di risorse (figura \thefigure), dato il grande numero di collegamenti tra i vari punti.
 
 Una delle soluzioni che viene maggiormente implementata per risolvere questo problema è la migrazione verso una \sacr{eda} (\textit{\acrlong{eda}}), un'architettura basata sugli eventi in grado di scambiare dati tra punti multipli.
 
@@ -37,7 +37,7 @@ Una delle soluzioni che viene maggiormente implementata per risolvere questo pro
   \end{center}
 \end{figure}
 
-Questo tipo di architettura è pertanto definita per gestire la produzione, il rilevamento e la reazione agli eventi (figura \thefigure) grazie ad un \textit{Design Pattern} di tipo \textit{Publish/Subscribe}, eliminando i problemi visti precedentemente causati dal sistema \sacr{p2p}.
+Questo tipo di architettura è pertanto definita per gestire la produzione, il rilevamento e la reazione agli eventi (figura \thefigure), grazie ad un \textit{Design Pattern} di tipo \textit{Publish/Subscribe}, eliminando i problemi delineati precedentemente causati dal sistema \sacr{p2p}.
 Questa architettura prevede l'utilizzo di servizi chiamati \textit{Producer}, il cui scopo è fornire dati al \textit{event bus} centrale.
 Una volta che i dati sono inseriti all'interno del \textit{bus} centrale, ogni servizio in ascolto (\textit{Subscriber}) li riceverà idealmente in tempo reale.
 % \section{L’evoluzione delle architetture di integrazione}
@@ -63,7 +63,7 @@ Una volta che i dati sono inseriti all'interno del \textit{bus} centrale, ogni s
 
 \subsection{Kafka come Middleware}
 
-Per soddisfare le esigenze di innovazione l'azienda ha avviato un percorso per indagare le capacità del software Apache Kafka nell'ambito dell'integrazione aziendale.
+Per soddisfare le esigenze di innovazione, l'azienda ha avviato un percorso per indagare le capacità del \software\ Apache Kafka nell'ambito dell'integrazione aziendale.
 
 \begin{figure}[h]
   \begin{center}
@@ -74,7 +74,7 @@ Per soddisfare le esigenze di innovazione l'azienda ha avviato un percorso per i
   \end{center}
 \end{figure}
 
-Apache Kafka si integra ottimamente in molti sistemi basati sul \textit{messaging pattern} e una \sacr{eda}, in cui lo scambio affidabile di dati tra numerosi servizi in tempo reale è essenziale (in figura \thefigure\ è illustrato un caso d'uso esemplificativo di un sistema distribuito basato su Kafka).
+Apache Kafka si integra in modo ottimale in molti sistemi basati sul \textit{messaging pattern} e una \sacr{eda}, in cui lo scambio affidabile di dati tra numerosi servizi in tempo reale è essenziale (in figura \thefigure\ è illustrato un caso d'uso esemplificativo di un sistema distribuito basato su Kafka).
 
 % \begin{figure}[h]
 %   \begin{center}
@@ -85,13 +85,13 @@ Apache Kafka si integra ottimamente in molti sistemi basati sul \textit{messagin
 %   \end{center}
 % \end{figure}
 
-L'interesse di Sync Lab nel \software\ risiede dunque nell'utilizzo di Kafka come un  \textit{Middleware} per soddisfare i problemi di integrazione aziendale e re-ingegnerizzare i flussi di dati preesistenti, ovvero sviluppare un nuovo sistema che consenta la comunicazione tra differenti servizi con un rapido flusso di dati fra di essi.
+L'interesse di Sync Lab nel \software\ risiede dunque nell'utilizzo di Kafka come un  \textit{Middleware} per soddisfare i problemi di integrazione aziendale e re-ingegnerizzare i flussi di dati preesistenti, ovvero sviluppare un nuovo sistema che consenta la comunicazione tra differenti servizi con un rapido flusso di dati tra di essi.
 
 
-L'azienda ha avviato un percorso per testare le capacità di Kafka rispetto agli attuali strumenti utilizzati nel settore, per valutare i vantaggi e svantaggi che l'adozione di tale \software\ può fornire al cliente.
+L'azienda dunque ha avviato un percorso per testare le capacità di Kafka rispetto agli attuali strumenti utilizzati nel settore, per valutare i vantaggi e svantaggi che l'adozione di tale \software\ può fornire al cliente.
 
 \noindent
-Sono numerosi i vantaggi che Kafka può portare nel settore, fra cui:
+Sono numerosi i vantaggi che Kafka può portare nel settore, tra cui:
 \begin{itemize}
   \item gestione rapida e performante di un enorme flusso di dati;
   \item scalabilità;
@@ -111,17 +111,17 @@ Sono numerosi i vantaggi che Kafka può portare nel settore, fra cui:
 Una delle ragioni che mi ha portato a scegliere questo percorso di \stage\ è l'interesse verso Apache Kafka.
 L'utilizzo della piattaforma di \textit{event streaming} è sempre più in crescita, come l'evoluzione verso sistemi sempre più distribuiti e a microservizi.
 
-Un altro fattore fondamentale alla scelta del percorso sono stati la famigliarità con l'azienda, il personale giudizio positivo che ho avuto riguardo il loro metodo di lavoro e la libertà di sviluppo concessa: ho ritenuto importante la possibilità di elaborare personalmente un'architettura del caso d'uso con una visione ad alto livello, anziché il semplice sviluppo di un software predeterminato e dal percorso strettamente imposto.
+Un altro fattore fondamentale per la scelta del percorso sono stati la familiarità con l'azienda, una buona valutazione del metodo di lavoro aziendale e la libertà di sviluppo concessa: ho ritenuto importante la possibilità di elaborare personalmente un'architettura associata al caso d'uso con una visione ad alto livello, anziché il semplice sviluppo di un \software\ predeterminato e dal percorso strettamente imposto.
 
 \subsection{Obiettivi personali}
 L'obiettivo fondamentale dello \stage\ è colmare il divario tra il mondo accademico e quello lavorativo.
 Grazie al percorso di \stage\ in una ditta esterna ho avuto l'opportunità di conoscere l'ambiente di lavoro di un'azienda nel campo \sacr{ict}, facilitandomi l'inserimento nel mondo del lavoro.
 
 Un altro obiettivo è ottenere una formazione riguardo la tecnologia di Kafka, che ritengo possa arricchire fortemente le mie capacità e \textit{skill} professionali.
-Sono pertanto interessato a sviluppare la mia formazione riguardo l'utilizzo e le implicazioni di questa tecnologia in rapida espansione, la cui formazione potrà essermi utile in molti campi anche al di fuori degli obiettivi dell'azienda ospitante lo \stage.
+Sono pertanto interessato a sviluppare la mia conoscenza riguardo l'utilizzo e le implicazioni di questa tecnologia in rapida espansione, la cui formazione potrà essermi utile in molti campi anche al di fuori degli obiettivi dell'azienda ospitante lo \stage.
 
 
-\section{Il percorso di Stage}
+\section{Pianificazione del percorso di Stage}
 
 
 % Descrizione di come il percorso di \textit{stage} si inserisce nella visione più ampia riportata qui sopra.
@@ -144,10 +144,10 @@ Sono pertanto interessato a sviluppare la mia formazione riguardo l'utilizzo e l
 \subsection{Obiettivi dello \textit{stage}}
 \label{sub:obiettivi_stage}
 Il percorso di \textit{stage} offerto dall'azienda si inserisce all'interno della strategia aziendale più ampia descritta sopra.
-Al fine di esplorare la tecnologia di Apache Kafka nell'ambito di un \textit{Middleware} per l'integrazione aziendale, l'azienda ha proposto un percorso di \textbf{\textit{stage} il cui obiettivo è la re-ingegnerizzazione di un flusso di dati asincrono, utilizzando un'architettura basata su Kafka all'interno di un caso d'uso simulato tramite servizi indipendenti.}
+Al fine di esplorare la tecnologia di Apache Kafka nell'ambito di un \textit{Middleware} per l'integrazione aziendale, l'azienda ha proposto un percorso di \textbf{\textit{stage}, il cui obiettivo è la re-ingegnerizzazione di un flusso di dati asincrono, utilizzando un'architettura basata su Kafka all'interno di un caso d'uso simulato tramite servizi indipendenti.}
 
 Lo stagista ha il compito di osservare, testare e verificare che il \software\ possa svolgere alcuni compiti inerenti all'area del \sacr{eai}, analizzando alcuni casi d'uso presenti in un \textit{Middleware} aziendale in ambito \textit{telco}.
-Il percorso di prevede una durata di 300 ore lavorative.
+Il percorso prevede una durata di 300 ore lavorative.
 
 % \bigskip\noindent
 % Il percorso proposto prevede le seguenti attività e obiettivi generali:
@@ -168,7 +168,7 @@ Il percorso di prevede una durata di 300 ore lavorative.
   \end{center}
 \end{figure}
 
-I prodotti attesi al termine dello \textit{stage} sono dunque associati alla realizzazione di tre flussi di integrazione, basati su dei casi d’uso reali, per la gestione dei paradigmi di integrazione asincrono e asincrono con \textit{callback} (due requisiti obbligatori), e sincrono ove fosse disponibile del tempo aggiuntivo e se ritenuto opportuno; durante il percorso considerato il contesto e le opportunità offerte dal \software\ questo obiettivo verrà sostituito per testare delle funzionalità aggiuntive di Kafka.
+I prodotti attesi al termine dello \textit{stage} sono dunque associati alla realizzazione di tre flussi di integrazione, basati su dei casi d’uso reali, per la gestione dei paradigmi di integrazione asincrono, asincrono con \textit{callback} (due requisiti obbligatori), e sincrono ove fosse disponibile del tempo aggiuntivo se ritenuto opportuno; durante il percorso, considerati il contesto e le opportunità offerte dal \software, questo obiettivo verrà sostituito per testare delle funzionalità aggiuntive di Kafka.
 
 Il prodotto \software\ finale sarà un sistema basato su servizi indipendenti costruito con un'architettura di tipo \sacr{eda} tramite l'utilizzo di Kafka (figura \thefigure).
 
@@ -186,10 +186,10 @@ Più precisamente, i contenuti formativi previsti durante questo percorso di \te
 
 \subsection{Interazione tra studente e referenti aziendali}
 % Personalizzare definendo le modalità di interazione col tutor aziendale
-Regolarmente, (almeno una volta la settimana) ci saranno incontri online (tramite la piattaforma Google Meet) con il tutor aziendale Francesco Giovanni Sanges, il responsabile dell’area \sacr{eai} Salvatore Dore e gli esperti delle tecnologie affrontate.
-I meeting saranno necessariamente online, dato il dislocamento dei vari membri in diverse città.
+Regolarmente sono previsti incontri online settimanali (tramite la piattaforma Google Meet) con il tutor aziendale Francesco Giovanni Sanges, il responsabile dell’area \sacr{eai} Salvatore Dore e gli esperti delle tecnologie affrontate.
+% I meeting saranno necessariamente online, dato il dislocamento dei vari membri in diverse città.
 
-Lo scopo di questi incontri sarà quello di verificare lo stato di avanzamento, chiarire gli obiettivi ove necessario, affinare la ricerca e aggiornare la pianificazione iniziale.
+Lo scopo di questi incontri è quello di verificare lo stato di avanzamento, chiarire gli obiettivi ove necessario, affinare la ricerca e aggiornare la pianificazione iniziale.
 
 % \subsection{Strumenti organizzativi dello \textit{stage}}
 
@@ -200,16 +200,16 @@ Lo scopo di questi incontri sarà quello di verificare lo stato di avanzamento, 
 \subsubsection{\textsc{Kanban board di progetto}}
 
 % Descrizione del Piano di Lavoro presentato, le strategie e il metodo di lavoro stabilito.
-All'inizio del percorso ho delineato un \textit{way of working}, ovvero un metodo di lavoro da mantenere per tutta la durata dello \textit{stage}, insieme al tutor aziendale, il responsabile dell'area \sacr{eai} e gli esperti del settore.
-
-Per garantire un buon livello organizzativo, quantificare l'avanzamento e rendere agevole la verifica e il supporto tecnico l'azienda ha proposto l'utilizzo di una \textit{board} di progetto.
+All'inizio dello \stage\ ho stabilito un \textit{way of working}, ovvero un metodo di lavoro da mantenere per tutta la durata del percorso, insieme al tutor aziendale, il responsabile dell'area \sacr{eai} e gli esperti del settore.
+%
+% Per garantire un buon livello organizzativo, quantificare l'avanzamento e rendere agevole la verifica e il supporto tecnico l'azienda ha proposto l'utilizzo di una \textit{board} di progetto.
 % Tra le tante opzioni disponibili, mi è stata proposta la piattaforma \textit{ClickUp}.
 % Rispetto alla concorrenza questa \textit{board} è ricca di funzionalità, pulita nell'esposizione dello stato del progetto, e la maggior parte delle sue funzioni sono gratuite.
 
 L'organizzazione efficiente del progetto è dunque garantita dall'utilizzo di vari strumenti a supporto, quali Kanban \textit{board} (come \textit{Click Up}\footfullcite{clickup} per la gestione di progetto e \textit{Notion}\footfullcite{notion} per le prenotazioni della postazione di lavoro in sede), \textit{chat} (come \textit{Google Chat}\footfullcite{google-chat}) per i confronti rapidi con gli altri membri interni al progetto ed e-mail per le comunicazioni con componenti esterni al progetto.
 
 Lo strumento più utilizzato in ambito organizzativo durante il mio percorso è la Kanban \textit{board} di \textit{Click Up}, che ha permesso la gestione, il confronto, la quantificazione e la verifica del progresso.
-Tra le tante opzioni disponibili \textit{ClickUp} possiede numerosi vantaggi rispetto la concorrenza: la piattaforma è ricca di funzionalità, pulita nell'esposizione dello stato del progetto, e la maggior parte delle sue funzioni sono gratuite.
+Tra le tante opzioni disponibili \textit{Click Up} possiede numerosi vantaggi rispetto alla concorrenza: la piattaforma è ricca di funzionalità, pulita nell'esposizione dello stato del progetto e la maggior parte delle sue funzioni sono gratuite.
 La figura seguente illustra, a titolo esemplificativo, uno \textit{screenshot} che raffigura lo stato dell'avanzamento.
 
 % \bigskip
@@ -223,9 +223,9 @@ La figura seguente illustra, a titolo esemplificativo, uno \textit{screenshot} c
 \end{figure}
 
 Le attività (\textit{task}) vengono inizialmente create nella colonna "\textsc{DA FARE}" dal tutor aziendale o dal sottoscritto, ove ritenuto opportuno.
-Per dimostrare l'avanzamento il \textit{task} si sposta verso destra a seconda dello stato raggiunto; lo stagista ha la responsabilità del cambiamento di stato fino alla colonna "DA VERIFICARE", dopodiché è compito del tutor aziendale la verifica e lo spostamento del \textit{task} in "\textsc{TASK APPROVATI}", che comporta l'approvazione finale e conclusione dell'attività.
+Per dimostrare l'avanzamento il \textit{task} si sposta verso destra a seconda dello stato raggiunto; ho avuto la responsabilità del cambiamento di stato fino alla colonna "DA VERIFICARE", dopodiché la verifica e lo spostamento del \textit{task} in "\textsc{TASK APPROVATI}" è compito del tutor aziendale, con conseguenti approvazione finale e conclusione dell'attività.
 
-Per tenere traccia del lavoro svolto riguardante una specifica attività ho utilizzato le \textit{card} messe a disposizione dalla piattaforma, che mi hanno consentito di delineare precisamente la pianificazione e descrizione dell'avanzamento in dettaglio del singolo \textit{task}.
+Per tenere traccia del lavoro svolto riguardante una specifica attività, ho utilizzato le \textit{card} messe a disposizione dalla piattaforma, che mi hanno consentito di delineare precisamente la pianificazione e la descrizione dettagliata dell'avanzamento del singolo \textit{task}.
 
 \begin{figure}[h]
   \begin{center}
@@ -236,16 +236,16 @@ Per tenere traccia del lavoro svolto riguardante una specifica attività ho util
   \end{center}
 \end{figure}
 
-Questa \textit{card} (di cui è presente un esempio in figura \thefigure) contiene una casella di testo per inserire una descrizione e appunti utili ove sia richiesto, una \textit{checklist} approfondita, e una colonna che mantiene uno storico dei commenti; quest'ultima colonna non solo permette a me di mantenere un'importante resoconto sul lavoro svolto, ma consente anche al tutor aziendale e esperti del settore di quantificare il progresso e di fornire un aiuto rapido e contestuale.
+Questa \textit{card} (di cui è presente un esempio in figura \thefigure) contiene una casella di testo per inserire una descrizione e appunti utili, una \textit{checklist} approfondita e una colonna che mantiene uno storico dei commenti; quest'ultima colonna non solo permette a me di mantenere un'importante resoconto sul lavoro svolto, ma consente anche al tutor aziendale e esperti del settore di quantificare il progresso e di fornire un aiuto rapido e contestuale.
 
-Per la condivisione di codice è stato possibile utilizzare uno strumento a mia discrezione, e pertanto ho utilizzato Git per creare una \textit{repository} e successivamente ne ho fatto l'\textit{upload} in modalità privata (secondo indicazioni aziendali) su Github.
-L'inserimento del codice identificativo del \texttt{commit} all'interno di un commento allo scopo di \textit{log} ha favorito ulteriormente il tracciamento del progresso e reso agevole l'eventuale supporto da parte degli esperti aziendali.
+Per la condivisione di codice è stato possibile utilizzare uno strumento a mia discrezione, e pertanto ho utilizzato Git per creare una \textit{repository} di cui successivamente ho eseguito l'\textit{upload} in modalità privata (secondo indicazioni aziendali) su Github.
+L'inserimento del codice identificativo del \texttt{commit} , all'interno di un commento allo scopo di \textit{log}, ha favorito ulteriormente il tracciamento del progresso e reso agevole l'eventuale supporto da parte degli esperti aziendali.
 
-All'inizio del percorso il tutor aziendale e il responsabile del \sacr{eai} hanno creato delle \textit{card} contenenti le attività previste per ogni settimana (\textit{task}) al fine di fornire una struttura generale del progetto.
-All'interno di questi \textit{task} vi sono i concetti chiave, attività previste e obiettivi settimanali che lo stagista è tenuto a seguire per garantire l'efficacia del prodotto finale.
-Oltre a questi \textit{task} principali, ho potuto creare di \textit{task} ausiliari e dei \textit{sub-task} per descrivere più adeguatamente l'attività in corso.
+All'inizio del percorso, il tutor aziendale e il responsabile del \sacr{eai} hanno creato delle \textit{card} contenenti le attività previste per ogni settimana (\textit{task}), al fine di fornire una struttura generale del progetto.
+All'interno di questi \textit{task} vi sono i concetti chiave, attività previste e obiettivi settimanali da seguire per garantire l'efficacia del prodotto finale.
+Oltre a questi \textit{task} principali, ho potuto creare dei \textit{task} ausiliari e dei \textit{sub-task} per descrivere più adeguatamente l'attività in corso.
 
-Ciascun \textit{task} contiene una colonna laterale dove ho mantenuto un \textit{log} di tutto ciò che è stato eseguito relativo al \textit{task} in questione, allo scopo di esplicitarne il progresso e rendere agevole un eventuale supporto dal tutor o l'evoluzione futura.
+% Ciascun \textit{task} contiene una colonna laterale dove ho mantenuto un \textit{log} di tutto ciò che è stato eseguito relativo al \textit{task} in questione, allo scopo di esplicitarne il progresso e rendere agevole un eventuale supporto dal tutor o l'evoluzione futura.
 
 \subsubsection{\textsc{Meeting con gli esperti di Sync Lab}}
 

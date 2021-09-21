@@ -97,9 +97,9 @@ Per il processo di Formazione, Sync Lab fornisce materiale sotto forma di corsi 
 
 Per il processo di Analisi, Sync Lab mi ha fornito il materiale relativo al caso d'uso da sviluppare, al fine di consentirmi la conoscenza dei requisiti e funzioni finali richieste dal prodotto.
 
-Il processo di Progettazione architetturale è uno dei più complessi, che necessita di una buona dose di esperienza nell'ambito.
+Il processo di Progettazione architetturale è uno dei più complessi, che necessita di una considerevole esperienza nell'ambito.
 Per affrontare questo processo, oltre ad approfondire le mie conoscenze riguardo i diversi \textit{design pattern} e \textit{software architecture style}, l'azienda mi ha accompagnato e supportato nella progettazione stessa, con relative motivazioni.
-Il tutor aziendale  Francesco Sanges e il responsabile del settore \sacr{eai} Salvatore Dore
+Il tutor aziendale  Francesco Giovanni Sanges e il responsabile del settore \sacr{eai} Salvatore Dore
 sono stati di fondamentale aiuto in questo processo.
 
 Il processo di Codifica nella mia esperienza personale è risultato abbastanza libero per quanto riguarda le tecnologie e i \software\ utilizzati, purché le scelte fossero adeguatamente motivate e adeguate.
@@ -122,7 +122,7 @@ La strategia \textit{Agile} è composta da quattro valori fondamentali:
   \item gli individui hanno importanza maggiore rispetto ai processi;
   \item il funzionamento del \software\ ha la priorità rispetto alla documentazione esaustiva;
   \item la collaborazione tra fornitore e cliente è più importante della negoziazione del contratto;
-  \item adattare il progetto ai cambiamenti ha la priorità rispetto al seguire la pianificazione.
+  \item l'adattamento del progetto ai cambiamenti ha la priorità rispetto alla pianificazione.
 \end{itemize}
 
 Questo metodo di lavoro consente all'azienda un alto livello di adattabilità ed evoluzione del prodotto, in base alle richieste del cliente e alle esigenze del \textit{team} di progetto, al fine di fornire soluzioni \textit{ad-hoc} e soddisfare le loro richieste in modo efficiente ed efficace.
@@ -159,15 +159,15 @@ Il percorso di \stage\ ha visto anch'esso l'utilizzo di una Kanban \textit{board
 
 % Sviluppo indipendente dal sistema operativo, produzione di \software\ non strettamente legati ad uno specifico linguaggio, utilizzo di ambienti virtuali quali \textit{Virtual Machine} e \textit{container} per simulare sistemi indipendenti.
 % L'ambiente di lavoro di cui ho avuto esperienza risulta libero e flessibile, tanto nel campo organizzativo quanto in quello tecnologico.
-\subsection{Un dominio flessibile e indipendente}
+\subsection{Dominio aziendale flessibile e indipendente}
 
 Il dominio tecnologico aziendale di cui ho avuto esperienza risulta libero e flessibile.
 
-Lo sviluppo del prodotto \software\ nell'ambito del \sacr{eai} è fortemente consigliato essere indipendente dal linguaggio di programmazione, dagli strumenti utilizzati per l'esecuzione e sviluppo, e ove possibile e anche dal Sistema Operativo su cui esso esegue.
+Lo sviluppo del prodotto \software\ nell'ambito del \sacr{eai} è fortemente consigliato essere indipendente dal linguaggio di programmazione, dagli strumenti utilizzati per l'esecuzione e sviluppo, e ove possibile, anche dal Sistema Operativo su cui esso esegue.
 A tal scopo si utilizzano strumenti quali \textit{Virtual Machine} e \textit{Container}: essi non solo garantiscono l'indipendenza dal Sistema Operativo in uso, ma simulano efficacemente il caso d'uso reale in cui gli eseguibili sono dislocati in più dispositivi come spesso accade per il cliente finale.
 Il percorso formativo ha visto l'apprendimento di entrambe le tecnologie tramite l'utilizzo dei \software\ \textit{Virtual Box}\footfullcite{virtualbox} e \textit{Docker}\footfullcite{docker}, ma infine solo quest'ultima è stata utilizzata durante il progetto.
 
-Nonostante vi sia questa libertà tecnologica riguardo la scelta dei software e linguaggi, è necessario tenere in considerazioni i concetti principali vincolanti del settore, che descrivo in seguito.
+Nonostante vi sia questa libertà tecnologica riguardo la scelta dei software e linguaggi, è necessario tenere in considerazione i concetti principali vincolanti del settore, descritti in seguito.
 
  % come quelli di sistema distribuito, \sacrfoot{soa}, \textit{messaging pattern} e \sacrfoot{esb}.
 
@@ -184,16 +184,17 @@ Un concetto fondamentale che caratterizza il dominio tecnologico aziendale, è q
   \end{center}
 \end{figure}
 
-\textbf{Un sistema distribuito} (figura \thefigure) \textbf{è una collezione di componenti indipendenti} (spesso collocati in macchine differenti) \textbf{che condividono dei messaggi fra di loro per raggiungere un obiettivo comune.}
-Un'architettura software basata su di un sistema distribuito necessita di una rete che connette tutti i singoli componenti (macchine, \textit{hardware} o \textit{software}), cosicché sia possibile lo scambio dei messaggi.
+\textbf{Un sistema distribuito} (figura \thefigure) \textbf{è una collezione di componenti indipendenti} (spesso collocati in macchine differenti) \textbf{che condividono dei messaggi per raggiungere un obiettivo comune.}
+Un'architettura \software\ basata su di un sistema distribuito necessita di una rete che connette tutti i singoli componenti (macchine, \textit{hardware} o \textit{software}), cosicché sia possibile lo scambio dei messaggi.
 
-Il vantaggio principale di questo tipo di sistemi è la relativamente economica scalabilità orizzontale dei grandi sistemi: per migliorare la \textit{performance} del sistema è sufficiente aggiungere delle nuove macchine, meno costoso che richiedere \textit{hardware} sempre più potente.
+Il vantaggio principale di questo tipo di sistemi è la scalabilità orizzontale relativamente economica dei grandi sistemi: per migliorare la \textit{performance} del sistema è sufficiente aggiungere nuove macchine, operazione meno costosa rispetto alla richiesta di \textit{hardware} sempre più potente.
 
-Un secondo vantaggio di fondamentale importanza è la tolleranza ai guasti (\textit{fault tolerance}); rispetto ad un sistema centralizzato, ove nel caso di guasto nella macchina centrale si interrompe l'intero sistema, nel caso di un sistema distribuito esso continua a funzionare e fornire il servizio ove vi sia un guasto in un numero (limitato) di macchine.
+Un secondo vantaggio di fondamentale importanza è la tolleranza ai guasti (\textit{fault tolerance}).
+In un sistema centralizzato, un guasto nella macchina centrale provoca l'interruzione dell'intero sistema, mentre un sistema distribuito continua e fornire il servizio ove vi sia un guasto in un numero limitato di macchine.
 
-Un ulteriore punto a favore dei sistemi distribuiti è la bassa latenza: il \textit{service client} si connette al nodo a se più geograficamente vicino, riducendo il tempo di risposta dei sistemi che coprono vasti territori.
+Un ulteriore punto a favore dei sistemi distribuiti è la bassa latenza: il \textit{service client} si connette al nodo più geograficamente vicino, riducendo il tempo di risposta dei sistemi che coprono vasti territori.
 
-Questo tipo di sistemi risulta molto favorevole per i clienti di grande dimensione di Sync Lab, per cui i vantaggi superano lo svantaggio del costo iniziale più alto dato dall'installazione del sistema.
+Questa soluzione risulta molto favorevole per i clienti di grande dimensione di Sync Lab, per cui i vantaggi elencati superano lo svantaggio del costo iniziale più alto dato dall'installazione del sistema.
 
 \subsection{\textit{\acrlong{soa}}}
 
@@ -225,14 +226,14 @@ Questo tipo di architettura consente a Sync Lab di creare sistemi basati sui mic
     \caption*{\begin{footnotesize}\textit{Fonte:} \url{https://starship-knowledge.com/messaging-patterns}\end{footnotesize}}
   \end{center}
 \end{figure}
-
+\noindent
 I \textit{messaging pattern} sono alla base di ogni sistema di integrazione.
 Il \textit{design pattern} si occupa dello scambio di messaggi, come si può intuire dal nome.
 Un messaggio è un pacchetto di dati atomico che può essere trasmesso attraverso un canale in modalità asincrona.
 Un canale è un condotto virtuale che connette un servizio che invia i dati ad uno che li riceve.
 
 Nella maggior parte dei sistemi di integrazione, il dato potrebbe necessitare diverse elaborazioni e non conoscere direttamente il destinatario del messaggio; è possibile applicare i concetti relativi alla \textit{pipes and filters architecture} inserendo un ricettore comune, un \textit{message router} che si occupa del \textit{routing} di tutti i messaggi e del passaggio di essi attraverso i vari filtri e trasformazioni.
-Un \textit{message broker} è un modulo \software\ spesso posto all'interno di una \sacr{mom}; si occupa, oltre al \textit{routing}, della validazione, memorizzazione ed invio dei messaggi alle destinazioni appropriate
+Un \textit{message broker} è un modulo \software\ spesso posto all'interno di una \sacr{mom}; si occupa, oltre al \textit{routing}, di validazione, memorizzazione ed invio dei messaggi alle destinazioni appropriate
 
 
 \subsection{\textit{\acrlong{esb}}}
@@ -292,8 +293,8 @@ Dal sito di Red Hat\footfullcite{red-hat-middleware}:
 \noindent
 I \textit{Middleware} pertanto vedono due importanti utilizzi nel settore \sacr{eai}:
 \begin{itemize}
-  \item \textbf{Integrazione su più livelli:} i \textit{Middleware} connettono i principali sistemi aziendali interni ed esterni. Capacità di integrazione quali trasformazione, connettività, componibilità e messaggistica enterprise, abbinate all'autenticazione \sacrfoot{sso}, aiutano gli sviluppatori a estendere tali capacità su diverse applicazioni.
-  \item \textbf{Flussi di dati:} le \sacrfoot{api} rappresentano una modalità per condividere i dati tra le applicazioni. Un altro approccio è quello del flusso di dati asincrono, che consiste nella replica di un set di dati in un livello intermedio, da cui i dati possono essere condivisi con più applicazioni.
+  \item \textbf{Integrazione su più livelli:} i \textit{Middleware} connettono i principali sistemi aziendali interni ed esterni. Capacità di integrazione quali trasformazione, connettività, componibilità e messaggistica \textit{enterprise}, abbinate all'autenticazione \sacrfoot{sso}, aiutano gli sviluppatori a estendere tali capacità su diverse applicazioni.
+  \item \textbf{Flussi di dati:} le \sacrfoot{api} rappresentano una modalità per condividere i dati tra le applicazioni. Un altro approccio è quello del flusso di dati asincrono, che consiste nella replica di un \textit{set} di dati in un livello intermedio, da cui i dati possono essere condivisi con più applicazioni.
   \item \textbf{Ottimizzazione di applicazioni esistenti:} con l'adozione del \textit{Middleware}, gli sviluppatori possono trasformare le applicazioni monolitiche esistenti in applicazioni \textit{cloud native} o a microservizi, mantenendo i validi strumenti già in uso ma migliorandone prestazioni e portabilità (figura \thefigure).
 \end{itemize}
 
@@ -309,15 +310,15 @@ I \textit{Middleware} pertanto vedono due importanti utilizzi nel settore \sacr{
 
 \subsection{\textit{Container} e \textit{Virtual Machine}}
 
-Come anticipato nella sezione precedente, tra le tecnologie più utilizzate in questo settore aziendale vi sono molte piattaforme che permettono di simulare ambienti distribuiti su più macchine fisiche, ove possibile anche indipendenti dal Sistema Operativo su cui viene eseguito il prodotto software.
+Come anticipato nella sezione precedente, tra le tecnologie più utilizzate in questo settore aziendale vi sono molte piattaforme che permettono di simulare ambienti distribuiti su più macchine fisiche, ove possibile anche indipendenti dal Sistema Operativo su cui viene eseguito il prodotto \software.
 
 La simulazione di questi \textit{distributed environment} avviene grazie a sistemi basati sul concetto di \textit{container} (come Docker e Kubernetes) oppure interi Sistemi Operativi che vengono eseguiti all'interno di una \textit{Virtual Machine}.
-Il vantaggio principale di queste tecnologie è che rendono l'esecuzione del software al loro interno completamente indipendente dall'ambiente circostante, eliminando problemi di \sacrfoot{os} differenti tra i componenti del team o tra l'azienda e i clienti o divergenze nelle dipendenze con relative versioni.
-Un \textit{container} o una \textit{Virtual Machine} contengono tutto il necessario affinché sia possibile eseguire il software al suo interno su diverse macchine fisiche (o anch'esse  virtuali).
+Il vantaggio principale di queste tecnologie è che rendono l'esecuzione del \software\ al loro interno completamente indipendente dall'ambiente circostante, eliminando problemi di \sacrfoot{os} differenti tra i componenti del team o tra l'azienda e i clienti o divergenze nelle dipendenze con relative versioni.
+Un \textit{container} o una \textit{Virtual Machine} contengono tutto il necessario affinché sia possibile eseguire il \software\ al suo interno su diverse macchine fisiche (o anch'esse  virtuali).
 
-Queste piattaforme non solo rendono agevole l'esecuzione del software prodotto, ma anche lo sviluppo: la condivisione, \textit{debugging} e manutenzione risultano più agevoli grazie alla condivisione dell'intero \textit{container} o \sacr{vm} con gli altri membri del team.
+Queste piattaforme non solo rendono agevole l'esecuzione del \software\ prodotto, ma anche lo sviluppo: la condivisione, \textit{debugging} e manutenzione risultano più agevoli grazie alla condivisione dell'intero \textit{container} o \sacr{vm} con gli altri membri del team.
 
-Inoltre, si adattano particolarmente bene a simulare l'ambiente distribuito, un concetto fondamentale nel settore del \textit{eai}; infatti è sufficiente generare molteplici \textit{container} o \sacr{vm} sulla stessa macchina fisica per simulare un sistema composto da più macchine fisiche distinte, minimizzando l'utilizzo di risorse senza compromettere il risultato del prodotto finale.
+Inoltre, si adattano particolarmente bene a simulare l'ambiente distribuito, un concetto fondamentale nel settore del \sacr{eai}; infatti è sufficiente generare molteplici \textit{container} o \sacr{vm} sulla stessa macchina fisica per simulare un sistema composto da più macchine fisiche distinte, minimizzando l'utilizzo di risorse senza compromettere il risultato del prodotto finale.
 È così possibile per l'azienda riprodurre un sistema complesso che si avvicina alle risorse ed esigenze effettive del cliente, che usualmente possiede molti computer e server dislocati.
 
 \begin{figure}[h]
@@ -340,10 +341,10 @@ Vi sono dunque delle notevoli differenze, vantaggi e svantaggi tra l'utilizzo de
 \end{enumerate}
 
 % Dati questi presupposti, ho optato per l'implementazione di un sistema basato su i \container\ nel mio progetto di \stage.
-Durante il percorso di stage ho approfondito le mie conoscenze riguardo entrambe le tecnologie, optando di utilizzare i \container\ all'interno del mio progetto di \stage, poiché più efficiente considerate le risorse a mia disposizione.
+Durante il percorso di stage ho approfondito le mie conoscenze riguardo entrambe le tecnologie, optando per l'utilizzo di \container\ all'interno del mio progetto di \stage, poiché più efficiente considerate le risorse a mia disposizione.
 La scelta della piattaforma di \container\ è stata quella di Docker.
 % La scelta, in accordo con il tutor aziendale, è dovuta
-Più precisamente, ho utilizzato l'estensione \textit{Docker-compose}\footfullcite{docker-compose} per gestire in modo elegante la generazione e collaudo di più servizi indipendenti (figura \thefigure): non solo questo \software\ consente di creare velocemente una rete di \textit{container} comunicanti su di una rete isolata, ma rende anche rapido ed efficiente lo sviluppo grazie alla possibilità di modificare e riavviare rapidamente un singolo servizio.
+Più precisamente, ho utilizzato l'estensione \textit{Docker-compose}\footfullcite{docker-compose} per gestire in modo elegante generazione e collaudo di più servizi indipendenti (figura \thefigure): non solo questo \software\ consente di creare velocemente una rete di \textit{container} comunicanti su di una rete isolata, ma rende anche rapido ed efficiente lo sviluppo, grazie alla possibilità di modificare e riavviare rapidamente un singolo servizio.
 %
 % \begin{figure}[H]
 %   \begin{minted}[
@@ -413,24 +414,24 @@ Più precisamente, ho utilizzato l'estensione \textit{Docker-compose}\footfullci
 
 \end{figure}
 
-Come si può vedere in figura \thefigure, è relativamente semplice e veloce creare un ambiente composto da due container (il servizio intitolato \texttt{web}, composto a partire dalla cartella corrente e accessibile alla porta 5000, e il servizio \texttt{redis}, generato a partire da un'immagine predefinita, entrambi connessi alla stessa rete locale di default di Docker.
+Come si può vedere in figura \thefigure, è relativamente semplice e veloce creare un ambiente composto da due container entrambi connessi alla stessa rete locale di default di Docker (il servizio intitolato \texttt{web}, composto a partire dalla cartella corrente e accessibile alla porta 5000, e il servizio \texttt{redis}, generato a partire da un'immagine predefinita).
 
-Il caso d'uso realizzato nel mio percorso ha simulato grazie ai \container\ un sistema a microservizi che simula le risorse di un grande cliente gestore di telecomunicazioni, secondo una visione coerente con il tipo di clientela reale dell'azienda.
+Il caso d'uso realizzato nel mio percorso ha modellato grazie ai \container\ un sistema a microservizi che simula le risorse di un grande cliente gestore di telecomunicazioni, secondo una visione coerente con il tipo di clientela reale dell'azienda.
 % TODO: completare il collegamento tra sopra e sotto;
 % TODO: magari ci sta bene un esempio di dockerfile
 
-\subsection{L'introduzione di Apache Kafka}
+\subsection{Introduzione di Apache Kafka}
 
-In questo periodo Sync Lab sta iniziando dei percorsi per implementare nuove tecnologie nei prodotti \textit{Middleware}.
+Attualmente Sync Lab sta intraprendendo dei percorsi per implementare nuove tecnologie nei prodotti \textit{Middleware}.
 Uno di questi prodotti è Apache Kafka.
 
 Kafka è una piattaforma di \textit{event streaming}, un sistema distribuito e moderno basato sugli eventi anziché su di una soluzione più classica come può essere quella del \textit{request/response} e \sacr{p2p}.
 
-L'\textit{event streaming} è una pratica focalizzata sul catturare dati in \textit{real-time} da diverse fonti come \textit{database}, sensori e dispositivi mobili sotto la forma di un flusso continuo di eventi; garantisce uno scambio continuo di informazioni e la loro interpretazione.
+L'\textit{event streaming} è una pratica focalizzata sul catturare dati in \textit{real-time} da diverse fonti come \textit{database}, sensori e dispositivi mobili sotto la forma di un flusso di eventi; garantisce uno scambio continuo di informazioni e la loro interpretazione.
 
 Apache Kafka è un \software\ fondato sul \textit{design pattern} del \textit{publish/subscribe}.
 Contiene infatti delle \sacr{api} intitolate \textit{Producer} e \textit{Consumer}, che un utente della piattaforma può utilizzare rispettivamente per pubblicare degli eventi o riceverli istantaneamente.
-Permette inoltre di memorizzare questo flusso di dati in modo affidabile, \textit{fault tolerant}, e duraturo, o di processare il flusso per processarlo e trasformarlo.
+Permette inoltre di memorizzare questo flusso di dati in modo affidabile, \textit{fault tolerant}, e duraturo, oppure di processare il flusso per trasformarlo.
 
 Un evento è definito come un'occorrenza significativa o un cambiamento di stato del sistema, e nell'ottica del \textit{messaging design pattern} occuperebbe il ruolo di un messaggio atomico.
 
@@ -444,21 +445,21 @@ Un evento è definito come un'occorrenza significativa o un cambiamento di stato
 \end{figure}
 
 Essi sono organizzati all'interno di \textit{topics}, delle liste ordinate di eventi in cui molteplici applicazioni possono scrivere o leggere tali eventi simultaneamente.
-In figura si può vedere un esempio di \textit{topic}, diviso in diverse partizioni, in cui due \textit{producer} inseriscono dati simultaneamente.
+In figura si può vedere un esempio di \textit{topic}, diviso in diverse partizioni, in cui due \textit{producer} inseriscono dati.
 
 Kafka viene eseguito come un gruppo (\textit{cluster}) di \textit{server} distribuiti.
 Alcuni di questi \textit{server} sono chiamati \textit{broker}, e insieme compongono il livello di memorizzazione (\textit{storage layer}).
 Altri \textit{server} sono dedicati all'esecuzione di Kafka Connect, un componente essenziale per l'importazione dei dati da altre fonti; esso è molto rilevante nel campo dei \middleware, poiché permette di integrare Kafka all'interno di sistemi pre-esistenti in modo graduale, con un investimento iniziale parziale.
 
-I \textit{client} invece permettono di sviluppare applicazioni distribuite a microservizi che leggono, scrivono e processano il flusso di dati; questi \textit{client} mettono a disposizione delle interfacce per molti linguaggi e \software\ differenti, tra cui Java, Scala, Python, C++/C oltre a delle \sacr{rest} \sacr{api}.
+I \textit{client} invece, permettono di sviluppare applicazioni distribuite a microservizi che leggono, scrivono e processano il flusso di dati; questi \textit{client} mettono a disposizione delle interfacce per molti linguaggi e \software\ differenti, tra cui Java, Scala, Python, C++/C oltre a delle \sacr{rest} \sacr{api}.
 
-Il sistema è molto adattabile, dato che può essere installato anche su \textit{acrlong{vm}}, \textit{container}, ambienti \textit{cloud} e addirittura \textit{bare-metal hardware}.
+Il sistema è molto adattabile, dato che può essere installato anche su \textit{\acrlong{vm}}, \textit{container}, ambienti \textit{cloud} e addirittura \textit{bare-metal hardware}.
 La piattaforma è costituita da un sistema distribuito di \textit{server} e \textit{client} che comunicano attraverso un protocollo \textit{network} \sacrfoot{tcp} ad alta \textit{performance}.
 
 Il \software\ ha dimostrato negli anni recenti un notevole successo in diversi campi\footnote{Fonte: \url{https://kafka.apache.org/powered-by}}, come quello del flusso di \textit{Big Data}, del monitoraggio e dell'elaborazione dati in tempo reale.
-L'adozione del \software\ nell'ambito del \sacr{eai} è in crescita dato le dimostrate qualità nel gestire grandi moli di dati: la sua performance, sicurezza e scalabilità sono i punti che hanno portato il software al suo attuale successo.
+L'adozione del \software\ nell'ambito del \sacr{eai} è in crescita dato le dimostrate qualità nel gestire grandi moli di dati: le sue performance, sicurezza e scalabilità sono i punti che hanno portato il \software\ al suo attuale successo.
 
-\section{L'innovazione all'interno dell'azienda}
+\section{Innovazione all'interno dell'azienda}
 
 
 Questo contesto dell'integrazione aziendale porta dunque l'impresa ad avere un'importante propensione all'innovazione, talvolta esplicitamente richiesta dai clienti.
