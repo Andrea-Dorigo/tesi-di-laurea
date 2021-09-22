@@ -10,7 +10,7 @@ La causa di questo questa lunga durata è data dallo studio di diversi concetti 
 \begin{figure}[h]
   \begin{center}
     \includegraphics[width=0.7\textwidth]{images/coursera_week2.png}
-    \caption{Screenshot del corso online \textit{\acrlong{soa}} sulla piattaforma Coursera}
+    \caption{\textit{Screenshot} del corso \textit{online} \textit{\acrlong{soa}} sulla piattaforma Coursera}
     \captionsetup{aboveskip=2pt}
     \caption*{\begin{footnotesize}\textit{Fonte: elaborazione personale}\end{footnotesize}}
   \end{center}
@@ -57,8 +57,8 @@ Il modello associato al caso asincrono con \textit{callback} seguirà la stessa 
 \section{Progettazione architetturale}\label{sec:progettazione}
 \subsection{\textit{Middleware} basato su un \sacr{eda}}
 
-La progettazione architetturale ha portato alla produzione di diversi diagrammi \sacr{uml} per rappresentare efficacemente l'architettura del prodotto e fornire un modello da seguire durante l'attività di Codifica.
-L'attività ha richiesto frequenti \textit{meeting} e confronti per raggiungere un risultato finale soddisfacente al fine della sperimentazione.
+La progettazione architetturale ha portato alla produzione di diversi diagrammi \sacr{uml} per rappresentare efficacemente l'architettura del prodotto e fornire un modello da seguire durante la fase di Codifica.
+La fase ha richiesto frequenti \textit{meeting} e confronti per raggiungere un risultato finale soddisfacente al fine della sperimentazione.
 
 La progettazione architetturale del prodotto comprende un \middleware\ centrale basato su di un \textit{\acrlong{eda}} con l'utilizzo di Apache Kafka, e due componenti di \textit{testing} chiamati \textit{service client} e \textit{service provider}, che simulano due servizi esterni che comunicano con il \middleware\ attraverso \sacr{rest} \textit{request}.
 Il sistema è composto da molteplici \gls{g_microservizi}, che comunicano attraverso la rete di Docker.
@@ -169,7 +169,7 @@ Esso riassume con una visione ad alto livello i componenti che compongono il sis
 
 \subsection{Kafka \textit{cluster}}
 
-Il primo passo dell'attività di Codifica è stato quello del \textit{setup} dell'ambiente di Kafka in locale.
+Il primo passo della fase di Codifica è stato quello del \textit{setup} dell'ambiente di Kafka in locale.
 La guida rapida \textit{online} fornita direttamente da Apache per un'installazione minimale di Kafka porta al \textit{download} di un pacchetto e l'esecuzione di un servizio Zookeeper e un \textit{broker} di Kafka.
 
 Zookeeper è un servizio attualmente essenziale al funzionamento di Kafka, gestisce i nodi del \textit{cluster} e mantiene una lista dei \textit{topic} e dei messaggi.
@@ -362,9 +362,9 @@ L'immagine illustra i servizi prodotti per il flusso asincrono con \textit{callb
 
 
 % Questi \gls{g_microservizi} hanno raggiunto efficacemente il risultato preposto, creando il sistema richiesto dalla sperimentazione; i due servizi di test quali \sacr{ws} \textit{Client} e \sacr{ws} \textit{Provider} si scambiano messaggi tramite un \middleware\ basato su Apache Kafka.
-Il tempo dedicato all'attività di Verifica è stato relativamente breve rispetto alla maggior parte dei prodotti \software: la causa di questa durata minore è la natura sperimentale del progetto.
+Il tempo dedicato alla fase di Verifica è stato relativamente breve rispetto alla maggior parte dei prodotti \software: la causa di questa durata minore è la natura sperimentale del progetto.
 Come visto nella sotto-sezione \ref{sub:obiettivi_stage}, lo \stage\ è incentrato sulla re-ingegnerizzazione del flusso di dati senza l'obiettivo di produrre un \middleware\ da implementare in produzione; quest'ultimo è un obiettivo aziendale nel lungo termine, ma non di questo specifico progetto di sperimentazione.
-L'attività di Verifica è stata applicata per tutta la durata della Codifica, con particolare attenzione nelle fasi finali.
+La fase di Verifica è stata applicata successivamente alla Codifica, con particolare attenzione nelle fasi finali.
 
 Il prodotto è stato più volte verificato con la supervisione del tutor aziendale e il responsabile del \sacr{eai}.
 Tutti i \gls{g_container} prodotti sono stati revisionati, compresa la loro corretta esecuzione.
@@ -377,9 +377,8 @@ Tramite l'utilizzo degli eseguibili di supporto messi a disposizione dal \textit
 \subsection{Collaudo}
 
 % Il tempo dedicato al processo di Collaudo è stato relativamente breve rispetto alla maggior parte dei prodotti \software: la causa di questa durata minore è la natura sperimentale del progetto di \stage\ che, come visto nella sotto-sezione \ref{sub:obiettivi_stage}, è incentrato sulla re-ingegnerizzazione del flusso di dati ma senza l'obiettivo di produrre un \middleware\ da implementare in produzione (quest'ultimo è un obiettivo aziendale nel lungo termine, ma non di questo specifico progetto di sperimentazione).
-Come per l'attività di Verifica, anche il Collaudo ha visto un utilizzo di risorse ridotto rispetto a quelle richieste per un \software\ da distribuire in produzione.
-
-L'attività è stato effettuato con la supervisione del tutor e degli esperti aziendali.
+Come per la fase di Verifica, anche il Collaudo ha visto un utilizzo di risorse ridotto rispetto a quelle richieste per un \software\ da distribuire in produzione.
+Il tutor e gli esperti aziendali hanno contribuito a questa fase.
 
 Il collaudo ha riguardato il processo di \textit{build} e successivo avvio simultaneo di ogni singolo servizio all'interno del \textit{cluster}, tramite l'apposito comando di docker-compose "\texttt{docker-compose up --build}".
 
