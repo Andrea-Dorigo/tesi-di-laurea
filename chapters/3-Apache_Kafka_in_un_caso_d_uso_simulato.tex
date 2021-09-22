@@ -57,8 +57,8 @@ Il modello associato al caso asincrono con \textit{callback} seguirà la stessa 
 \section{Progettazione architetturale}\label{sec:progettazione}
 \subsection{\textit{Middleware} basato su un \sacr{eda}}
 
-La progettazione architetturale ha portato alla produzione di diversi diagrammi \sacr{uml} per rappresentare efficacemente l'architettura del prodotto e fornire un modello da seguire durante il processo di Codifica.
-Il processo ha richiesto frequenti \textit{meeting} e confronti per raggiungere un risultato finale soddisfacente al fine della sperimentazione.
+La progettazione architetturale ha portato alla produzione di diversi diagrammi \sacr{uml} per rappresentare efficacemente l'architettura del prodotto e fornire un modello da seguire durante l'attività di Codifica.
+L'attività ha richiesto frequenti \textit{meeting} e confronti per raggiungere un risultato finale soddisfacente al fine della sperimentazione.
 
 La progettazione architetturale del prodotto comprende un \middleware\ centrale basato su di un \textit{\acrlong{eda}} con l'utilizzo di Apache Kafka, e due componenti di \textit{testing} chiamati \textit{service client} e \textit{service provider}, che simulano due servizi esterni che comunicano con il \middleware\ attraverso \sacr{rest} \textit{request}.
 Il sistema è composto da molteplici \gls{g_microservizi}, che comunicano attraverso la rete di Docker.
@@ -169,7 +169,7 @@ Esso riassume con una visione ad alto livello i componenti che compongono il sis
 
 \subsection{Kafka \textit{cluster}}
 
-Il primo passo del processo di Codifica è stato quello del \textit{setup} dell'ambiente di Kafka in locale.
+Il primo passo dell'attività di Codifica è stato quello del \textit{setup} dell'ambiente di Kafka in locale.
 La guida rapida \textit{online} fornita direttamente da Apache per un'installazione minimale di Kafka porta al \textit{download} di un pacchetto e l'esecuzione di un servizio Zookeeper e un \textit{broker} di Kafka.
 
 Zookeeper è un servizio attualmente essenziale al funzionamento di Kafka, gestisce i nodi del \textit{cluster} e mantiene una lista dei \textit{topic} e dei messaggi.
@@ -355,20 +355,20 @@ Nella figura \ref{fig:riass_componenti} è presente una bozza riassuntiva dei co
 
 
 
-L'immagine illustra i servizi prodotti per il flusso asincrono con \textit{callback} e di come essi comunichino tra di loro attraverso le varie porte, elaborata durante il processo di Progettazione iniziale (si può notare come non sia ancora presente la protezione del dato sensibile con Kafka Streams, funzionalità aggiunta negli ultimi giorni di \stage).
+L'immagine illustra i servizi prodotti per il flusso asincrono con \textit{callback} e di come essi comunichino tra di loro attraverso le varie porte, elaborata durante la Progettazione iniziale (si può notare come non sia ancora presente la protezione del dato sensibile con Kafka Streams, funzionalità aggiunta negli ultimi giorni di \stage).
 
 
 \subsection{Verifica}
 
 
 % Questi \gls{g_microservizi} hanno raggiunto efficacemente il risultato preposto, creando il sistema richiesto dalla sperimentazione; i due servizi di test quali \sacr{ws} \textit{Client} e \sacr{ws} \textit{Provider} si scambiano messaggi tramite un \middleware\ basato su Apache Kafka.
-Il tempo dedicato al processo di Verifica è stato relativamente breve rispetto alla maggior parte dei prodotti \software: la causa di questa durata minore è la natura sperimentale del progetto.
+Il tempo dedicato all'attività di Verifica è stato relativamente breve rispetto alla maggior parte dei prodotti \software: la causa di questa durata minore è la natura sperimentale del progetto.
 Come visto nella sotto-sezione \ref{sub:obiettivi_stage}, lo \stage\ è incentrato sulla re-ingegnerizzazione del flusso di dati senza l'obiettivo di produrre un \middleware\ da implementare in produzione; quest'ultimo è un obiettivo aziendale nel lungo termine, ma non di questo specifico progetto di sperimentazione.
-Il processo di Verifica è stato applicato per tutta la durata del processo di Codifica, con particolare attenzione nelle fasi finali.
+L'attività di Verifica è stata applicata per tutta la durata della Codifica, con particolare attenzione nelle fasi finali.
 
 Il prodotto è stato più volte verificato con la supervisione del tutor aziendale e il responsabile del \sacr{eai}.
 Tutti i \gls{g_container} prodotti sono stati revisionati, compresa la loro corretta esecuzione.
-I passaggi principali del processo hanno visto la verifica manuale dell'\textit{input} e \textit{output} di ogni singolo \gls{g_container} sia nel flusso di dati in andata che nel flusso di ritorno di \textit{callback}, con eccezione del \textit{cluster} Kafka.
+I passaggi principali della Verifica hanno visto la verifica manuale dell'\textit{input} e \textit{output} di ogni singolo \gls{g_container} sia nel flusso di dati in andata che nel flusso di ritorno di \textit{callback}, con eccezione del \textit{cluster} Kafka.
 La stampa su \textit{console} del movimento del dato, contenuta nei servizi scritti in Java, ha aiutato la verifica costante della funzionalità principale, permettendo il rilevamento immediato di casi di regressione.
 Il \textit{cluster} Kafka invece è stato il soggetto di una verifica differente: ho analizzato approfonditamente l'\textit{output} in \textit{console} dei vari \gls{g_container}, per assicurarmi la corretta comunicazione tra di essi.
 Tramite l'utilizzo degli eseguibili di supporto messi a disposizione dal \textit{team} di Apache Kafka, ho periodicamente controllato i contenuti dei \textit{topic} generati durante il progetto ed il corretto funzionamento del \textit{cluster}.
@@ -377,9 +377,9 @@ Tramite l'utilizzo degli eseguibili di supporto messi a disposizione dal \textit
 \subsection{Collaudo}
 
 % Il tempo dedicato al processo di Collaudo è stato relativamente breve rispetto alla maggior parte dei prodotti \software: la causa di questa durata minore è la natura sperimentale del progetto di \stage\ che, come visto nella sotto-sezione \ref{sub:obiettivi_stage}, è incentrato sulla re-ingegnerizzazione del flusso di dati ma senza l'obiettivo di produrre un \middleware\ da implementare in produzione (quest'ultimo è un obiettivo aziendale nel lungo termine, ma non di questo specifico progetto di sperimentazione).
-Come per il processo di Verifica, anche il processo di Collaudo ha visto un utilizzo di risorse ridotto rispetto a quelle richieste per un \software\ da distribuire in produzione.
+Come per l'attività di Verifica, anche il Collaudo ha visto un utilizzo di risorse ridotto rispetto a quelle richieste per un \software\ da distribuire in produzione.
 
-Il processo è stato effettuato con la supervisione del tutor e degli esperti aziendali.
+L'attività è stato effettuato con la supervisione del tutor e degli esperti aziendali.
 
 Il collaudo ha riguardato il processo di \textit{build} e successivo avvio simultaneo di ogni singolo servizio all'interno del \textit{cluster}, tramite l'apposito comando di docker-compose "\texttt{docker-compose up --build}".
 
