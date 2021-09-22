@@ -1,4 +1,4 @@
-\documentclass[a4paper]{report}
+\documentclass[a4paper, twoside, openright]{report}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[italian]{babel}
@@ -15,20 +15,18 @@
 \usepackage{fancyhdr}
 \usepackage{datatool}
 \usepackage{acronym}
-\usepackage[acronym]{glossaries}
+\usepackage[acronym,toc,section=chapter]{glossaries}
 \usepackage{textcomp}
-\usepackage{csquotes}
 \usepackage{tabularx}
 \usepackage{makecell}
 \usepackage{multirow}
+% \usepackage[nottoc,numbib]{tocbibind}
+% \usepackage[]{glossaries}
 \usepackage{longtable}
-
 % \newcommand{\mintedoptions}{cachedir=/tmp/mint,outputdir=/aux}
-
 \usepackage[outputdir=aux]{minted}
-
 \usepackage[citestyle=authortitle-ibid, backend=biber, hyperref=true]{biblatex}
-
+\usepackage{csquotes}
 \definecolor{unipdred}{RGB}{149, 0, 19}
 \definecolor{pastelblue}{RGB}{17,93,118}
 
@@ -61,7 +59,39 @@
     {\footnotesize\textit{Fonte:} \url{https://www.ibm.com/it-it/cloud/learn/soa}}
     }
 }
-
+\newglossaryentry{g_eda}
+{
+    name=\textit{Event Driven Architecture},
+    description={\hfill \\
+    Una Event Driven Architecture è costituita da produttori di eventi che generano un flusso di eventi e consumer eventi che sono in ascolto degli eventi.\\
+    Gli eventi vengono recapitati praticamente in tempo reale, in modo che i consumer possano rispondervi immediatamente non appena si verificano. I producer sono separati dai consumer: un producer è all'oscuro dei consumer in ascolto. Anche i consumer sono separati tra loro e ognuno visualizza tutti gli eventi. Questo comportamento differisce da un modello con consumer concorrenti, in cui i consumer eseguono il pull di messaggi da una coda e un messaggio viene elaborato solo una volta (presupponendo l'assenza di errori). In alcuni sistemi, ad esempio nei sistemi IoT, gli eventi devono essere inseriti a volumi molto elevati. \\
+    Un'architettura guidata dagli eventi può usare un modello di pubblicazione/sottoscrizione o un modello di flusso di eventi.
+    \hfill \\
+    {\footnotesize\textit{Fonte:} \url{https://docs.microsoft.com/it-it/azure/architecture/guide/architecture-styles/event-driven}}
+    }
+}
+\newglossaryentry{g_microservizi}
+{
+    name=microservizi,
+    description={\hfill \\
+    I microservizi sono un approccio per sviluppare e organizzare l’architettura dei software secondo cui quest’ultimi sono composti di servizi indipendenti di piccole dimensioni che comunicano tra loro tramite API ben definite. Questi servizi sono controllati da piccoli team autonomi.\\
+    Le architetture dei microservizi permettono di scalare e sviluppare le applicazioni in modo più rapido e semplice, permettendo di promuovere l’innovazione e accelerare il time-to-market di nuove funzionalità.
+    \hfill \\
+    {\footnotesize\textit{Fonte:} \url{https://aws.amazon.com/it/microservices/}}
+    }
+}
+\newglossaryentry{g_container}
+{
+    name=\textit{container},
+    description={\hfill \\
+    I container sono delle unità eseguibili di software in cui viene impacchettato il codice applicativo, insieme alle sue librerie e dipendenze, con modalità comuni in modo da poter essere eseguito ovunque, sia su desktop che su IT tradizionale o cloud.\\
+    Per farlo, i container usufruiscono di una forma di virtualizzazione del sistema operativo (SO), in cui le funzioni del SO (ossia, nel caso del kernel Linux, i namespace e le primitive dei cgroup) vengono utilizzate efficacemente sia per isolare i processi che per controllare la quantità di CPU, memoria e disco a cui tali processi hanno accesso.\\
+    I container sono piccoli, veloci e portatili perché, diversamente da una VM, non hanno bisogno di includere un sistema operativo guest in ogni istanza e possono invece sfruttare semplicemente le funzioni e le risorse del sistema operativo host.\\
+    I container sono apparsi per la prima volta decenni fa con versioni come le jail FreeBSD e le partizioni di carico di lavoro AIX (WPAR), ma la maggior parte degli sviluppatori moderni ricorda il 2013 come inizio dell'era dei container moderni con l'introduzione di Docker.
+    \hfill \\
+    {\footnotesize\textit{Fonte:} \url{https://www.ibm.com/it-it/cloud/learn/containers}}
+    }
+}
 % middleware
 % architetture a messaggio
 % Integrazione
@@ -104,7 +134,7 @@
 \newacronym{sso}{SSO}{Single Sign On}
 \newacronym{api}{API}{Application Programming Interface}
 \newacronym{p2p}{P2P}{Point To Point}
-\newacronym{eda}{EDA}{\textit{Event Driven Architecture}}
+\newacronym{eda}{EDA}{\gls{g_eda}}
 \newacronym{uc}{UC}{Use Case}
 \newacronym{os}{OS}{Operating System}
 \newacronym{vm}{VM}{Virtual Machine}
@@ -137,7 +167,7 @@
   {\end{minted}}
 
 \begin{document}
-
+\pagenumbering{arabic}
 
 \pagestyle{fancy}
 \fancyhf{}
@@ -214,11 +244,12 @@
 \input{chapters/2-Apache_Kafka_nel_settore_dell_Integrazione_Aziendale}
 \input{chapters/3-Apache_Kafka_in_un_caso_d_uso_simulato}
 \input{chapters/4-Obiettivi_soddisfatti_e_bilancio_formativo}
-
+% \addcontentsline{toc}{chapter}{Acronimi}
 \printglossary[type=\acronymtype]
 \printglossary
 
-\printbibliography
+% \addcontentsline{toc}{chapter}{Bibliografia}
+\printbibliography[heading=bibintoc]
 % \clearpage{\pagestyle{plain}\cleardoublepage} %Numerazione araba per i capitoli
 % \pagenumbering{arabic}
 %

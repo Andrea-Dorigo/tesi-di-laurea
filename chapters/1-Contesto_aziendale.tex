@@ -104,7 +104,7 @@ sono stati di fondamentale aiuto in questo processo.
 
 Il processo di Codifica nella mia esperienza personale è risultato abbastanza libero per quanto riguarda le tecnologie e i \software\ utilizzati, purché le scelte fossero adeguatamente motivate e adeguate.
 
-Il processo di Verifica è stato eseguito dal tutor aziendale e dal Responsabile del settore \sacr{eai} a scadenza settimanale, tramite colloqui \textit{online} o resoconti sulla \textit{online board} di riferimento.
+Il processo di Verifica è stato eseguito, con il supporto del tutor aziendale e del Responsabile del settore \sacr{eai} a scadenza settimanale, tramite colloqui \textit{online} o resoconti sulla \textit{online board} di riferimento.
 
 Il processo di Collaudo è avvenuto tramite una presentazione \textit{online} e dimostrazione \textit{live} del prodotto sviluppato all'intera azienda.
 
@@ -157,14 +157,14 @@ Questo scopo viene raggiunto grazie al delineamento di cinque elementi principal
 Il percorso di \stage\ ha visto anch'esso l'utilizzo di una Kanban \textit{board} per la gestione del progetto.
 \section{Dominio tecnologico}
 
-% Sviluppo indipendente dal sistema operativo, produzione di \software\ non strettamente legati ad uno specifico linguaggio, utilizzo di ambienti virtuali quali \textit{Virtual Machine} e \textit{container} per simulare sistemi indipendenti.
+% Sviluppo indipendente dal sistema operativo, produzione di \software\ non strettamente legati ad uno specifico linguaggio, utilizzo di ambienti virtuali quali \textit{Virtual Machine} e \gls{g_container} per simulare sistemi indipendenti.
 % L'ambiente di lavoro di cui ho avuto esperienza risulta libero e flessibile, tanto nel campo organizzativo quanto in quello tecnologico.
 \subsection{Dominio aziendale flessibile e indipendente}
 
 Il dominio tecnologico aziendale di cui ho avuto esperienza risulta libero e flessibile.
 
 Lo sviluppo del prodotto \software\ nell'ambito del \sacr{eai} è fortemente consigliato essere indipendente dal linguaggio di programmazione, dagli strumenti utilizzati per l'esecuzione e sviluppo, e ove possibile, anche dal Sistema Operativo su cui esso esegue.
-A tal scopo si utilizzano strumenti quali \textit{Virtual Machine} e \textit{Container}: essi non solo garantiscono l'indipendenza dal Sistema Operativo in uso, ma simulano efficacemente il caso d'uso reale in cui gli eseguibili sono dislocati in più dispositivi come spesso accade per il cliente finale.
+A tal scopo si utilizzano strumenti quali \textit{Virtual Machine} e \gls{g_container}: essi non solo garantiscono l'indipendenza dal Sistema Operativo in uso, ma simulano efficacemente il caso d'uso reale in cui gli eseguibili sono dislocati in più dispositivi come spesso accade per il cliente finale.
 Il percorso formativo ha visto l'apprendimento di entrambe le tecnologie tramite l'utilizzo dei \software\ \textit{Virtual Box}\footfullcite{virtualbox} e \textit{Docker}\footfullcite{docker}, ma infine solo quest'ultima è stata utilizzata durante il progetto.
 
 Nonostante vi sia questa libertà tecnologica riguardo la scelta dei software e linguaggi, è necessario tenere in considerazione i concetti principali vincolanti del settore, descritti in seguito.
@@ -214,7 +214,7 @@ Le interfacce di servizio comportano un \textit{loose coupling}, il che signific
 I servizi sono esposti utilizzando protocolli di rete standard, come \sacrfoot{soap}/\sacr{http} o \sacrfoot{json}/\sacr{http}, per inviare richieste di lettura o modifica dei dati.
 I servizi sono pubblicati per consentire agli sviluppatori di trovarli rapidamente e riutilizzarli per assemblare nuove applicazioni in modo modulare.
 
-Questo tipo di architettura consente a Sync Lab di creare sistemi basati sui microservizi, derivati dalla \sacr{soa}, per dare modularità, scalabilità, flessibilità e facilità di manutenzione o aggiornamento ai propri prodotti.
+Questo tipo di architettura consente a Sync Lab di creare sistemi basati sui \gls{g_microservizi}, derivati dalla \sacr{soa}, per dare modularità, scalabilità, flessibilità e facilità di manutenzione o aggiornamento ai propri prodotti.
 
 \subsection{\textit{Messaging pattern}}
 
@@ -238,7 +238,7 @@ Un \textit{message broker} è un modulo \software\ spesso posto all'interno di u
 
 \subsection{\textit{\acrlong{esb}}}
 
-\begin{figure}[H]
+\begin{figure}[h]
   \begin{center}
     \includegraphics[width=0.65\textwidth]{images/esb.png}
     \caption{Illustrazione esemplificativa di un \sacr{esb}}
@@ -249,8 +249,7 @@ Un \textit{message broker} è un modulo \software\ spesso posto all'interno di u
 
 \textbf{Un \sacr{esb} è un \textit{pattern} architetturale in cui un \software\ centrale consente l'integrazione tra diverse applicazioni} (figura \thefigure).
 Esso si occupa della comunicazione, trasformazione e conversione dei dati all'interno di una \sacr{soa}; è una tipologia più evoluta di \textit{message broker}.
-Senza strumenti di questo tipo, la \textit{\acrlong{soa}} porterebbe ad un sistema composto semplicemente da un gruppo di servizi.
-Ogni servizio dovrebbe occuparsi dello scambio di messaggi con tutti gli altri (\sacrfoot{p2p}) creando, nei sistemi più grandi, problemi per quanto riguarda l'estensione e manutenibilità dei servizi.
+Senza strumenti di questo tipo, la \textit{\acrlong{soa}} porterebbe ad un sistema composto semplicemente da un gruppo di servizi; in questo caso infatti, ogni servizio dovrebbe occuparsi dello scambio di messaggi con tutti gli altri (\sacrfoot{p2p}) creando, nei sistemi più grandi, problemi per quanto riguarda l'estensione e manutenibilità dei servizi.
 
 % \begin{figure}[h]
 %   \begin{center}
@@ -295,13 +294,13 @@ I \textit{Middleware} pertanto vedono due importanti utilizzi nel settore \sacr{
 \begin{itemize}
   \item \textbf{Integrazione su più livelli:} i \textit{Middleware} connettono i principali sistemi aziendali interni ed esterni. Capacità di integrazione quali trasformazione, connettività, componibilità e messaggistica \textit{enterprise}, abbinate all'autenticazione \sacrfoot{sso}, aiutano gli sviluppatori a estendere tali capacità su diverse applicazioni.
   \item \textbf{Flussi di dati:} le \sacrfoot{api} rappresentano una modalità per condividere i dati tra le applicazioni. Un altro approccio è quello del flusso di dati asincrono, che consiste nella replica di un \textit{set} di dati in un livello intermedio, da cui i dati possono essere condivisi con più applicazioni.
-  \item \textbf{Ottimizzazione di applicazioni esistenti:} con l'adozione del \textit{Middleware}, gli sviluppatori possono trasformare le applicazioni monolitiche esistenti in applicazioni \textit{cloud native} o a microservizi, mantenendo i validi strumenti già in uso ma migliorandone prestazioni e portabilità (figura \thefigure).
+  \item \textbf{Ottimizzazione di applicazioni esistenti:} con l'adozione del \textit{Middleware}, gli sviluppatori possono trasformare le applicazioni monolitiche esistenti in applicazioni \textit{cloud native} o a \gls{g_microservizi}, mantenendo i validi strumenti già in uso ma migliorandone prestazioni e portabilità (figura \thefigure).
 \end{itemize}
 
 \begin{figure}[h]
   \begin{center}
     \includegraphics[width=0.85\textwidth]{images/mono_to_micro.png}
-    \caption{Dalle classiche soluzioni monolitiche ai moderni sistemi a microservizi}
+    \caption{Dalle classiche soluzioni monolitiche ai moderni sistemi a \gls{g_microservizi}}
     \captionsetup{aboveskip=2pt}
     \caption*{\begin{footnotesize}\textit{Fonte:} \url{https://aymax.fr/en/why-a-microservices-architecture/}\end{footnotesize}}
   \end{center}
@@ -312,13 +311,13 @@ I \textit{Middleware} pertanto vedono due importanti utilizzi nel settore \sacr{
 
 Come anticipato nella sezione precedente, tra le tecnologie più utilizzate in questo settore aziendale vi sono molte piattaforme che permettono di simulare ambienti distribuiti su più macchine fisiche, ove possibile anche indipendenti dal Sistema Operativo su cui viene eseguito il prodotto \software.
 
-La simulazione di questi \textit{distributed environment} avviene grazie a sistemi basati sul concetto di \textit{container} (come Docker e Kubernetes) oppure interi Sistemi Operativi che vengono eseguiti all'interno di una \textit{Virtual Machine}.
+La simulazione di questi \textit{distributed environment} avviene grazie a sistemi basati sul concetto di \gls{g_container} (come Docker e Kubernetes) oppure interi Sistemi Operativi che vengono eseguiti all'interno di una \textit{Virtual Machine}.
 Il vantaggio principale di queste tecnologie è che rendono l'esecuzione del \software\ al loro interno completamente indipendente dall'ambiente circostante, eliminando problemi di \sacrfoot{os} differenti tra i componenti del team o tra l'azienda e i clienti o divergenze nelle dipendenze con relative versioni.
-Un \textit{container} o una \textit{Virtual Machine} contengono tutto il necessario affinché sia possibile eseguire il \software\ al suo interno su diverse macchine fisiche (o anch'esse  virtuali).
+Un \gls{g_container} o una \textit{Virtual Machine} contengono tutto il necessario affinché sia possibile eseguire il \software\ al suo interno su diverse macchine fisiche (o anch'esse  virtuali).
 
-Queste piattaforme non solo rendono agevole l'esecuzione del \software\ prodotto, ma anche lo sviluppo: la condivisione, \textit{debugging} e manutenzione risultano più agevoli grazie alla condivisione dell'intero \textit{container} o \sacr{vm} con gli altri membri del team.
+Queste piattaforme non solo rendono agevole l'esecuzione del \software\ prodotto, ma anche lo sviluppo: la condivisione, \textit{debugging} e manutenzione risultano più agevoli grazie alla condivisione dell'intero \gls{g_container} o \sacr{vm} con gli altri membri del team.
 
-Inoltre, si adattano particolarmente bene a simulare l'ambiente distribuito, un concetto fondamentale nel settore del \sacr{eai}; infatti è sufficiente generare molteplici \textit{container} o \sacr{vm} sulla stessa macchina fisica per simulare un sistema composto da più macchine fisiche distinte, minimizzando l'utilizzo di risorse senza compromettere il risultato del prodotto finale.
+Inoltre, si adattano particolarmente bene a simulare l'ambiente distribuito, un concetto fondamentale nel settore del \sacr{eai}; infatti è sufficiente generare molteplici \gls{g_container} o \sacr{vm} sulla stessa macchina fisica per simulare un sistema composto da più macchine fisiche distinte, minimizzando l'utilizzo di risorse senza compromettere il risultato del prodotto finale.
 È così possibile per l'azienda riprodurre un sistema complesso che si avvicina alle risorse ed esigenze effettive del cliente, che usualmente possiede molti computer e server dislocati.
 
 \begin{figure}[h]
@@ -335,7 +334,7 @@ Vi sono dunque delle notevoli differenze, vantaggi e svantaggi tra l'utilizzo de
 \begin{enumerate}
   \item i \container\ sono più rapidi delle \sacr{vm} nell'esecuzione;
   \item i \container\ sono più leggeri delle \sacr{vm} in termini di memoria;
-  \item i \container\ sono più adatti a simulare un'architettura a microservizi, dato la relativa semplicità ed efficienza rispetto ad una \sacr{vm};
+  \item i \container\ sono più adatti a simulare un'architettura a \gls{g_microservizi}, dato la relativa semplicità ed efficienza rispetto ad una \sacr{vm};
   \item le \sacr{vm} sono considerate tendenzialmente più sicure dei \container\;
   \item le infrastrutture e strumenti di gestione di grandi quantità di \sacr{vm} sono più consolidate dei corrispettivi strumenti associati ai \container.
 \end{enumerate}
@@ -344,7 +343,7 @@ Vi sono dunque delle notevoli differenze, vantaggi e svantaggi tra l'utilizzo de
 Durante il percorso di stage ho approfondito le mie conoscenze riguardo entrambe le tecnologie, optando per l'utilizzo di \container\ all'interno del mio progetto di \stage, poiché più efficiente considerate le risorse a mia disposizione.
 La scelta della piattaforma di \container\ è stata quella di Docker.
 % La scelta, in accordo con il tutor aziendale, è dovuta
-Più precisamente, ho utilizzato l'estensione \textit{Docker-compose}\footfullcite{docker-compose} per gestire in modo elegante generazione e collaudo di più servizi indipendenti (figura \thefigure): non solo questo \software\ consente di creare velocemente una rete di \textit{container} comunicanti su di una rete isolata, ma rende anche rapido ed efficiente lo sviluppo, grazie alla possibilità di modificare e riavviare rapidamente un singolo servizio.
+Più precisamente, ho utilizzato l'estensione \textit{Docker-compose}\footfullcite{docker-compose} per gestire in modo elegante generazione e collaudo di più servizi indipendenti (figura \thefigure): non solo questo \software\ consente di creare velocemente una rete di \gls{g_container} comunicanti su di una rete isolata, ma rende anche rapido ed efficiente lo sviluppo, grazie alla possibilità di modificare e riavviare rapidamente un singolo servizio.
 %
 % \begin{figure}[H]
 %   \begin{minted}[
@@ -416,7 +415,7 @@ Più precisamente, ho utilizzato l'estensione \textit{Docker-compose}\footfullci
 
 Come si può vedere in figura \thefigure, è relativamente semplice e veloce creare un ambiente composto da due container entrambi connessi alla stessa rete locale di default di Docker (il servizio intitolato \texttt{web}, composto a partire dalla cartella corrente e accessibile alla porta 5000, e il servizio \texttt{redis}, generato a partire da un'immagine predefinita).
 
-Il caso d'uso realizzato nel mio percorso ha modellato grazie ai \container\ un sistema a microservizi che simula le risorse di un grande cliente gestore di telecomunicazioni, secondo una visione coerente con il tipo di clientela reale dell'azienda.
+Il caso d'uso realizzato nel mio percorso ha modellato grazie ai \container\ un sistema a \gls{g_microservizi} che simula le risorse di un grande cliente gestore di telecomunicazioni, secondo una visione coerente con il tipo di clientela reale dell'azienda.
 % TODO: completare il collegamento tra sopra e sotto;
 % TODO: magari ci sta bene un esempio di dockerfile
 
@@ -451,9 +450,9 @@ Kafka viene eseguito come un gruppo (\textit{cluster}) di \textit{server} distri
 Alcuni di questi \textit{server} sono chiamati \textit{broker}, e insieme compongono il livello di memorizzazione (\textit{storage layer}).
 Altri \textit{server} sono dedicati all'esecuzione di Kafka Connect, un componente essenziale per l'importazione dei dati da altre fonti; esso è molto rilevante nel campo dei \middleware, poiché permette di integrare Kafka all'interno di sistemi pre-esistenti in modo graduale, con un investimento iniziale parziale.
 
-I \textit{client} invece, permettono di sviluppare applicazioni distribuite a microservizi che leggono, scrivono e processano il flusso di dati; questi \textit{client} mettono a disposizione delle interfacce per molti linguaggi e \software\ differenti, tra cui Java, Scala, Python, C++/C oltre a delle \sacr{rest} \sacr{api}.
+I \textit{client} invece, permettono di sviluppare applicazioni distribuite a \gls{g_microservizi} che leggono, scrivono e processano il flusso di dati; questi \textit{client} mettono a disposizione delle interfacce per molti linguaggi e \software\ differenti, tra cui Java, Scala, Python, C++/C oltre a delle \sacr{rest} \sacr{api}.
 
-Il sistema è molto adattabile, dato che può essere installato anche su \textit{\acrlong{vm}}, \textit{container}, ambienti \textit{cloud} e addirittura \textit{bare-metal hardware}.
+Il sistema è molto adattabile, dato che può essere installato anche su \textit{\acrlong{vm}}, \gls{g_container}, ambienti \textit{cloud} e addirittura \textit{bare-metal hardware}.
 La piattaforma è costituita da un sistema distribuito di \textit{server} e \textit{client} che comunicano attraverso un protocollo \textit{network} \sacrfoot{tcp} ad alta \textit{performance}.
 
 Il \software\ ha dimostrato negli anni recenti un notevole successo in diversi campi\footnote{Fonte: \url{https://kafka.apache.org/powered-by}}, come quello del flusso di \textit{Big Data}, del monitoraggio e dell'elaborazione dati in tempo reale.
