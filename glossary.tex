@@ -1,0 +1,54 @@
+
+\newglossaryentry{g_eai}
+{
+    name=\textit{Enterprise Application Integration},
+    description={\hfill \\
+    Il termine si riferisce al processo d'integrazione tra diversi tipi di sistemi informatici di un'azienda attraverso l'utilizzo di software e soluzioni architetturali.
+    \hfill \\
+    {\footnotesize{\textit{Fonte:} \url{https://it.wikipedia.org/wiki/Enterprise_Application_Integration}}}
+    }
+}
+\newglossaryentry{g_soa}
+{
+    name=\textit{Service Oriented Architecture},
+    description={\hfill \\
+    La Service Oriented Architecture definisce un modo per rendere i componenti software riutilizzabili tramite interfacce di servizio. Queste interfacce utilizzano standard di comunicazione comuni in modo da poter essere rapidamente integrate in nuove applicazioni senza dover eseguire ogni volta una profonda integrazione.\\
+    Ogni servizio in una SOA incorpora il codice e le integrazioni dei dati necessari per eseguire una funzione aziendale completa e discreta (ad esempio, il controllo del credito del cliente, il calcolo di un pagamento di un prestito mensile o l'elaborazione di un'applicazione ipotecaria). Le interfacce di servizio forniscono un accoppiamento libero, il che significa che possono essere richiamate con poca o nessuna conoscenza della sottostante modalità di implementazione dell'integrazione.\\
+    I servizi sono esposti utilizzando protocolli di rete standard - come SOAP (simple object access protocol)/HTTP o JSON/HTTP - per inviare richieste di lettura o modifica dei dati. I servizi sono pubblicati per consentire agli sviluppatori di trovarli rapidamente e riutilizzarli per assemblare nuove applicazioni.
+    \hfill \\
+    {\footnotesize\textit{Fonte:} \url{https://www.ibm.com/it-it/cloud/learn/soa}}
+    }
+}
+\newglossaryentry{g_eda}
+{
+    name=\textit{Event Driven Architecture},
+    description={\hfill \\
+    Una Event Driven Architecture è costituita da produttori di eventi che generano un flusso di eventi e consumer eventi che sono in ascolto degli eventi.\\
+    Gli eventi vengono recapitati praticamente in tempo reale, in modo che i consumer possano rispondervi immediatamente non appena si verificano. I producer sono separati dai consumer: un producer è all'oscuro dei consumer in ascolto. Anche i consumer sono separati tra loro e ognuno visualizza tutti gli eventi. Questo comportamento differisce da un modello con consumer concorrenti, in cui i consumer eseguono il pull di messaggi da una coda e un messaggio viene elaborato solo una volta (presupponendo l'assenza di errori). In alcuni sistemi, ad esempio nei sistemi IoT, gli eventi devono essere inseriti a volumi molto elevati. \\
+    Un'architettura guidata dagli eventi può usare un modello di pubblicazione/sottoscrizione o un modello di flusso di eventi.
+    \hfill \\
+    {\footnotesize\textit{Fonte:} \url{https://docs.microsoft.com/it-it/azure/architecture/guide/architecture-styles/event-driven}}
+    }
+}
+\newglossaryentry{g_microservizi}
+{
+    name=microservizi,
+    description={\hfill \\
+    I microservizi sono un approccio per sviluppare e organizzare l’architettura dei software secondo cui quest’ultimi sono composti di servizi indipendenti di piccole dimensioni che comunicano tra loro tramite API ben definite. Questi servizi sono controllati da piccoli team autonomi.\\
+    Le architetture dei microservizi permettono di scalare e sviluppare le applicazioni in modo più rapido e semplice, permettendo di promuovere l’innovazione e accelerare il time-to-market di nuove funzionalità.
+    \hfill \\
+    {\footnotesize\textit{Fonte:} \url{https://aws.amazon.com/it/microservices/}}
+    }
+}
+\newglossaryentry{g_container}
+{
+    name=\textit{container},
+    description={\hfill \\
+    I container sono delle unità eseguibili di software in cui viene impacchettato il codice applicativo, insieme alle sue librerie e dipendenze, con modalità comuni in modo da poter essere eseguito ovunque, sia su desktop che su IT tradizionale o cloud.\\
+    Per farlo, i container usufruiscono di una forma di virtualizzazione del sistema operativo (SO), in cui le funzioni del SO (ossia, nel caso del kernel Linux, i namespace e le primitive dei cgroup) vengono utilizzate efficacemente sia per isolare i processi che per controllare la quantità di CPU, memoria e disco a cui tali processi hanno accesso.\\
+    I container sono piccoli, veloci e portatili perché, diversamente da una VM, non hanno bisogno di includere un sistema operativo guest in ogni istanza e possono invece sfruttare semplicemente le funzioni e le risorse del sistema operativo host.\\
+    I container sono apparsi per la prima volta decenni fa con versioni come le jail FreeBSD e le partizioni di carico di lavoro AIX (WPAR), ma la maggior parte degli sviluppatori moderni ricorda il 2013 come inizio dell'era dei container moderni con l'introduzione di Docker.
+    \hfill \\
+    {\footnotesize\textit{Fonte:} \url{https://www.ibm.com/it-it/cloud/learn/containers}}
+    }
+}

@@ -1,3 +1,7 @@
+% by Andrea Dorigo - https://github.com/Andrea-Dorigo
+
+
+% predispongo il documento per la stampa, e comincio il capitolo sempre sulla pagina destra (inserisce automaticamente pagine bianche ove necessario)
 \documentclass[a4paper, twoside, openright]{report}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -20,138 +24,33 @@
 \usepackage{tabularx}
 \usepackage{makecell}
 \usepackage{multirow}
-% \usepackage[nottoc,numbib]{tocbibind}
-% \usepackage[]{glossaries}
 \usepackage{longtable}
-% \newcommand{\mintedoptions}{cachedir=/tmp/mint,outputdir=/aux}
 \usepackage[outputdir=aux]{minted}
 \usepackage[citestyle=authortitle-ibid, backend=biber, hyperref=true]{biblatex}
 \usepackage{csquotes}
+
+% definisco il colore rosso unipd, e un blu pastello per gli url
 \definecolor{unipdred}{RGB}{149, 0, 19}
 \definecolor{pastelblue}{RGB}{17,93,118}
 
-\hypersetup{
+\hypersetup{ % colora gli url di blu, rimuovi i riquadri intorno ai link e colorali di nero
   colorlinks = true,
   linkcolor = black,
   urlcolor = pastelblue,
   breaklinks = true
 }
-\addbibresource{tesi.bib}
-\makeglossaries
 
-\newglossaryentry{g_eai}
-{
-    name=\textit{Enterprise Application Integration},
-    description={\hfill \\
-    Il termine si riferisce al processo d'integrazione tra diversi tipi di sistemi informatici di un'azienda attraverso l'utilizzo di software e soluzioni architetturali.
-    \hfill \\
-    {\footnotesize{\textit{Fonte:} \url{https://it.wikipedia.org/wiki/Enterprise_Application_Integration}}}
-    }
-}
-\newglossaryentry{g_soa}
-{
-    name=\textit{Service Oriented Architecture},
-    description={\hfill \\
-    La Service Oriented Architecture definisce un modo per rendere i componenti software riutilizzabili tramite interfacce di servizio. Queste interfacce utilizzano standard di comunicazione comuni in modo da poter essere rapidamente integrate in nuove applicazioni senza dover eseguire ogni volta una profonda integrazione.\\
-    Ogni servizio in una SOA incorpora il codice e le integrazioni dei dati necessari per eseguire una funzione aziendale completa e discreta (ad esempio, il controllo del credito del cliente, il calcolo di un pagamento di un prestito mensile o l'elaborazione di un'applicazione ipotecaria). Le interfacce di servizio forniscono un accoppiamento libero, il che significa che possono essere richiamate con poca o nessuna conoscenza della sottostante modalità di implementazione dell'integrazione.\\
-    I servizi sono esposti utilizzando protocolli di rete standard - come SOAP (simple object access protocol)/HTTP o JSON/HTTP - per inviare richieste di lettura o modifica dei dati. I servizi sono pubblicati per consentire agli sviluppatori di trovarli rapidamente e riutilizzarli per assemblare nuove applicazioni.
-    \hfill \\
-    {\footnotesize\textit{Fonte:} \url{https://www.ibm.com/it-it/cloud/learn/soa}}
-    }
-}
-\newglossaryentry{g_eda}
-{
-    name=\textit{Event Driven Architecture},
-    description={\hfill \\
-    Una Event Driven Architecture è costituita da produttori di eventi che generano un flusso di eventi e consumer eventi che sono in ascolto degli eventi.\\
-    Gli eventi vengono recapitati praticamente in tempo reale, in modo che i consumer possano rispondervi immediatamente non appena si verificano. I producer sono separati dai consumer: un producer è all'oscuro dei consumer in ascolto. Anche i consumer sono separati tra loro e ognuno visualizza tutti gli eventi. Questo comportamento differisce da un modello con consumer concorrenti, in cui i consumer eseguono il pull di messaggi da una coda e un messaggio viene elaborato solo una volta (presupponendo l'assenza di errori). In alcuni sistemi, ad esempio nei sistemi IoT, gli eventi devono essere inseriti a volumi molto elevati. \\
-    Un'architettura guidata dagli eventi può usare un modello di pubblicazione/sottoscrizione o un modello di flusso di eventi.
-    \hfill \\
-    {\footnotesize\textit{Fonte:} \url{https://docs.microsoft.com/it-it/azure/architecture/guide/architecture-styles/event-driven}}
-    }
-}
-\newglossaryentry{g_microservizi}
-{
-    name=microservizi,
-    description={\hfill \\
-    I microservizi sono un approccio per sviluppare e organizzare l’architettura dei software secondo cui quest’ultimi sono composti di servizi indipendenti di piccole dimensioni che comunicano tra loro tramite API ben definite. Questi servizi sono controllati da piccoli team autonomi.\\
-    Le architetture dei microservizi permettono di scalare e sviluppare le applicazioni in modo più rapido e semplice, permettendo di promuovere l’innovazione e accelerare il time-to-market di nuove funzionalità.
-    \hfill \\
-    {\footnotesize\textit{Fonte:} \url{https://aws.amazon.com/it/microservices/}}
-    }
-}
-\newglossaryentry{g_container}
-{
-    name=\textit{container},
-    description={\hfill \\
-    I container sono delle unità eseguibili di software in cui viene impacchettato il codice applicativo, insieme alle sue librerie e dipendenze, con modalità comuni in modo da poter essere eseguito ovunque, sia su desktop che su IT tradizionale o cloud.\\
-    Per farlo, i container usufruiscono di una forma di virtualizzazione del sistema operativo (SO), in cui le funzioni del SO (ossia, nel caso del kernel Linux, i namespace e le primitive dei cgroup) vengono utilizzate efficacemente sia per isolare i processi che per controllare la quantità di CPU, memoria e disco a cui tali processi hanno accesso.\\
-    I container sono piccoli, veloci e portatili perché, diversamente da una VM, non hanno bisogno di includere un sistema operativo guest in ogni istanza e possono invece sfruttare semplicemente le funzioni e le risorse del sistema operativo host.\\
-    I container sono apparsi per la prima volta decenni fa con versioni come le jail FreeBSD e le partizioni di carico di lavoro AIX (WPAR), ma la maggior parte degli sviluppatori moderni ricorda il 2013 come inizio dell'era dei container moderni con l'introduzione di Docker.
-    \hfill \\
-    {\footnotesize\textit{Fonte:} \url{https://www.ibm.com/it-it/cloud/learn/containers}}
-    }
-}
-% middleware
-% architetture a messaggio
-% Integrazione
-% Networking
-% distribuite? sistemi distribuiti? architetture distribuite? monolitiche?
-% big data?
-% object Oriented
-% design Pattern
-% uml?
-% Agile (+ manifesto?)
-% virtual machine
-% container
-% event streaming
-% request response
-% microservizi
-% open source
-% rest
-% proxy?
-% asincrono / sincrono
-% callback
+\addbibresource{tesi.bib} % leggi il file con la bibliografia
+\makeglossaries % costruisci il glossario
+\loadglsentries{glossary}
+\loadglsentries[acryonym]{acronyms}
 
-\newacronym{ict}{ICT}{Information and Communication Technologies}
-\newacronym{j2ee}{J2EE}{Java 2 Platform Enterprise Edition}
-\newacronym{ejb}{EJB}{Enterprise Java Bean}
-\newacronym{cobra}{COBRA}{Common Object Request Broker Architecture}
-\newacronym{mom}{MOM}{Message Oriented Middleware}
-\newacronym{jms}{JMS}{Java Message Service}
-\newacronym{eai}{EAI}{\gls{g_eai}}
-\newacronym{oo}{O-O}{Object Oriented}
-\newacronym{uml}{UML}{Unified Modeling Language}
-\newacronym{cli}{CLI}{Command Line Interface}
-\newacronym{soa}{SOA}{\gls{g_soa}}
-\newacronym{soap}{SOAP}{Simple Object Access Protocol}
-\newacronym{wsdl}{WSDL}{Web Service Description Language}
-\newacronym{xml}{XML}{eXtensible Markup Language}
-\newacronym{xsd}{XSD}{XML Schema Definition}
-\newacronym{json}{JSON}{JavaScript Object Notation}
-\newacronym{ws}{WS}{Web Service}
-\newacronym{rest}{REST}{REpresentational State Transfer}
-\newacronym{sso}{SSO}{Single Sign On}
-\newacronym{api}{API}{Application Programming Interface}
-\newacronym{p2p}{P2P}{Point To Point}
-\newacronym{eda}{EDA}{\gls{g_eda}}
-\newacronym{uc}{UC}{Use Case}
-\newacronym{os}{OS}{Operating System}
-\newacronym{vm}{VM}{Virtual Machine}
-\newacronym{http}{HTTP}{HyperText Transfer Protocol}
-\newacronym{esb}{ESB}{Enterprise Service Bus}
-\newacronym{tcp}{TCP}{Transmission Control Protocol}
-\newacronym{ipv4}{IPv4}{Internet Protocol version 4}
-\newacronym{cdl}{CdL}{Corso di Laurea}
-\newacronym{pdca}{PDCA}{\textit{Plan Do Check Act}}
-\newacronym{jre}{JRE}{\textit{Java Runtime Environment}}
+\captionsetup[figure]{font=small,labelfont=small} % rimpicciolisci il font delle captions
 
-% ksql
+\urlstyle{tt} % monospace font per gli url. probabilmente è possibile rimuovere questo comando
 
-\captionsetup[figure]{font=small,labelfont=small}
-
-\urlstyle{tt}
-
+% definizione di un nuobo environment per rappresentare pezzi di codice ben formattati all'interno del documento tramite il package intitolato Minted.
+% Richiede l'installazione del software "pygments" nel sistema, che rende disponibile il comando "pygmentize".
 \newenvironment{mycode}[1]
  {\VerbatimEnvironment
   \begin{minted}[
@@ -167,32 +66,38 @@
   {\end{minted}}
 
 \begin{document}
-\pagenumbering{arabic}
 
+
+
+\pagenumbering{arabic} % numeri arabi nelle pagine. Refuso di un periodo iniziale in cui avevo numerato gli indici e le liste di figure/tabelle con numeri romani.
+
+%impostazione dell'header e del footer della pagina: per maggiori informazioni documentarsi sul package "fancyhdr"
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead{}
 \fancyhead[L,RO]{\rightmark}
 \fancyhead[LO,RE]{\textbf{\leftmark}}
 \fancyfoot[C]{\thepage}
-
 \renewcommand{\chaptermark}[1]{\markboth{\small\textsc{\thechapter.\ #1}}{}}
 \renewcommand{\sectionmark}[1]{\markright{\small\textsc{\thesection.\ #1}}{}}
-\newcommand{\sacr}[1]{\acrshort{#1}$_a$}
+
+% mi sono scritto alcuni comandi utili, per un rapido utilizzo ripetuto
+\newcommand{\sacr}[1]{\acrshort{#1}$_a$} %appendi ad ogni acronimo, in basso a destra, la lettera a in piccolo
+
+% scrivo facilmente in corsivo i seguenti termini
 \newcommand{\stage}{\textit{stage}}
 \newcommand{\software}{\textit{software}}
 \newcommand{\middleware}{\textit{Middleware}}
 \newcommand{\container}{\textit{container}}
+
+% inserisco nel footer l'acronimo esteso, per una rapida consultazione.
 \newcommand{\sacrfoot}[1]{\sacr{#1}\footnote{\textit{\glsentrylong{#1}}}}
-\renewcommand{\sectionmark}[1]{\markright{\small\textsc{\thesection.\ #1}}{}}
 
-% \newcommand{\mintedoptions}{outputdir=/aux}
-
-
-
+% ridefinisco il comando gls (che identifica i termini presenti nel glossario) per appendere alla parola una piccola g.
 \let\oldgls\gls
 \renewcommand{\gls}[1]{\oldgls{#1}$_g$}
 
+% pagina del titolo, credit to FIUP/thesis-template su GitHub. Nomi e date da sostituire
 \begin{titlepage}
 \begin{center}
 \includegraphics[scale=0.1]{images/logo.png}\\
@@ -237,44 +142,16 @@
 \listoftables
 \listoffigures
 
-% \hypersetup{
-%   linkcolor = pastelblue
-% }
+% inserisco i vari capitoli
 \input{chapters/1-Contesto_aziendale}
 \input{chapters/2-Apache_Kafka_nel_settore_dell_Integrazione_Aziendale}
 \input{chapters/3-Apache_Kafka_in_un_caso_d_uso_simulato}
 \input{chapters/4-Obiettivi_soddisfatti_e_bilancio_formativo}
 % \addcontentsline{toc}{chapter}{Acronimi}
+
+%inserisco la pagina degli Acronimi, del GLossario, e della Bibliografia (tutti presenti nell'indice)
 \printglossary[type=\acronymtype]
 \printglossary
-
-% \addcontentsline{toc}{chapter}{Bibliografia}
 \printbibliography[heading=bibintoc]
-% \clearpage{\pagestyle{plain}\cleardoublepage} %Numerazione araba per i capitoli
-% \pagenumbering{arabic}
-%
-%
-% \clearpage{\pagestyle{plain}\cleardoublepage} %Comando per iniziare il capitolo su pagina dispari
-% \chapter{Primo Capitolo} %Nome capitolo
-% \label{chapter:primo_capitolo} %Label per creare riferimenti al capitolo
-% \input{intro_cap1.tex} %File in cui verrà scritto il capitolo
-%
-% \clearpage{\pagestyle{plain}\cleardoublepage}
-% \chapter{Immagini e Tabelle}
-% \label{chapter:immagini_e_tabelle}
-% \input{intro_cap2.tex}
-%
-% \clearpage{\pagestyle{plain}\cleardoublepage}
-% \chapter{Formule}
-% \label{chapter:formule}
-% \input{intro_cap3.tex}
-%
-% \clearpage{\pagestyle{plain}\cleardoublepage}
-% \chapter{Pseudocodice e codice}
-% \label{chapter:codice}
-% \input{intro_cap4.tex}
-%
-% \clearpage{\pagestyle{plain}\cleardoublepage}
-% \input{bibliografia.tex}
 
 \end{document}
